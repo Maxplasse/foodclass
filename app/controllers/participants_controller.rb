@@ -12,4 +12,10 @@ class ParticipantsController < ApplicationController
 
   def favorites
   end
+
+  private
+
+  def participant_params
+    params.require(:participant).permit(:favorite)
+  end
 end
