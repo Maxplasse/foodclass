@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   def show
-    @profile = Profile.find(:id)
+    @user = current_user
+    authorize @user
   end
 
   def sponsorship
