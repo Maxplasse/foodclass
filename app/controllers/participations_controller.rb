@@ -1,10 +1,12 @@
 class ParticipationsController < ApplicationController
   def past_participations
     @past_participations = Participation.created_before(DateTime.now)
+    authorize(:participation, :past_participations?)
   end
 
   def upcoming_participations
     @upcoming_participations = Participation.created_after(DateTime.now)
+    authorize(:participation, :upcoming_participations?)
   end
 
   def create
@@ -14,7 +16,7 @@ class ParticipationsController < ApplicationController
     @participation.user = current_user
     authorize @participation
     if @participation.save
-      redirect_to course_path(@course), notice: "Demande de réservation envoyée !"
+      redirect_to course_path(@course), notice: "Demande de réservation envoyée!"
     else
       render :new
     end
