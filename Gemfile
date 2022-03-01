@@ -25,8 +25,13 @@ gem 'jbuilder', '~> 2.7'
 # gem devise User
 gem 'devise'
 
+
+# gem cloudinary
+gem 'cloudinary', '~> 1.16.0'
+
 # pundit for user authorisation
 gem 'pundit'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
