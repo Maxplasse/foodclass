@@ -130,7 +130,7 @@ users_chefs_h = [
     first_name: "Chloé",
     last_name: "Charles",
     email: "chloe@gmail.com",
-    password: "chloe",
+    password: "chloec",
     nickname: "chloec",
     photo: "chloe.jpg"
   },
@@ -228,6 +228,8 @@ chefs_h = [
     user: pierrec
   }
 ]
+
+p "2bis"
 
 chefs = chefs_h.map do |chef|
   c = Chef.new(chef)
@@ -338,8 +340,8 @@ courses_simple = [
     category: "",
     participants_total: 193,
     level_points: 10,
-    start_at: DateTime.new(2022,2,01,19,30),
-    end_at: DateTime.new(2022,2,01,19,30) + 1.hour ,
+    start_at: DateTime.new(2022,2,1,19,30),
+    end_at: DateTime.new(2022,2,1,19,30) + 1.hour ,
     photo_url: [
       "https://images.pexels.com/photos/3642030/pexels-photo-3642030.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -352,8 +354,8 @@ courses_simple = [
     category: "",
     participants_total: 137,
     level_points: 10,
-    start_at: DateTime.new(2022,2,02,18,30),
-    end_at: DateTime.new(2022,2,02,18,30) + 0.84.hour ,
+    start_at: DateTime.new(2022,2,2,18,30),
+    end_at: DateTime.new(2022,2,2,18,30) + 0.84.hour ,
     photo_url: [
       "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -366,8 +368,8 @@ courses_simple = [
     category: "",
     participants_total: 149,
     level_points: 10,
-    start_at: DateTime.new(2022,2,02,18,30),
-    end_at: DateTime.new(2022,2,02,18,30) + 0.84.hour ,
+    start_at: DateTime.new(2022,2,2,18,30),
+    end_at: DateTime.new(2022,2,2,18,30) + 0.84.hour ,
     photo_url: [
       "https://images.pexels.com/photos/323682/pexels-photo-323682.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -380,8 +382,8 @@ courses_simple = [
     category: "",
     participants_total: 203,
     level_points: 10,
-    start_at: DateTime.new(2022,2,08,18,30),
-    end_at: DateTime.new(2022,2,08,18,30) + 0.5.hour ,
+    start_at: DateTime.new(2022,2,8,18,30),
+    end_at: DateTime.new(2022,2,8,18,30) + 0.5.hour ,
     photo_url: [
       "https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
     ]
@@ -394,8 +396,8 @@ courses_simple = [
     category: "",
     participants_total: 281,
     level_points: 10,
-    start_at: DateTime.new(2022,2,09,18,30),
-    end_at: DateTime.new(2022,2,08,18,30) + 0.5.hour ,
+    start_at: DateTime.new(2022,2,9,18,30),
+    end_at: DateTime.new(2022,2,8,18,30) + 0.5.hour ,
     photo_url: [
       "https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -461,7 +463,7 @@ courses_simple = [
 p "4"
 
 courses_simple.each_with_index do |course, index|
-  photo = URI.open(course[:photo_url])
+  photo = URI.open(course[:photo_url].first)
 
   p = Course.new(chef: course[:chef],
                  title: course[:title],
