@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
   resources :profiles, only: [:show]
-  resources :participants, only: [] do
+  resources :participations, only: [] do
     collection do
       get :past_participations, :upcoming_participations
     end

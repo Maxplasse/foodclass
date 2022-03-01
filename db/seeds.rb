@@ -254,10 +254,10 @@ courses_simple = [
     difficulty: "Moyen",
     duration: 50,
     category: "",
-    participants_total: 236,
+    total_participations: 236,
     level_points: 10,
-    start_at: DateTime.new(2022,1,5,18),
-    end_at: DateTime.new(2022,1,5,18) + 0.84.hour ,
+    start_at: DateTime.new(2022, 1, 5, 18),
+    end_at: DateTime.new(2022, 1, 5, 18) + 0.84.hour,
     photo_url: [
       "https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -268,10 +268,10 @@ courses_simple = [
     difficulty: "Facile",
     duration: 50,
     category: "",
-    participants_total: 168,
+    total_participations: 168,
     level_points: 10,
-    start_at: DateTime.new(2022,1,12,18,30),
-    end_at: DateTime.new(2022,1,12,18,30) + 0.84.hour ,
+    start_at: DateTime.new(2022, 1, 12, 18, 30),
+    end_at: DateTime.new(2022, 1, 12, 18, 30) + 0.84.hour,
     photo_url: [
       "https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -282,10 +282,10 @@ courses_simple = [
     difficulty: "Facile",
     duration: 40,
     category: "",
-    participants_total: 128,
+    total_participations: 128,
     level_points: 10,
-    start_at: DateTime.new(2022,1,13,19),
-    end_at: DateTime.new(2022,1,13,19) + 0.66.hour ,
+    start_at: DateTime.new(2022, 1, 13, 19),
+    end_at: DateTime.new(2022, 1, 13, 19) + 0.66.hour,
     photo_url: [
       "https://images.pexels.com/photos/674574/pexels-photo-674574.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -296,10 +296,10 @@ courses_simple = [
     difficulty: "Facile",
     duration: 35,
     category: "",
-    participants_total: 265,
+    total_participations: 265,
     level_points: 10,
-    start_at: DateTime.new(2022,1,19,18,30),
-    end_at: DateTime.new(2022,1,19,18,30) + 0.58.hour ,
+    start_at: DateTime.new(2022, 1, 19, 18, 30),
+    end_at: DateTime.new(2022, 1, 19, 18, 30) + 0.58.hour,
     photo_url: [
       "https://images.pexels.com/photos/3490368/pexels-photo-3490368.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -310,10 +310,10 @@ courses_simple = [
     difficulty: "Facile",
     duration: 30,
     category: "",
-    participants_total: 142,
+    total_participations: 142,
     level_points: 10,
-    start_at: DateTime.new(2022,1,25,18),
-    end_at: DateTime.new(2022,1,25,18) + 0.5.hour ,
+    start_at: DateTime.new(2022, 1, 25, 18),
+    end_at: DateTime.new(2022, 1, 25, 18) + 0.5.hour,
     photo_url: [
       "https://images.pexels.com/photos/3590401/pexels-photo-3590401.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -324,10 +324,10 @@ courses_simple = [
     difficulty: "Difficile",
     duration: 60,
     category: "",
-    participants_total: 189,
+    total_participations: 189,
     level_points: 10,
-    start_at: DateTime.new(2022,1,27,19,30),
-    end_at: DateTime.new(2022,1,25,18) + 1.hour ,
+    start_at: DateTime.new(2022, 1, 27, 19, 30),
+    end_at: DateTime.new(2022, 1, 25, 18) + 1.hour,
     photo_url: [
       "https://images.pexels.com/photos/3659862/pexels-photo-3659862.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -338,10 +338,10 @@ courses_simple = [
     difficulty: "Moyen",
     duration: 60,
     category: "",
-    participants_total: 193,
+    total_participations: 193,
     level_points: 10,
-    start_at: DateTime.new(2022,2,1,19,30),
-    end_at: DateTime.new(2022,2,1,19,30) + 1.hour ,
+    start_at: DateTime.new(2022, 2, 1, 19, 30),
+    end_at: DateTime.new(2022, 2, 1, 19, 30) + 1.hour,
     photo_url: [
       "https://images.pexels.com/photos/3642030/pexels-photo-3642030.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -352,10 +352,10 @@ courses_simple = [
     difficulty: "Facile",
     duration: 50,
     category: "",
-    participants_total: 137,
+    total_participations: 137,
     level_points: 10,
-    start_at: DateTime.new(2022,2,2,18,30),
-    end_at: DateTime.new(2022,2,2,18,30) + 0.84.hour ,
+    start_at: DateTime.new(2022, 2, 2, 18, 30),
+    end_at: DateTime.new(2022, 2, 2, 18, 30) + 0.84.hour,
     photo_url: [
       "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -366,10 +366,10 @@ courses_simple = [
     difficulty: "Difficile",
     duration: 50,
     category: "",
-    participants_total: 149,
+    total_participations: 149,
     level_points: 10,
-    start_at: DateTime.new(2022,2,2,18,30),
-    end_at: DateTime.new(2022,2,2,18,30) + 0.84.hour ,
+    start_at: DateTime.new(2022, 2, 2, 18, 30),
+    end_at: DateTime.new(2022, 2, 2, 18, 30) + 0.84.hour,
     photo_url: [
       "https://images.pexels.com/photos/323682/pexels-photo-323682.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -380,10 +380,10 @@ courses_simple = [
     difficulty: "Difficile",
     duration: 30,
     category: "",
-    participants_total: 203,
+    total_participations: 203,
     level_points: 10,
-    start_at: DateTime.new(2022,2,8,18,30),
-    end_at: DateTime.new(2022,2,8,18,30) + 0.5.hour ,
+    start_at: DateTime.new(2022, 2, 8, 18, 30),
+    end_at: DateTime.new(2022, 2, 8, 18, 30) + 0.5.hour,
     photo_url: [
       "https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
     ]
@@ -394,10 +394,10 @@ courses_simple = [
     difficulty: "Facile",
     duration: 30,
     category: "",
-    participants_total: 281,
+    total_participations: 281,
     level_points: 10,
-    start_at: DateTime.new(2022,2,9,18,30),
-    end_at: DateTime.new(2022,2,8,18,30) + 0.5.hour ,
+    start_at: DateTime.new(2022, 2, 9, 18, 30),
+    end_at: DateTime.new(2022, 2, 8, 18, 30) + 0.5.hour,
     photo_url: [
       "https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -408,10 +408,10 @@ courses_simple = [
     difficulty: "Difficile",
     duration: 70,
     category: "",
-    participants_total: 219,
+    total_participations: 219,
     level_points: 10,
-    start_at: DateTime.new(2022,2,10,19),
-    end_at: DateTime.new(2022,2,10,19) + 1.16.hour ,
+    start_at: DateTime.new(2022, 2, 10, 19),
+    end_at: DateTime.new(2022, 2, 10, 19) + 1.16.hour,
     photo_url: [
       "https://images.pexels.com/photos/10883374/pexels-photo-10883374.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -422,10 +422,10 @@ courses_simple = [
     difficulty: "Moyen",
     duration: 45,
     category: "",
-    participants_total: 172,
+    total_participations: 172,
     level_points: 10,
-    start_at: DateTime.new(2022,2,17,19),
-    end_at: DateTime.new(2022,2,17,19) + 0.75.hour ,
+    start_at: DateTime.new(2022, 2, 17, 19),
+    end_at: DateTime.new(2022, 2, 17, 19) + 0.75.hour,
     photo_url: [
       "https://images.pexels.com/photos/10766728/pexels-photo-10766728.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -436,10 +436,10 @@ courses_simple = [
     difficulty: "Facile",
     duration: 45,
     category: "",
-    participants_total: 183,
+    total_participations: 183,
     level_points: 10,
-    start_at: DateTime.new(2022,2,18,18,30),
-    end_at: DateTime.new(2022,2,18,18,30) + 0.75.hour ,
+    start_at: DateTime.new(2022, 2, 18, 18, 30),
+    end_at: DateTime.new(2022, 2, 18, 18, 30) + 0.75.hour,
     photo_url: [
       "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -450,10 +450,10 @@ courses_simple = [
     difficulty: "Moyen",
     duration: 50,
     category: "",
-    participants_total: 137,
+    total_participations: 137,
     level_points: 10,
-    start_at: DateTime.new(2022,2,25,19,30),
-    end_at: DateTime.new(2022,2,25,19,30) + 0.83.hour ,
+    start_at: DateTime.new(2022, 2, 25, 19, 30),
+    end_at: DateTime.new(2022, 2, 25, 19, 30) + 0.83.hour,
     photo_url: [
       "https://images.pexels.com/photos/6646351/pexels-photo-6646351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -469,7 +469,7 @@ courses_simple.each_with_index do |course, index|
                  title: course[:title],
                  difficulty: course[:difficulty],
                  category: course[:category],
-                 participants_total: course[:participants_total],
+                 total_participations: course[:total_participations],
                  level_points: course[:level_points],
                  start_at: course[:start_at],
                  end_at: course[:end_at])

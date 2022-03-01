@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_01_131004) do
+ActiveRecord::Schema.define(version: 2022_03_01_150243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2022_03_01_131004) do
     t.string "difficulty"
     t.integer "duration"
     t.string "category"
-    t.integer "participants_total"
+    t.integer "total_participations"
     t.integer "level_points"
     t.datetime "start_at"
     t.datetime "end_at"
@@ -81,31 +81,31 @@ ActiveRecord::Schema.define(version: 2022_03_01_131004) do
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.bigint "course_id", null: false
-    t.bigint "participant_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "participation_id"
     t.index ["course_id"], name: "index_messages_on_course_id"
-    t.index ["participant_id"], name: "index_messages_on_participant_id"
+    t.index ["participation_id"], name: "index_messages_on_participation_id"
   end
 
-  create_table "participants", force: :cascade do |t|
+  create_table "participations", force: :cascade do |t|
     t.boolean "favorite"
     t.bigint "user_id", null: false
     t.bigint "course_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["course_id"], name: "index_participants_on_course_id"
-    t.index ["user_id"], name: "index_participants_on_user_id"
+    t.index ["course_id"], name: "index_participations_on_course_id"
+    t.index ["user_id"], name: "index_participations_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
-    t.bigint "participant_id", null: false
     t.bigint "course_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "participation_id"
     t.index ["course_id"], name: "index_posts_on_course_id"
-    t.index ["participant_id"], name: "index_posts_on_participant_id"
+    t.index ["participation_id"], name: "index_posts_on_participation_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -132,9 +132,9 @@ ActiveRecord::Schema.define(version: 2022_03_01_131004) do
   add_foreign_key "comments", "users"
   add_foreign_key "courses", "chefs"
   add_foreign_key "messages", "courses"
-  add_foreign_key "messages", "participants"
-  add_foreign_key "participants", "courses"
-  add_foreign_key "participants", "users"
+  add_foreign_key "messages", "participations"
+  add_foreign_key "participations", "courses"
+  add_foreign_key "participations", "users"
   add_foreign_key "posts", "courses"
-  add_foreign_key "posts", "participants"
+  add_foreign_key "posts", "participations"
 end
