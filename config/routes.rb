@@ -2,11 +2,13 @@ Rails.application.routes.draw do
   # get 'profiles/sponsorship'
   devise_for :users
   root to: 'pages#home'
+  get 'my_profile', to: 'profiles#show', as: :my_profile
+  get 'communauty', to: 'posts#index', as: :communauty
   resources :courses, only: [:index, :show]
   resources :posts, only: :index do
     resources :comments, only: :create
   end
-  resources :profiles, only: [:show]
+  # resources :profiles, only: [:show]
   resources :participants, only: [] do
     collection do
       get :past_participations, :upcoming_participations
