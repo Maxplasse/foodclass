@@ -1,4 +1,4 @@
-class ParticipantsController < ApplicationController
+class ParticipationsController < ApplicationController
   def past_participations
     @past_participations = Participation.created_before(DateTime.now)
   end
@@ -9,11 +9,11 @@ class ParticipantsController < ApplicationController
 
   def create
     @course = Course.find(params[:course_id])
-    @participant = Participant.new(participant_params)
-    @participant.course = @course
-    @participant.user = current_user
-    authorize @participant
-    if @participant.save
+    @participation = Participation.new(participation_params)
+    @participation.course = @course
+    @participation.user = current_user
+    authorize @participation
+    if @participation.save
       redirect_to course_path(@course), notice: "Demande de réservation envoyée !"
     else
       render :new
@@ -25,7 +25,7 @@ class ParticipantsController < ApplicationController
 
   private
 
-  def participant_params
-    params.require(:participant).permit(:favorite)
+  def participation_params
+    params.require(:participation).permit(:favorite)
   end
 end

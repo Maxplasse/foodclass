@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :posts, only: :index do
     resources :comments, only: :create
   end
+  resources :participations, only: [] do
   # resources :profiles, only: [:show]
-  resources :participants, only: [] do
     collection do
       get :past_participations, :upcoming_participations
     end
