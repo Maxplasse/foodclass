@@ -229,7 +229,7 @@ chefs_h = [
   }
 ]
 
-p "2bis"
+p "3"
 
 chefs = chefs_h.map do |chef|
   c = Chef.new(chef)
@@ -245,7 +245,7 @@ sarah = chefs[4]
 alexia = chefs[5]
 pierre = chefs[6]
 
-p "3"
+p "4"
 
 courses_simple = [
   {
@@ -460,7 +460,7 @@ courses_simple = [
   }
 ]
 
-p "4"
+p "5"
 
 courses_simple.each_with_index do |course, index|
   photo = URI.open(course[:photo_url].first)
@@ -479,4 +479,4 @@ courses_simple.each_with_index do |course, index|
   end
 end
 
-p "5"
+p "6"
