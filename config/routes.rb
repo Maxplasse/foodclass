@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   resources :participations, only: [] do
   # resources :profiles, only: [:show]
     collection do
-      get :past_participations, :upcoming_participations
+      get :past_participations
+      get :upcoming_participations
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
