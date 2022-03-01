@@ -1,0 +1,4 @@
+<%= link_to "mon profile", my_profile_path, class: "#{ "active" if controller_name == "profiles" && action_name == "show" }" %>
+<%= link_to "mon historique", past_participations_participations_path, class: "#{ "active" if controller_name == "participations" && action_name == "past_participations" }" %>
+<%= link_to "mes prochains cours", upcoming_participations_participations_path, class: "#{ "active" if controller_name == "participations" && action_name == "upcoming_participations" }" %>
+<%= link_to "mes cours favoris", "#", class: "#{ "active" if controller_name == "participations" && action_name == "upcoming_participations" }" %>
