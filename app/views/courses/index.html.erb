@@ -1,2 +1,9 @@
-<h1>Courses#index</h1>
+<h1><%= link_to "FoodClass.", root_path %></h1>
 <p>Find me in app/views/courses/index.html.erb</p>
+
+<%= link_to course_path(:id) do %>
+  <p>Just to get the root</p>
+  <% @courses.each do |course| %>
+    <%= course.title %>
+  <% end %>
+<% end %>
