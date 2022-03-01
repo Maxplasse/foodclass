@@ -8,6 +8,16 @@ class ParticipantsController < ApplicationController
   end
 
   def create
+    @course = Course.find(params[:course_id])
+    @participant = Participant.new(participant_params)
+    @participant.course = @course
+    @participant.user = current_user
+    authorize @participant
+    if @participant.save
+      redirect_to course_path(@course), notice: "Demande de réservation envoyée !"
+    else
+      render :new
+    end
   end
 
   def favorites
