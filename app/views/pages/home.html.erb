@@ -4,9 +4,37 @@
   <%# <img src="https://images.pexels.com/photos/4686816/pexels-photo-4686816.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""> %>
 </div>
 
- <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-  <%= link_to "Réserver un cours", courses_path %>
-  <%= link_to "mon profil", my_profile_path %>
+
+<h1 class="title">Foodclass</h1>
+
+
+<div class="container">
+  <div class="carousel-home-page-custom">
+   <h3>Recettes populaires du moment</h3>
+    <div class="carousel-home" data-controller="carousel">
+      <div><img src="https://images.pexels.com/photos/566566/pexels-photo-566566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:640px;height:360px"  class="d-block w-100" alt="..."></div>
+      <div><img src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:640px;height:360px"  class="d-block w-100" alt="..."></div>
+      <div><img src="https://images.pexels.com/photos/1907228/pexels-photo-1907228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:640px;height:360px"  class="d-block w-100" alt="..."></div>
+      <div><img src="https://images.pexels.com/photos/7251837/pexels-photo-7251837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:640px;height:360px"  class="d-block w-100" alt="..."></div>
+      <div><img src="https://images.pexels.com/photos/7251837/pexels-photo-7251837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:640px;height:360px"  class="d-block w-100" alt="..."></div>
+      <div><img src="https://images.pexels.com/photos/7251837/pexels-photo-7251837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:640px;height:360px"  class="d-block w-100" alt="..."></div>
+      <div><img src="https://images.pexels.com/photos/7251837/pexels-photo-7251837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:640px;height:360px"  class="d-block w-100" alt="..."></div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+      <div class="pe-2"><img src="https://images.pexels.com/photos/4259707/pexels-photo-4259707.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""> </div>
+      <div class="text custom-center-text"> <h2>Redécouvrez la cuisine</h2><br>  à la maison avec des cours ludiques et innovants.</div>
+      <div class="text pe-4 custom-center-text"> <h2>Partagez</h2><br>une expérience unique avec des chefs renommés qui feront de vous des cuistos aguerris</div>
+      <div> <img src="https://images.pexels.com/photos/3217156/pexels-photo-3217156.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""> </div>
+      <div class="pe-2 "> <img src="https://images.pexels.com/photos/6707696/pexels-photo-6707696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""> </div>
+      <div class="text custom-center-text" > <h2>Devenez</h2><br>membre de la communauté avec les autres utilisateurs de Foodclass. Venez, cuisinez, partagez !</div>
+  </div>
+</div>
+
+
+
+
+
 
 <%= render 'shared/footer' %>

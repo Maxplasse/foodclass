@@ -1,5 +1,9 @@
 require "open-uri"
 
+p "Destroying posts"
+Post.destroy_all
+p "Destroying participations"
+Participation.destroy_all
 p "Destroying courses"
 Course.destroy_all
 p "Destroying chefs"
@@ -247,7 +251,7 @@ pierre = chefs[6]
 
 p "4"
 
-courses_simple = [
+courses_simple_h = [
   {
     chef: ambroise,
     title: "Bobun au tofu",
@@ -410,8 +414,8 @@ courses_simple = [
     category: "",
     total_participations: 219,
     level_points: 10,
-    start_at: DateTime.new(2022, 2, 10, 19),
-    end_at: DateTime.new(2022, 2, 10, 19) + 1.16.hour,
+    start_at: DateTime.new(2022, 3, 15, 19),
+    end_at: DateTime.new(2022, 3, 15, 19) + 1.16.hour,
     photo_url: [
       "https://images.pexels.com/photos/10883374/pexels-photo-10883374.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -460,23 +464,76 @@ courses_simple = [
   }
 ]
 
-p "5"
-
-courses_simple.each_with_index do |course, index|
+courses = courses_simple_h.map.with_index do |course, index|
   photo = URI.open(course[:photo_url].first)
 
   p = Course.new(chef: course[:chef],
                  title: course[:title],
                  difficulty: course[:difficulty],
+                 duration: course[:duration],
                  category: course[:category],
                  total_participations: course[:total_participations],
                  level_points: course[:level_points],
                  start_at: course[:start_at],
                  end_at: course[:end_at])
   p.photo.attach(io: photo, filename: "course#{index}.png", content_type: 'image/png')
-  unless p.save
-    raise
-  end
+  p.save!
+  p
+end
+
+p "5"
+
+posted_course = courses.each do |course|
+  Participation.create!(course: course, user: maxime_p, favorite: false)
 end
 
 p "6"
+
+maxime_p.participations.sample(3).each { |p| p.update(favorite: true) }
+
+p "7"
+
+participations = Participation.all
+
+participation1 = participations[0]
+participation2 = participations[2]
+participation3 = participations[3]
+
+p "8"
+
+post1 = posted_course[0]
+post2 = posted_course[2]
+post3 = posted_course[3]
+
+posts_h = [
+  {
+    content: "Recette excellente ! Un beau moment de partage avec Abroise",
+    participation: participation1,
+    course: post1,
+    photo_url: "https://img-3.journaldesfemmes.fr/Dv4No5oSzA4-mYG4QYiXZRInjhs=/750x500/smart/0858995addb849bdb295719d05cf406c/recipe-jdf/10033576.jpg"
+  },
+  {
+    content: "Un délicieux riz coco accompagné sous les conseils de Chloé Charles. Plat délicieuuuuux! ",
+    participation: participation2,
+    course: post2,
+    photo_url: "https://res.cloudinary.com/hv9ssmzrz/image/fetch/c_fill,f_auto,h_488,q_auto,w_650/https://s3-eu-west-1.amazonaws.com/images-ca-1-0-1-eu/recipe_photos/original/140940/DSC_0390.JPG"
+  },
+  {
+    content: "Recette suive à la lettre, très bonne recette avec Mory Sacko",
+    participation: participation3,
+    course: post3,
+    photo_url: "https://i.ytimg.com/vi/Jke_paxHCUc/sddefault.jpg"
+  }
+]
+
+posts_h.map do |post|
+  photo = URI.open(post[:photo_url])
+  new_post = Post.create!(content: post[:content],
+                          participation: post[:participation],
+                          course: post[:course])
+  new_post.photo.attach(io: photo, filename: "post.png", content_type: 'image/png')
+  new_post.save!
+  new_post
+end
+
+p "9"

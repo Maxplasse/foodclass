@@ -1,12 +1,17 @@
 class ParticipationsController < ApplicationController
   def past_participations
-    @past_participations = Participation.created_before(DateTime.now)
+    @past_participations = Participation.past
     authorize(:participation, :past_participations?)
   end
 
   def upcoming_participations
-    @upcoming_participations = Participation.created_after(DateTime.now)
+    @upcoming_participations = Participation.upcoming
     authorize(:participation, :upcoming_participations?)
+  end
+
+  def favorites
+    @favorites = Participation.favorites
+    authorize(:participation, :favorites?)
   end
 
   def create
@@ -20,9 +25,6 @@ class ParticipationsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def favorites
   end
 
   private

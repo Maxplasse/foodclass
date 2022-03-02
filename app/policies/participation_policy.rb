@@ -8,10 +8,16 @@ class ParticipationPolicy < ApplicationPolicy
   def create?
     true
   end
+
   def past_participations?
     true
   end
+
   def upcoming_participations?
+    true
+  end
+
+  def favorites?
     true
   end
 end

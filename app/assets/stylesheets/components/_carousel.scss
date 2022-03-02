@@ -1,0 +1,27 @@
+
+
+.carousel-home-page-custom {
+  margin-top: 100px;
+
+  h3 {
+    text-align: center;
+    color: $orange;
+  }
+
+}
+
+.slick-prev:before,
+.slick-next:before {
+color: black;
+}
+
+
+.carousel-home {
+img {
+  padding-right: 10px;
+  display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+}

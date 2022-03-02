@@ -1,0 +1,12 @@
+.dashboard-navigation {
+  font-size: 24px;
+
+  a {
+    color: $orange;
+    text-decoration: none;
+  }
+}
+
+.active {
+  border-bottom: solid $orange;
+}

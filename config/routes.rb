@@ -9,10 +9,10 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
   resources :participations, only: [] do
-  # resources :profiles, only: [:show]
     collection do
       get :past_participations
       get :upcoming_participations
+      get :favorites
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
