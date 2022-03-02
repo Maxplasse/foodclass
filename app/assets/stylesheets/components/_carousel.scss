@@ -1,19 +1,24 @@
-.carousel {
-  width:500px;
-  height:500px;
-}
 
-.carousel-inner > .item > img, .carousel-inner > .item > a > img {
-  width: 100%;
-}
 
 .carousel-home-page-custom {
-  display: flex;
-  justify-content: center;
-  margin-top: 180px;
+  margin-top: 100px;
+
+  h3 {
+    text-align: center;
+    color: $orange;
+  }
 
 }
 
-#carouselExampleIndicators {
-width: 50%;
+.slick-prev:before,
+.slick-next:before {
+color: black;
+}
+
+
+.carousel-home {
+img {
+  padding-right: 10px;
+}
+
 }
