@@ -1,4 +1,28 @@
 <div class="container">
   <h1>Posts#index</h1>
   <p>Find me in app/views/posts/index.html.erb</p>
+  <% @posts.each do |post| %>
+    <div class="card-communauty">
+      <div class="d-flex">
+        <div class="px-3">
+          <%= image_tag post.participation.user.photo, class: "avatar-large" %>
+        </div>
+        <div>
+          <p><%= post.participation.user.nickname %> a commenté la recette <%= post.course.title %> par
+          <em>
+            <%= post.course.chef.user.first_name %>
+            <%= post.course.chef.user.last_name %>
+          </em>
+          </p>
+          <ul class="list-inline">
+            <li><%= cl_image_tag(post.photo.key, style: "width: 250px; height: 150px;") %></li>
+            <li><%= post.content %></li>
+            <li><%= post.course.difficulty %></li>
+            <li><%= post.course.duration %>minutes</li>
+            <li><p><%= post.course.level_points %> points</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
