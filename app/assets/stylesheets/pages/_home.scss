@@ -18,18 +18,35 @@ body {
 
 .wrapper {
   display: grid;
+  padding-top: 100px;
   grid-template-columns: 1fr 1fr;
+
+.custom-center-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
 
 
 
   img {
     width: 688px;
     height: 496px;
+    padding-right: 15px;
     // mask-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9));
   }
 
   .text {
     text-align: justify;
+    font-size: 20px;
   }
+
+  h2 {
+    font-size: 50px;
+    letter-spacing: 0.4rem;
+  }
+
 
 }
