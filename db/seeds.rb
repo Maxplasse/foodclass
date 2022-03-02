@@ -470,6 +470,7 @@ courses = courses_simple_h.map.with_index do |course, index|
   p = Course.new(chef: course[:chef],
                  title: course[:title],
                  difficulty: course[:difficulty],
+                 duration: course[:duration],
                  category: course[:category],
                  total_participations: course[:total_participations],
                  level_points: course[:level_points],
@@ -482,11 +483,15 @@ end
 
 p "5"
 
-random_boolean = [true, false].sample
-
 posted_course = courses.each do |course|
-  Participation.create!(course: course, user: maxime_p, favorite: random_boolean)
+  Participation.create!(course: course, user: maxime_p, favorite: false)
 end
+
+p "6"
+
+maxime_p.participations.sample(3).each { |p| p.update(favorite: true) }
+
+p "7"
 
 participations = Participation.all
 
@@ -494,11 +499,7 @@ participation1 = participations[0]
 participation2 = participations[2]
 participation3 = participations[3]
 
-p "6"
-
-maxime_p.participations.shuffle.first(3).each { |p| p.update(favorite: true) }
-
-p "7"
+p "8"
 
 post1 = posted_course[0]
 post2 = posted_course[2]
@@ -535,4 +536,4 @@ posts_h.map do |post|
   new_post
 end
 
-p "8"
+p "9"
