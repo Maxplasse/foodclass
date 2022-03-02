@@ -9,6 +9,11 @@ class ParticipationsController < ApplicationController
     authorize(:participation, :upcoming_participations?)
   end
 
+  def favorites
+    @favorites = Participation.favorites
+    authorize(:participation, :favorites?)
+  end
+
   def create
     @course = Course.find(params[:course_id])
     @participation = Participation.new(participation_params)
@@ -20,9 +25,6 @@ class ParticipationsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def favorites
   end
 
   private
