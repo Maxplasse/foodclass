@@ -1,1 +1,13 @@
-<h1>Coucou</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-10 col-lg-8">
+      <%= render "shared/dashboard_navigation" %>
+        <h1>Coucou</h1>
+        <% current_user.participations.each do |participation| %>
+          <%if participation.favorite? %>
+            <%= participation.course.title %>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>

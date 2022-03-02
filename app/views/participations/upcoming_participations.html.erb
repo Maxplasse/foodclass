@@ -1,4 +1,11 @@
 <div class="container">
-  <%= render "shared/dashboard_navigation" %>
-  <h1>Hello upcoming participations</h1>
+  <div class="row">
+    <div class="col-12 col-sm-10 col-lg-8">
+      <%= render "shared/dashboard_navigation" %>
+      <h1>Hello upcoming participations</h1>
+      <% current_user.participations.upcoming.each do |participation| %>
+        <%= participation.course.title %>
+      <% end %>
+    </div>
+  </div>
 </div>
