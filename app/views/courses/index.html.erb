@@ -1,20 +1,37 @@
+<h1><%= link_to "FoodClass.", root_path %></h1>
+<p>Find me in app/views/courses/index.html.erb</p>
+
 <div class="dashboard-navigation">
   <div class="container">
+    <div class="d-flex justify-content-between">
+      <div style ="width: 100%">
+        <%= form_tag courses_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Trouver un cours, un chef, etc"
+          %>
+      </div>
+      <div>
+        <%= submit_tag "Rechercher", class: "button" %>
+      </div>
+      <% end %>
+    </div>
+  <br>
     <div class="cards">
       <% @courses.each do |course| %>
         <div class="card-course">
           <%= link_to course_path(course) do %>
               <%= cl_image_tag course.photo.key %>
           <% end %>
-            <div class="card-course-infos">
-              <div>
-                <h2><%= course.title %></h2>
-                <p>Chef <%= course.chef.user.first_name %> <%= course.chef.user.last_name %></p>
-                <p>Temps de réalisation : <%= course.duration %> minutes</p>
-              </div>
+          <div class="card-course-infos">
+            <div>
+              <h2><%= course.title %></h2>
+              <p>Chef <%= course.chef.user.first_name %> <%= course.chef.user.last_name %></p>
+              <p>Temps de réalisation : <%= course.duration %> minutes</p>
             </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
+          </div>
+       <% end %>
+     </div>
+   </div>
 </div>
