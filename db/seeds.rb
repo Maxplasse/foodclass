@@ -487,3 +487,7 @@ courses.each do |course|
 end
 
 p "6"
+
+maxime_p.participations.shuffle.first(3).each { |p| p.update(favorite: true) }
+
+p "7"
