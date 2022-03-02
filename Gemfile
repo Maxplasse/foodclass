@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.7'
 # gem devise User
 gem 'devise'
 
+# Simple Form
+gem 'simple_form'
 
 # gem cloudinary
 gem 'cloudinary', '~> 1.16.0'

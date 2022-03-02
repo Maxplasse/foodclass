@@ -1,5 +1,7 @@
 require "open-uri"
 
+p "Destroying participations"
+Participation.destroy_all
 p "Destroying courses"
 Course.destroy_all
 p "Destroying chefs"
@@ -247,7 +249,7 @@ pierre = chefs[6]
 
 p "4"
 
-courses_simple = [
+courses_simple_h = [
   {
     chef: ambroise,
     title: "Bobun au tofu",
@@ -410,8 +412,8 @@ courses_simple = [
     category: "",
     total_participations: 219,
     level_points: 10,
-    start_at: DateTime.new(2022, 2, 10, 19),
-    end_at: DateTime.new(2022, 2, 10, 19) + 1.16.hour,
+    start_at: DateTime.new(2022, 3, 15, 19),
+    end_at: DateTime.new(2022, 3, 15, 19) + 1.16.hour,
     photo_url: [
       "https://images.pexels.com/photos/10883374/pexels-photo-10883374.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
@@ -460,9 +462,7 @@ courses_simple = [
   }
 ]
 
-p "5"
-
-courses_simple.each_with_index do |course, index|
+courses = courses_simple_h.map.with_index do |course, index|
   photo = URI.open(course[:photo_url].first)
 
   p = Course.new(chef: course[:chef],
@@ -474,9 +474,20 @@ courses_simple.each_with_index do |course, index|
                  start_at: course[:start_at],
                  end_at: course[:end_at])
   p.photo.attach(io: photo, filename: "course#{index}.png", content_type: 'image/png')
-  unless p.save
-    raise
-  end
+  p.save!
+  p
+end
+
+p "5"
+
+random_boolean = [true, false].sample
+
+courses.each do |course|
+  Participation.create!(course: course, user: maxime_p, favorite: random_boolean)
 end
 
 p "6"
+
+maxime_p.participations.shuffle.first(3).each { |p| p.update(favorite: true) }
+
+p "7"
