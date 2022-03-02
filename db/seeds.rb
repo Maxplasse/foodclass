@@ -1,5 +1,7 @@
 require "open-uri"
 
+p "Destroying posts"
+Post.destroy_all
 p "Destroying participations"
 Participation.destroy_all
 p "Destroying courses"
@@ -482,12 +484,55 @@ p "5"
 
 random_boolean = [true, false].sample
 
-courses.each do |course|
+posted_course = courses.each do |course|
   Participation.create!(course: course, user: maxime_p, favorite: random_boolean)
 end
+
+participations = Participation.all
+
+participation1 = participations[0]
+participation2 = participations[2]
+participation3 = participations[3]
 
 p "6"
 
 maxime_p.participations.shuffle.first(3).each { |p| p.update(favorite: true) }
 
 p "7"
+
+post1 = posted_course[0]
+post2 = posted_course[2]
+post3 = posted_course[3]
+
+posts_h = [
+  {
+    content: "Recette excellente ! Un beau moment de partage avec Abroise",
+    participation: participation1,
+    course: post1,
+    photo_url: "https://img-3.journaldesfemmes.fr/Dv4No5oSzA4-mYG4QYiXZRInjhs=/750x500/smart/0858995addb849bdb295719d05cf406c/recipe-jdf/10033576.jpg"
+  },
+  {
+    content: "Un délicieux riz coco accompagné sous les conseils de Chloé Charles. Plat délicieuuuuux! ",
+    participation: participation2,
+    course: post2,
+    photo_url: "https://res.cloudinary.com/hv9ssmzrz/image/fetch/c_fill,f_auto,h_488,q_auto,w_650/https://s3-eu-west-1.amazonaws.com/images-ca-1-0-1-eu/recipe_photos/original/140940/DSC_0390.JPG"
+  },
+  {
+    content: "Recette suive à la lettre, très bonne recette avec Mory Sacko",
+    participation: participation3,
+    course: post3,
+    photo_url: "https://i.ytimg.com/vi/Jke_paxHCUc/sddefault.jpg"
+  }
+]
+
+posts_h.map do |post|
+  photo = URI.open(post[:photo_url])
+  new_post = Post.create!(content: post[:content],
+                          participation: post[:participation],
+                          course: post[:course])
+  new_post.photo.attach(io: photo, filename: "post.png", content_type: 'image/png')
+  new_post.save!
+  new_post
+end
+
+p "8"
