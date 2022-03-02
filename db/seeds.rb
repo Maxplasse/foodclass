@@ -468,6 +468,7 @@ courses = courses_simple_h.map.with_index do |course, index|
   p = Course.new(chef: course[:chef],
                  title: course[:title],
                  difficulty: course[:difficulty],
+                 duration: course[:duration],
                  category: course[:category],
                  total_participations: course[:total_participations],
                  level_points: course[:level_points],
@@ -480,14 +481,12 @@ end
 
 p "5"
 
-random_boolean = [true, false].sample
-
 courses.each do |course|
-  Participation.create!(course: course, user: maxime_p, favorite: random_boolean)
+  Participation.create!(course: course, user: maxime_p, favorite: false)
 end
 
 p "6"
 
-maxime_p.participations.shuffle.first(3).each { |p| p.update(favorite: true) }
+maxime_p.participations.sample(3).each { |p| p.update(favorite: true) }
 
 p "7"
