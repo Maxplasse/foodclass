@@ -5,7 +5,7 @@
   height: 90px;
   // position: relative;
 
-  .nav-link {
+  .navbar-text {
     color: white;
     font-weight: 900;
     font-size: 1.3em;
@@ -16,9 +16,9 @@
   }
 
   .navbar-brand {
-    color: rgba(2, 2, 2, 0.55);
     font-weight: 900;
     font-size: 1.3em;
+    color: white;
     &:hover {
       color: $orange;
       font-weight: 1000;
@@ -28,25 +28,21 @@
   .title-navbar {
     opacity: 0;
     top: 20px;
+    text-decoration: none;
     left: calc(50% - 71px);
     position: absolute;
   }
 
-  .a {
-    color: white;
-    &:hover {
-      color: $orange;
-      font-weight: 1000;
-    }
-  }
 }
 
 .navbar-lewagon-white {
   background-color: white;
   border-bottom: solid 1px silver;
 
-  .a {
-    color: white;
+  .navbar-text a {
+    color: black;
+    font-weight: 900;
+    font-size: 1.3em;
     &:hover {
       color: $orange;
       font-weight: 1000;
@@ -56,6 +52,7 @@
   .title-navbar {
     opacity: 1;
     color: $orange;
+    text-decoration: none;
     font-size: 36px;
     font-family: $headers-font;
   }
