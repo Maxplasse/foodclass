@@ -5,11 +5,30 @@
   height: 90px;
   // position: relative;
 
+  .nav-link {
+    color: white;
+  }
+
+  .navbar-brand {
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    &:hover {
+      color: $orange;
+      background-color: white;
+      border-radius: 20px;
+    }
+  }
+
   .title-navbar {
     opacity: 0;
     top: 20px;
     left: calc(50% - 71px);
     position: absolute;
+  }
+
+  .a {
+    color: white;
   }
 }
 
@@ -19,10 +38,22 @@
 
   .title-navbar {
     opacity: 1;
-    color: #F74C25;
+    color: $orange;
     font-size: 36px;
     font-family: $headers-font;
   }
+
+  .navbar-brand {
+    color: $orange;
+    font-weight: bold;
+    font-size: 25px;
+    &:hover {
+      color: white;
+      background-color: $orange;
+      border-radius: 20px;
+    }
+  }
+
 }
 
 
