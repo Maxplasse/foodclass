@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top navbar-global" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top navbar-global" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar" data-navbar-home-value="<%= action_name == "home"%>">
   <div class="container">
     <%= link_to "Accueil", root_path, class:"navbar-brand" %>
 
