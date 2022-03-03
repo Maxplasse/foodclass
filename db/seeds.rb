@@ -273,7 +273,7 @@ courses_simple_h = [
     duration: 50,
     category: "",
     total_participations: 168,
-    level_points: 10,
+    level_points: 5,
     start_at: DateTime.new(2022, 1, 12, 18, 30),
     end_at: DateTime.new(2022, 1, 12, 18, 30) + 0.84.hour,
     photo_url: [
@@ -287,7 +287,7 @@ courses_simple_h = [
     duration: 40,
     category: "",
     total_participations: 128,
-    level_points: 10,
+    level_points: 5,
     start_at: DateTime.new(2022, 1, 13, 19),
     end_at: DateTime.new(2022, 1, 13, 19) + 0.66.hour,
     photo_url: [
@@ -301,7 +301,7 @@ courses_simple_h = [
     duration: 35,
     category: "",
     total_participations: 265,
-    level_points: 10,
+    level_points: 5,
     start_at: DateTime.new(2022, 1, 19, 18, 30),
     end_at: DateTime.new(2022, 1, 19, 18, 30) + 0.58.hour,
     photo_url: [
@@ -315,7 +315,7 @@ courses_simple_h = [
     duration: 30,
     category: "",
     total_participations: 142,
-    level_points: 10,
+    level_points: 5,
     start_at: DateTime.new(2022, 1, 25, 18),
     end_at: DateTime.new(2022, 1, 25, 18) + 0.5.hour,
     photo_url: [
@@ -329,7 +329,7 @@ courses_simple_h = [
     duration: 60,
     category: "",
     total_participations: 189,
-    level_points: 10,
+    level_points: 15,
     start_at: DateTime.new(2022, 1, 27, 19, 30),
     end_at: DateTime.new(2022, 1, 25, 18) + 1.hour,
     photo_url: [
@@ -357,7 +357,7 @@ courses_simple_h = [
     duration: 50,
     category: "",
     total_participations: 137,
-    level_points: 10,
+    level_points: 5,
     start_at: DateTime.new(2022, 2, 2, 18, 30),
     end_at: DateTime.new(2022, 2, 2, 18, 30) + 0.84.hour,
     photo_url: [
@@ -371,7 +371,7 @@ courses_simple_h = [
     duration: 50,
     category: "",
     total_participations: 149,
-    level_points: 10,
+    level_points: 15,
     start_at: DateTime.new(2022, 2, 2, 18, 30),
     end_at: DateTime.new(2022, 2, 2, 18, 30) + 0.84.hour,
     photo_url: [
@@ -385,7 +385,7 @@ courses_simple_h = [
     duration: 30,
     category: "",
     total_participations: 203,
-    level_points: 10,
+    level_points: 15,
     start_at: DateTime.new(2022, 2, 8, 18, 30),
     end_at: DateTime.new(2022, 2, 8, 18, 30) + 0.5.hour,
     photo_url: [
@@ -399,7 +399,7 @@ courses_simple_h = [
     duration: 30,
     category: "",
     total_participations: 281,
-    level_points: 10,
+    level_points: 5,
     start_at: DateTime.new(2022, 2, 9, 18, 30),
     end_at: DateTime.new(2022, 2, 8, 18, 30) + 0.5.hour,
     photo_url: [
@@ -413,7 +413,7 @@ courses_simple_h = [
     duration: 70,
     category: "",
     total_participations: 219,
-    level_points: 10,
+    level_points: 15,
     start_at: DateTime.new(2022, 3, 15, 19),
     end_at: DateTime.new(2022, 3, 15, 19) + 1.16.hour,
     photo_url: [
@@ -441,7 +441,7 @@ courses_simple_h = [
     duration: 45,
     category: "",
     total_participations: 183,
-    level_points: 10,
+    level_points: 5,
     start_at: DateTime.new(2022, 2, 18, 18, 30),
     end_at: DateTime.new(2022, 2, 18, 18, 30) + 0.75.hour,
     photo_url: [
