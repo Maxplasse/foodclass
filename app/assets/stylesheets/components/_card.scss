@@ -1,7 +1,7 @@
 .card-course {
   overflow: hidden;
   background: white;
-  // box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
 
 .card-course
@@ -24,7 +24,9 @@
 }
 
 .card-course .card-course-infos {
-  padding-top: 16px;
+  padding-top: 14px;
+  padding-bottom: 10px;
+  padding-left: 6px;
   justify-content: space-between;
   position: relative;
 }
