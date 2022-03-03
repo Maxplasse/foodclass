@@ -16,7 +16,6 @@
   }
 
   .navbar-brand {
-    color: rgba(2, 2, 2, 0.55);
     font-weight: 900;
     font-size: 1.3em;
     &:hover {
@@ -33,7 +32,6 @@
   }
 
   .a {
-    color: white;
     &:hover {
       color: $orange;
       font-weight: 1000;
@@ -46,7 +44,6 @@
   border-bottom: solid 1px silver;
 
   .a {
-    color: white;
     &:hover {
       color: $orange;
       font-weight: 1000;
@@ -61,7 +58,6 @@
   }
 
   .navbar-brand {
-    color: rgba(2, 2, 2, 0.55);
     font-weight: bold;
     font-size: 1.4em;
     &:hover {
