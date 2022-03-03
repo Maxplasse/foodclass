@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'my_profile', to: 'profiles#show', as: :my_profile
-  get 'communauty', to: 'posts#index', as: :communauty
+  get 'community', to: 'posts#index', as: :community
   resources :courses, only: [:index, :show]
   resources :posts, only: :index do
     resources :comments, only: :create
