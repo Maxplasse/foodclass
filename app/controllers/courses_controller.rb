@@ -41,15 +41,4 @@ class CoursesController < ApplicationController
     authorize @course
   end
 
-  def search(query)
-    PgSearch::Multisearch.rebuild(Course)
-    PgSearch::Multisearch.rebuild(Chef)
-    PgSearch::Multisearch.rebuild(User)
-    @results = PgSearch.multisearch(query)
-    raise
-
-    @results.each do |result|
-    puts result.searchable
-    end
-  end
 end
