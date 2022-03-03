@@ -6,7 +6,7 @@ export default class extends Controller {
 
   // }
   updateTitleSize() {
-    const maxFontSize = 200
+    const maxFontSize = 220
     const minFontSize = 34
     const scrolled = (window.scrollY)/(window.innerHeight-80)
     // fontSizeOutput(scrolled)
