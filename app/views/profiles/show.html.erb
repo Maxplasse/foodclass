@@ -1,4 +1,78 @@
 <div class="container">
   <%= render "shared/dashboard_navigation" %>
-  <h1>Mon profil</h1>
+
+  <div class="row">
+    <div class="col-md-12 col-lg-9 my-progress">
+      <div class="d-flex justify-content-between progress-title">
+        <h4>Mes progrès</h4>
+        <div class="d-flex justify-content-between">
+          <h6><%= current_user.current_level_name %></h6>
+          <div class="progression-barre">
+            <div class="progress">
+              <div class="progress-value"></div>
+            </div>
+            <p><%= current_user.next_level_min_points  %> <i class="fas fa-carrot"></i> restantes</p>
+          </div>
+          <h6>FoodClass Chef</h6>
+        </div>
+      </div>
+      <div class="d-flex" id="progress">
+        <div>
+          <p>Nombre de cours suivis : <%= current_user.participations.count %></p>
+          <p>Niveau : <%= current_user.current_level_name %></p>
+          <p>Nombre de points accumulés : <%= current_user.number_of_points %> <i class="fas fa-carrot"></i></p>
+          <br>
+        </div>
+        <div>
+          <%= image_tag "#{current_user.current_level_icon_level}" %>
+        </div>
+      </div>
+
+      <div class="d-flex bg-white">
+        <% User::LEVELS.each do |level| %>
+          <div class="<%= level[:name].parameterize %>-box level-box">
+            <div>
+              <%= level[:name] %>
+            </div>
+            <div class="d-flex hex-box">
+              <span class="hex"></span>
+              <% if current_user.level_validated?(level) %>
+                <i class="fas fa-lock-open"></i>
+              <% else %>
+                <i class="fas fa-lock"></i>
+              <% end %>
+            </div>
+            <div>
+              <%= level[:min_points] %> <i class="fas fa-carrot"></i>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <%# <h5>Niveaux de difficultés</h5>
+      <p> Facile : 5 <i class="fas fa-carrot"></i> - Moyen : 10 <i class="fas fa-carrot"></i> - Difficile : 15 <i class="fas fa-carrot"></i> </p> %>
+    </div>
+
+    <div class="col-md-12 col-lg-3 my-badges">
+      <div class="badges">
+        <h4>Mes compétences</h4>
+        <div class="img-badges">
+          <%= image_tag "Apprenti.svg" %>
+          <%= image_tag "Toast.svg" %>
+          <%= image_tag "Commis.svg" %>
+          <%= image_tag "Sushis.svg" %>
+          <%= image_tag "Chicken.svg" %>
+          <%= image_tag "Souschef.svg" %>
+          <%= image_tag "Healthy_food.svg" %>
+          <%= image_tag "Meal.svg" %>
+          <%= image_tag "Ramen.svg" %>
+          <%= image_tag "Salad.svg" %>
+          <%= image_tag "Chef.svg" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
 </div>

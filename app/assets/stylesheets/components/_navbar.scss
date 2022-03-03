@@ -33,16 +33,25 @@
     position: absolute;
   }
 
+
+  .a {
+    &:hover {
+      color: $orange;
+      font-weight: 1000;
+    }
+  }
 }
 
 .navbar-lewagon-white {
   background-color: white;
   border-bottom: solid 1px silver;
 
+
   .navbar-text a {
     color: black;
     font-weight: 900;
     font-size: 1.3em;
+    
     &:hover {
       color: $orange;
       font-weight: 1000;
@@ -58,7 +67,6 @@
   }
 
   .navbar-brand {
-    color: rgba(2, 2, 2, 0.55);
     font-weight: bold;
     font-size: 1.4em;
     &:hover {
