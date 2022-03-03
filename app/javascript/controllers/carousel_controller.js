@@ -10,8 +10,10 @@ export default class extends Controller {
     $(this.element).slick({
       infinite: true,
       dots: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
       slidesToShow: 3,
-      slidesToScroll: 3
+      slidesToScroll: 1
 
     });
 
