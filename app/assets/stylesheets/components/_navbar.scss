@@ -2,7 +2,7 @@
   justify-content: space-between;
   background-color: transparent;
   transition: 0.1s background-color ease;
-  height: 80px;
+  height: 90px;
   // position: relative;
 
   .title-navbar {
@@ -16,13 +16,22 @@
 .navbar-lewagon-white {
   background-color: white;
   border-bottom: solid 1px silver;
+
+  .a {
+    color: #F74C25;
+  }
+
   .title-navbar {
     opacity: 1;
     color: #F74C25;
-    font-size: 34px;
+    font-size: 36px;
     font-family: $headers-font;
+    p {
+      margin-bottom: -7px;
+    }
   }
 }
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
