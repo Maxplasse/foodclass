@@ -7,16 +7,26 @@
 
   .nav-link {
     color: white;
+    font-weight: 900;
+    font-size: 1.3em;
+    &:hover {
+      font-weight: 1000;
+      font-size: 1.4em;
+    }
   }
 
   .navbar-brand {
     color: white;
     font-weight: bold;
     font-size: 25px;
+    padding: 8px 30px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 0px 2px;
     &:hover {
       color: $orange;
       background-color: white;
-      border-radius: 20px;
+      border-radius: 4px;
     }
   }
 
