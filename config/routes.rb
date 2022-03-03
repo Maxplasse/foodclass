@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'community', to: 'posts#index', as: :community
   resources :courses, only: [:index, :show]
   resources :posts, only: :index do
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
   end
   resources :participations, only: [] do
     collection do

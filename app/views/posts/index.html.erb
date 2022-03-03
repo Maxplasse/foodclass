@@ -8,11 +8,12 @@
           <%= image_tag post.participation.user.photo, class: "avatar-large" %>
         </div>
         <div>
-          <p><%= post.participation.user.nickname %> a commenté la recette <%= post.course.title %> par
+          <p><%= post.participation.user.nickname %> a commenté la recette <%= link_to post.course.title, courses_path %> par
           <em>
             <%= post.course.chef.user.first_name %>
             <%= post.course.chef.user.last_name %>
           </em>
+            <%= post.posted_at %>
           </p>
           <ul class="list-inline">
             <li><%= cl_image_tag(post.photo.key, style: "width: 250px; height: 150px;") %></li>
@@ -21,8 +22,25 @@
             <li><%= post.course.duration %>minutes</li>
             <li><p><%= post.course.level_points %> points</p></li>
           </ul>
+          <%= simple_form_for [post, comment = Comment.new] do |f| %>
+            <%= f.input :content %>
+            <%= f.submit "Commenter"%>
+          <% end %>
         </div>
       </div>
+    </div>
+    <div class="card-community-container">
+      <% post.comments.each do |comment| %>
+        <div class="card-community-comments">
+          <div>
+            <%= image_tag comment.user.photo, class: "avatar-large" %>
+          </div>
+          <%= link_to "Supprimer",
+                  # post_comment_path(@post, comment),
+                  method: :delete %>
+          <%= comment.content %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>

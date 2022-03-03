@@ -1,5 +1,17 @@
 .card-community {
-background-color: #F7F6F2;
-margin-top: 10px;
-padding: 10px;
+  background-color: #F7F6F2;
+  margin: 10px 97px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.card-community-comments {
+  background-color: #F7F6F2;
+  margin: 10px 0px 10px 97px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.card-community-container {
+  margin: 0px 97px;
 }
