@@ -1,44 +1,54 @@
 <div class="container">
-  <h1>Posts#index</h1>
-  <p>Find me in app/views/posts/index.html.erb</p>
+<br>
   <% @posts.each do |post| %>
     <div class="card-community">
-      <div class="d-flex">
-        <div class="px-3">
-          <%= image_tag post.participation.user.photo, class: "avatar-large" %>
-        </div>
-        <div>
-          <p><%= post.participation.user.nickname %> a commenté la recette <%= link_to post.course.title, courses_path %> par
-          <em>
+      <div class="d-flex" style="align-items: flex-start;">
+        <%= image_tag post.participation.user.photo, class: "avatar-large mx-3" %>
+        <div class="card-community-title">
+          <p><span class="community-user-nickname"><%= post.participation.user.nickname %></span>
+            a commenté la recette
+            <span><%= link_to post.course.title, course_path(post.course) %></span> par
             <%= post.course.chef.user.first_name %>
             <%= post.course.chef.user.last_name %>
-          </em>
-            <%= post.posted_at %>
           </p>
-          <ul class="list-inline">
-            <li><%= cl_image_tag(post.photo.key, style: "width: 250px; height: 150px;") %></li>
-            <li><%= post.content %></li>
-            <li><%= post.course.difficulty %></li>
-            <li><%= post.course.duration %>minutes</li>
-            <li><p><%= post.course.level_points %> points</p></li>
-          </ul>
-          <%= simple_form_for [post, comment = Comment.new] do |f| %>
-            <%= f.input :content %>
-            <%= f.submit "Commenter"%>
-          <% end %>
+          <p><%= post.posted_at %></p>
         </div>
+      </div>
+      <div class="d-flex card-community-margin">
+        <div>
+          <%= cl_image_tag(post.photo.key, style: "width: 350px; height: 200px; object-fit:cover") %>
+        </div>
+        <div class="card-community-description">
+          <div>
+            <%= post.content %>
+          </div>
+          <br>
+          <div>
+            Difficulté : <%= post.course.difficulty %>
+          </div>
+          <div>
+            <%= post.course.duration %> minutes
+          </div>
+          <p><%= post.course.level_points %> carottes gagnés</p>
+        </div>
+      </div>
+      <div class="card-community-margin">
+        <%= simple_form_for [post, comment = Comment.new] do |f| %>
+          <%= f.input :content %>
+          <%= f.submit "Commenter"%>
+        <% end %>
       </div>
     </div>
     <div class="card-community-container">
       <% post.comments.each do |comment| %>
         <div class="card-community-comments">
-          <div>
+          <div class="d-flex">
             <%= image_tag comment.user.photo, class: "avatar-large" %>
+            <div>
+              <p><%= comment.content %></p>
+            </div class="button-delete">
+              <%= link_to "Supprimer", post_comment_path(post, comment), method: :delete %>
           </div>
-          <%= link_to "Supprimer",
-                  # post_comment_path(@post, comment),
-                  method: :delete %>
-          <%= comment.content %>
         </div>
       <% end %>
     </div>

@@ -1,17 +1,43 @@
 .card-community {
   background-color: #F7F6F2;
-  margin: 10px 97px;
-  padding: 10px;
+  margin: 26px 108px 5px;
+  padding: 20px;
   border-radius: 4px;
+  font-family: $body-font;
+  font-size: 17px;
+}
+
+.card-community-title p {
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+.card-community-title a {
+  text-decoration: none;
+  color: $orange;
+  font-weight: bold;
 }
 
 .card-community-comments {
   background-color: #F7F6F2;
-  margin: 10px 0px 10px 97px;
+  margin: 10px 0px 10px 108px;
   padding: 10px;
   border-radius: 4px;
 }
 
 .card-community-container {
-  margin: 0px 97px;
+  margin: 0px 108px;
+}
+
+.card-community-description {
+  margin-left: 15px;
+}
+
+.card-community-margin {
+  margin: 10px 40px 0px;
+  padding-left: 48px;
+}
+
+.community-user-nickname {
+  font-weight: bold;
 }
