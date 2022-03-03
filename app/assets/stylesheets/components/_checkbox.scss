@@ -1,0 +1,47 @@
+.main-checkbox {
+  h3 {
+  border-left: 5px solid $orange;
+  padding-left: 16px;
+  }
+
+  //  input[type="checkbox"] {
+  //   display: none;
+  //    }
+
+  // label {
+  //   padding-top: 10px;
+  //   position: relative;
+  // }
+
+  // label::before {
+  // content: "";
+  // background: url("https://upload.wikimedia.org/wikipedia/commons/5/50/Yes_Check_Circle.svg");
+  // background-position: center;
+  // background-size: contain;
+  // width: 32px;
+  // height: 32px;
+  // position: absolute;
+  // left: -44px;
+  // top: -10px;
+
+  // transform: scale(0) rotateZ(180deg);
+  // transition: all 0.4s cubic-bezier(0.54, 0.01, 0, 1.49);
+  // }
+
+
+
+  // input[type="checkbox"]:checked + label::before {
+  //     transform: scale(1) rotateZ(0deg);
+  //   }
+
+  //   label::after {
+  //     content: "";
+  //     border: 2px solid #27ae60;
+  //     width: 24px;
+  //     height: 24px;
+  //     position: absolute;
+  //     left: -42px;
+  //     top: -10px;
+  //     border-radius: 50%;
+  //   }
+}

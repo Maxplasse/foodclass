@@ -1,21 +1,43 @@
 <div class="container">
   <%= render "shared/dashboard_navigation" %>
+  <div class="dashboard-navigation">
+      <div class="d-flex justify-content-between">
+        <div style="width: 100%">
+          <%= form_tag past_participations_participations_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Retrouver un ancien cours, un chef, etc",
+              style: "height: 50px; "
+            %>
+        </div>
+        <div style="padding-left: 4px">
+          <%= submit_tag "Rechercher", class: "button" %>
+        </div>
+        <% end %>
+      </div>
+  </div>
+  <br>
+  <div>
     <div class="cards">
-      <% current_user.participations.past.each do |participation| %>
+      <% @courses.each do |participation| %>
         <div class="card-course">
-          <%= link_to course_path(participation.course) do %>
-              <%= cl_image_tag participation.course.photo.key %>
+          <%= link_to course_path(participation) do %>
+              <%= cl_image_tag participation.photo.key %>
           <% end %>
             <div class="card-course-infos">
               <div class="mb-1">
-                <h2><%= participation.course.title %></h2>
+                <h2><%= participation.title %></h2>
               </div>
               <div>
-                <p>Chef <%= participation.course.chef.user.first_name %> <%= participation.course.chef.user.last_name %></p>
-                <p>Temps de réalisation : <%= participation.course.duration %> minutes</p>
+                <p>Chef <%= participation.chef.user.first_name %> <%= participation.chef.user.last_name %></p>
+                <p>Temps de réalisation : <%= participation.duration %> minutes</p>
               </div>
             </div>
         </div>
       <% end %>
     </div>
+  <div>
 </div>
+<br>
+<br>

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @posts = policy_scope(Post).order(created_at: :desc)
+    @posts = policy_scope(Post).order(posted_at: :desc)
   end
 
   def new
@@ -14,8 +14,8 @@ class PostsController < ApplicationController
     @post = Post.find(post_params)
     @post.course = @course
 
-    if posts.save
-      redirect_to post_path(@product)
+    if @post.save
+      redirect_to post_path(@post)
     else
       render :new
     end
