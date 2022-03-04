@@ -2,7 +2,7 @@
 
 body {
   background: $white; // Using this variable
-  margin-top: 110px;
+  margin-top: 100px;
 }
 
 .title {
@@ -24,17 +24,17 @@ body {
 
 .wrapper {
   display: grid;
-  padding-top: 100px;
+  padding-top: 150px;
   grid-template-columns: 1fr 1fr;
   margin-left: auto;
   margin-right: auto;
   width: 1400px;
 
-.custom-center-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+  .custom-center-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   img {
     width: 688px;
@@ -52,6 +52,12 @@ body {
     font-size: 50px;
     letter-spacing: 0.4rem;
   }
+}
 
+.carousel-home {
+  margin-top: 25px;
+}
 
+.carousel-home-page-custom h3 {
+  font-size: 34px;
 }
