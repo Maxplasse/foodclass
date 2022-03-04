@@ -64,6 +64,13 @@
   transition: opacity .3s ease-in-out;
 }
 
+.chef-detail {
+  display: flex;
+  img {
+    margin-left: 34px
+  }
+}
+
 .show-btn .button {
   margin-top: 25px;
   margin-left: 22px;
