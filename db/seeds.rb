@@ -29,6 +29,15 @@ users_h = [
     photo: "matthieu.jpg"
   },
   {
+    first_name: "Marie",
+    last_name: "Sepanik",
+    email: "maries@gmail.com",
+    password: "maries",
+    nickname: "marie szz",
+    photo: "maries.jpg",
+    admin: true
+  },
+  {
     first_name: "Frederic",
     last_name: "Lange",
     email: "frederic@gmail.com",
@@ -43,7 +52,8 @@ users_h = [
     email: "maxime@gmail.com",
     password: "maxime",
     nickname: "maxplasse",
-    photo: "maxime.jpg"
+    photo: "maxime.jpg",
+    admin: true
   },
   {
     first_name: "Maxime",
@@ -52,6 +62,7 @@ users_h = [
     password: "maxime",
     nickname: "maxxx",
     photo: "maxxx.png"
+    admin: true
   },
   {
     first_name: "Thomas",
@@ -536,7 +547,7 @@ post_stephen3 = posted_course[9]
 
 posts_h = [
   {
-    content: "Recette excellente ! Un beau moment de partage avec Abroise",
+    content: "Recette excellente ! Un beau moment de partage avec Ambroise",
     participation: part_max1,
     course: post_max1,
     posted_at: DateTime.new(2022, 2, 18, 15, 55),
