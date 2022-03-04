@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :upvotes, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :courses_as_participant, through: :participations, source: :course
+  has_many :invitations
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -80,5 +81,9 @@ class User < ApplicationRecord
 
   def next_level_min_points
     (current_level[:max_points] + 1) - number_of_points
+  end
+
+  def next_level_name
+    LEVELS[LEVELS.index(current_level) + 1][:name]
   end
 end
