@@ -5,26 +5,6 @@
   height: 90px;
   // position: relative;
 
-  .navbar-text {
-    color: white;
-    font-weight: 900;
-    font-size: 1.3em;
-    &:hover {
-      color: $orange;
-      font-weight: 1000;
-    }
-  }
-
-  .navbar-brand {
-    font-weight: 900;
-    font-size: 1.3em;
-    color: white;
-    &:hover {
-      color: $orange;
-      font-weight: 1000;
-    }
-  }
-
   .title-navbar {
     opacity: 0;
     top: 20px;
@@ -33,8 +13,10 @@
     position: absolute;
   }
 
-
-  .a {
+  .navbar-brand {
+    font-weight: 900;
+    font-size: 1.3em;
+    color: white;
     &:hover {
       color: $orange;
       font-weight: 1000;
@@ -47,17 +29,6 @@
   border-bottom: solid 1px silver;
 
 
-  .navbar-text a {
-    color: black;
-    font-weight: 900;
-    font-size: 1.3em;
-    
-    &:hover {
-      color: $orange;
-      font-weight: 1000;
-    }
-  }
-
   .title-navbar {
     opacity: 1;
     color: $orange;
@@ -69,6 +40,7 @@
   .navbar-brand {
     font-weight: bold;
     font-size: 1.4em;
+    color: $navy;
     &:hover {
       color: $orange;
       font-weight: 1000;
