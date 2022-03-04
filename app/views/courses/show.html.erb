@@ -24,7 +24,10 @@
         <div class="col-6">
           <div class="card-show-infos">
             <div>
-              <h3 class="chef">Chef·fe <%= @course.chef.user.first_name %> <%= @course.chef.user.last_name %></h3>
+              <div class="chef-detail">
+                <h3 class="chef">Chef·fe <%= @course.chef.user.first_name %> <%= @course.chef.user.last_name %></h3>
+                <%= image_tag @course.chef.user.photo, class: "avatar-large" %>
+              </div>
               <p>Temps de réalisation : <%= @course.duration %> minutes</p>
               <p>Matériel nécessaire :</p>
               <p>Difficulté: <%= @course.difficulty %></p>
