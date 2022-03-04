@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :upvotes, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :courses_as_participant, through: :participations, source: :course
-  has_many :invitations
+  has_many :invitations, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
