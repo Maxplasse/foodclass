@@ -61,7 +61,7 @@ users_h = [
     email: "maximebeauge@gmail.com",
     password: "maxime",
     nickname: "maxxx",
-    photo: "maxxx.png"
+    photo: "maxxx.png",
     admin: true
   },
   {

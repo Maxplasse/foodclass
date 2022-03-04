@@ -11,7 +11,7 @@
             <%= post.course.chef.user.first_name %>
             <%= post.course.chef.user.last_name %>
           </p>
-          <p><%= post.posted_at %></p>
+          <p><%= post.posted_at.strftime("%A, %d %b %Y %l:%M %p") %></p>
         </div>
         <div>
           <%= link_to post_upvotes_path(post), method: :post do %>
