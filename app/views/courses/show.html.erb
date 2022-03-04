@@ -33,13 +33,13 @@
               <p>Difficulté : <%= @course.difficulty %></p>
             </div>
           </div>
-          <div class="main-checkbox <%="past_courses" if @course.end_at < Time.now%>">
+          <div class="main-checkbox <%="past_courses" if @course.end_at < Time.now %>">
             <h3>Ingrédients</h3>
             <div class="card-show-infos">
               <p>Pour 2 personnes :</p>
             </div>
             <div class="detail-checkbox">
-              <input type="checkbox" id="Homard" name="Homard" checked>
+              <input type="checkbox" id="Homard" name="Homard">
               <label for="Homard"><strong>1 </strong>homard</label>
             <div>
               <input type="checkbox" id="Beurre" name="Beurre">
@@ -71,10 +71,12 @@
             </div>
             </div>
           </div>
+          <% if Time.now < @course.start_at %>
             <div class="show-btn">
               <button class="button" data-bs-toggle="modal" data-bs-target="#epiceryModal">Commander chez Epicery</button>
               <button class="button">M'envoyer la liste</button>
             </div>
+          <% end %>
 
             <!-- Modal -->
             <div class="modal fade" id="epiceryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
