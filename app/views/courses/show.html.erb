@@ -9,7 +9,7 @@
       <div class="row">
         <div class="col-6">
           <% if @course.end_at < Time.now  %>
-            <%= video_tag "replay2.mp4", controls: true, autoplay: true %>
+            <%= video_tag "replay2.mp4", autoplay: true %>
           <% else %>
             <%= cl_image_tag @course.photo.key %>
           <% end %>
