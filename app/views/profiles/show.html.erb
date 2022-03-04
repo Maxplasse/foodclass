@@ -6,14 +6,14 @@
       <div class="d-flex justify-content-between progress-title">
         <h4>Mes progrès</h4>
         <div class="d-flex justify-content-between">
-          <h6><%= current_user.current_level_name %></h6>
+          <h5><%= current_user.current_level_name %></h5>
           <div class="progression-barre">
             <div class="progress">
               <div class="progress-value"></div>
             </div>
             <p><%= current_user.next_level_min_points  %> <i class="fas fa-carrot"></i> restantes</p>
           </div>
-          <h6>FoodClass Chef</h6>
+          <h5><%= current_user.next_level_name %></h5>
         </div>
       </div>
       <div class="d-flex" id="progress">
@@ -28,11 +28,11 @@
         </div>
       </div>
 
-      <div class="d-flex bg-white">
+      <div class="d-flex bg-white level-boxes">
         <% User::LEVELS.each do |level| %>
           <div class="<%= level[:name].parameterize %>-box level-box">
             <div>
-              <%= level[:name] %>
+              <h6><%= level[:name] %></h6>
             </div>
             <div class="d-flex hex-box">
               <span class="hex"></span>
@@ -71,6 +71,17 @@
         </div>
       </div>
 
+    </div>
+
+    <div class="col-12 invitation">
+      <h4>Parrainez vos proches ! </h4>
+      <%= simple_form_for @invitation, html: { class: "form-inline" } do |f| %>
+        <%= f.input :email, label: false, placeholder: 'Saisissez une adresse email' %>
+        <%= button_tag type: 'submit', class: "submit-button" do %>
+          <i class="fa fa-paper-plane" aria-hidden="true"></i>
+        <% end %>
+
+      <% end %>
     </div>
   </div>
 
