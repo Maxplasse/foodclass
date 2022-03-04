@@ -19,6 +19,8 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Mon profil", my_profile_path, class: "dropdown-item" %>
               <%= link_to "Mes prochains cours", upcoming_participations_participations_path, class: "dropdown-item" %>
+              <%= link_to "Mes cours favoris", favorites_participations_path, class: "dropdown-item" %>
+              <%= link_to "Mes cours passés", past_participations_participations_path, class: "dropdown-item" %>
               <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
