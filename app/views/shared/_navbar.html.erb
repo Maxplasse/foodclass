@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top navbar-global" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar" data-navbar-home-value="<%= action_name == "home"%>">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top navbar-global navbar-foodclass" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar" data-navbar-home-value="<%= action_name == "home"%>">
   <div class="container">
     <%= link_to "Réserver un cours", courses_path, class:"navbar-brand" %>
 
@@ -10,7 +10,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item mx-5 navbar-link">
+        <li class="nav-item mx-5 navbar-link navbar-foodclass">
           <%= link_to "Communauté", community_path, class: "nav-link navbar-text"%>
         </li>
         <% if user_signed_in? %>
