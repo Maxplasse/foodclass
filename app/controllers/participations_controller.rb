@@ -1,6 +1,6 @@
 class ParticipationsController < ApplicationController
   def past_participations
-    @past_participations = Participation.past.where(user: current_user)
+    @past_participations = Participation.past.where(user: current_user).map {|p| p.course}
     authorize(:participation, :past_participations?)
 
     if params[:query] && !params[:query].empty?
@@ -9,10 +9,10 @@ class ParticipationsController < ApplicationController
       @results = PgSearch.multisearch(params[:query])
 
       @courses = []
-      if @results.group_by(&:searchable_type)["Chef"]
-        @results.group_by(&:searchable_type)["Chef"].each do |chef|
+      if @results.group_by(&:searchable_type)["User"]
+        @results.group_by(&:searchable_type)["User"].each do |chef|
           chef.searchable.courses.each do |course|
-            if @past_participations.any?{|past_part| past_part.course == course}
+            if @past_participations.include?(course)
               @courses << course
             end
           end
@@ -21,13 +21,13 @@ class ParticipationsController < ApplicationController
 
       if @results.group_by(&:searchable_type)["Course"]
         @results.group_by(&:searchable_type)["Course"].each do |course|
-          if @past_participations.any?{|past_part| past_part.course == course}
+          if @past_participations.include?(course.searchable)
               @courses << course.searchable
             end
         end
       end
     else
-      @courses = @past_participations.map { |past_part| past_part.course}
+      @courses = @past_participations
     end
   end
 
