@@ -35,11 +35,9 @@
 .navbar-lewagon-white {
   background-color: white;
   border-bottom: solid 1px silver;
-
-  .navbar-text .nav-link {
-      color: $navy;
-    }
-
+  .navbar-link a {
+    color: $navy !important;
+  }
 
   .title-navbar {
     opacity: 1;
