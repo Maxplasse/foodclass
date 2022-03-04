@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'my_profile', to: 'profiles#show', as: :my_profile
   get 'community', to: 'posts#index', as: :community
   resources :courses, only: [:index, :show]
-  resources :posts, only: :index do
+  resources :posts, only: [] do
+    resources :upvotes, only: :create
     resources :comments, only: [:create, :destroy]
   end
   resources :participations, only: [] do

@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     authorize @comment
     # raise
     if @comment.save
-      redirect_to posts_path
+      redirect_to community_path
     else
       render :new
     end
@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
     @comment.destroy
     authorize @comment
 
-    redirect_to posts_path
+    redirect_to community_path
   end
 
   private

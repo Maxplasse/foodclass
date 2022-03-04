@@ -10,6 +10,7 @@
 .card-community-title p {
   margin-bottom: 0px;
   font-weight: bold;
+  max-width: 580px;
 }
 
 .card-community-title a {
@@ -23,6 +24,7 @@
   margin: 10px 0px 10px 108px;
   padding: 10px;
   border-radius: 4px;
+
 }
 
 .card-community-container {
@@ -31,6 +33,11 @@
 
 .card-community-description {
   margin-left: 15px;
+  color: $navy;
+  font-size: 15px;
+  p {
+    margin-bottom: 3rem;
+  }
 }
 
 .card-community-margin {
@@ -40,4 +47,9 @@
 
 .community-user-nickname {
   font-weight: bold;
+}
+
+.post-comment-content p {
+  font-size: 14px;
+  padding: 0px 17px;
 }

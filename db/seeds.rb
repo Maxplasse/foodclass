@@ -536,7 +536,7 @@ post_stephen3 = posted_course[9]
 
 posts_h = [
   {
-    content: "Recette excellente ! Un beau moment de partage avec Abroise",
+    content: "Recette excellente ! Un beau moment de partage avec Ambroise",
     participation: part_max1,
     course: post_max1,
     posted_at: DateTime.new(2022, 2, 18, 15, 55),

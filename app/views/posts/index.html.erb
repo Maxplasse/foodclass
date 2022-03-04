@@ -13,30 +13,30 @@
           </p>
           <p><%= post.posted_at %></p>
         </div>
+        <div>
+          <%= link_to post_upvotes_path(post), method: :post do %>
+            <span class="button-small"><%= post.upvotes.count == 0 ? "" : post.upvotes.count %> <i class="far fa-thumbs-up"></i></span>
+          <% end %>
+        </div>
       </div>
       <div class="d-flex card-community-margin">
         <div>
           <%= cl_image_tag(post.photo.key, style: "width: 350px; height: 200px; object-fit:cover") %>
         </div>
         <div class="card-community-description">
-          <div>
+          <p>
             <%= post.content %>
-          </div>
+          </p>
           <br>
-          <div>
-            Difficulté : <%= post.course.difficulty %>
-          </div>
-          <div>
-            <%= post.course.duration %> minutes
-          </div>
-          <p><%= post.course.level_points %> carottes gagnés</p>
         </div>
       </div>
       <div class="card-community-margin">
+      <div>
         <%= simple_form_for [post, comment = Comment.new] do |f| %>
-          <%= f.input :content %>
+          <%= f.input :content, label: false %>
           <%= f.submit "Commenter"%>
         <% end %>
+      </div>
       </div>
     </div>
     <div class="card-community-container">
@@ -44,10 +44,14 @@
         <div class="card-community-comments">
           <div class="d-flex">
             <%= image_tag comment.user.photo, class: "avatar-large" %>
-            <div>
+            <div class="post-comment-content">
               <p><%= comment.content %></p>
-            </div class="button-delete">
-              <%= link_to "Supprimer", post_comment_path(post, comment), method: :delete %>
+            </div>
+            <div class="button-delete">
+              <%= link_to post_comment_path(post, comment), method: :delete  do %>
+                <%= image_tag("cancel.png") %>
+              <% end %>
+            </div>
           </div>
         </div>
       <% end %>
