@@ -490,6 +490,8 @@ posted_course = courses.each do |course|
   Participation.create!(course: course, user: maxime_p, favorite: false)
   Participation.create!(course: course, user: fred, favorite: false)
   Participation.create!(course: course, user: stephen, favorite: false)
+  Participation.create!(course: course, user: matthieu, favorite: false)
+  Participation.create!(course: course, user: marie, favorite: false)
 end
 
 p "6"
@@ -497,7 +499,6 @@ p "6"
 maxime_p.participations.sample(3).each { |p| p.update(favorite: true) }
 
 p "7"
-
 
 # Max participation to create new posts
 part_max = maxime_p.participations
@@ -509,13 +510,19 @@ part_max3 = part_max[3]
 part_fred = fred.participations
 part_fred1 = part_fred[4] # Gnocchis épinards et crème au soja avec Sarah
 part_fred2 = part_fred[5] # Canard, épinards et pommes de terre grillées au four avec Alexia
-part_fred3 = part_fred[6] # Makis saumon et avocat avec Pierre
 
-# Fred participation to create new posts
+# Marie participation to create new posts
+part_marie = marie.participations
+part_marie1 = part_marie[6] # Makis saumon et avocat avec Pierre
+
+# Stephen participation to create new posts
 part_stephen = stephen.participations
 part_stephen1 = part_stephen[7] # Pavé de boeuf, asperges, sauce au vin
 part_stephen2 = part_stephen[8] # Gigot d'agneau et ses légumes de saison
-part_stephen3 = part_stephen[9] # Toast avocat, épinards et œuf
+
+# Matthieu participation to create new posts
+part_matthieu = matthieu.participations
+part_matt1 = part_matthieu[9] # Toast avocat, épinards et œuf
 
 
 p "8"
@@ -528,12 +535,16 @@ post_max3 = posted_course[3]
 # les posts de fred
 post_fred1 = posted_course[4]
 post_fred2 = posted_course[5]
-post_fred3 = posted_course[6]
+
+# les posts de marie
+post_marie1 = posted_course[6]
 
 # les posts de stephen
 post_stephen1 = posted_course[7]
 post_stephen2 = posted_course[8]
-post_stephen3 = posted_course[9]
+
+# les posts de matthieu
+post_matthieu = posted_course[9]
 
 
 posts_h = [
@@ -541,7 +552,7 @@ posts_h = [
     content: "Recette excellente ! Un beau moment de partage avec Ambroise",
     participation: part_max1,
     course: post_max1,
-    posted_at: DateTime.new(2022, 2, 18, 15, 55),
+    posted_at: DateTime.new(2022, 1, 20, 17, 27),
     photo_url: "https://img-3.journaldesfemmes.fr/Dv4No5oSzA4-mYG4QYiXZRInjhs=/750x500/smart/0858995addb849bdb295719d05cf406c/recipe-jdf/10033576.jpg"
   },
   {
@@ -574,8 +585,8 @@ posts_h = [
   },
   {
     content: "Pierre a pris son temps pour bien expliquer cette recette asseaz complexe. Un régal!",
-    participation: part_fred3,
-    course: post_fred3,
+    participation: part_marie1,
+    course: post_marie1,
     posted_at: DateTime.new(2021, 11, 4, 15, 23),
     photo_url: "https://static.750g.com/images/1200-630/dc55b155cecbd4a45c1f0131c1d7850c/makis-saumon-et-avocat.jpeg"
   },
@@ -595,9 +606,9 @@ posts_h = [
   },
   {
     content: "Recette simple et efficace",
-    participation: part_stephen3,
-    course: post_stephen3,
-    posted_at: DateTime.new(2022, 1, 20, 17, 27),
+    participation: part_matt1,
+    course: post_matthieu,
+    posted_at: DateTime.new(2022, 2, 18, 15, 55),
     photo_url: "https://cuisine-addict.com/wp-content/uploads/2015/06/avocado-toast.jpg"
   }
 ]
