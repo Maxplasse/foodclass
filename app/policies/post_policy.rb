@@ -8,4 +8,7 @@ class PostPolicy < ApplicationPolicy
       scope.all
     end
   end
+  def create?
+    record.course.in? user.courses_as_participant.where("end_at < ?", Time.now)
+  end
 end
