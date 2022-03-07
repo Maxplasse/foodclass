@@ -7,6 +7,6 @@ class UpvotesController < ApplicationController
     authorize @upvote
 
     @upvote.save
-    redirect_to community_path
+    redirect_to posts_path
   end
 end

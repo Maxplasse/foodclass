@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'my_profile', to: 'profiles#show', as: :my_profile
-  get 'community', to: 'posts#index', as: :community
-  resources :courses, only: [:index, :show]
-  resources :posts, only: [] do
+  # get 'community', to: 'posts#index', as: :community
+  resources :courses, only: [:index, :show] do
+    resources :posts, only: [:create]
+  end
+  resources :posts, only: [:index, :create] do
     resources :upvotes, only: :create
     resources :comments, only: [:create, :destroy]
   end

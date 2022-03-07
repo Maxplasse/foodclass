@@ -3,6 +3,8 @@ class PostsController < ApplicationController
 
   def index
     @posts = policy_scope(Post).order(posted_at: :desc)
+    @post = Post.new
+    @courses = current_user.courses_as_participant.where("end_at < ?", Time.now)
   end
 
   def new
@@ -10,20 +12,38 @@ class PostsController < ApplicationController
   end
 
   def create
-    @course = Course.find(params[:course_id])
-    @post = Post.find(post_params)
-    @post.course = @course
-
-    if @post.save
-      redirect_to post_path(@post)
+    if params[:course_id].present?
+      @course = Course.find(params[:course_id])
+      @post = Post.new(post_params)
+      @participation = current_user.participations.find_by(course: @course)
+      @post.course = @course
+      @post.participation = @participation
+      authorize @post
+      if @post.save
+        redirect_to course_path(@course)
+      else
+        render 'courses/show'
+      end
     else
-      render :new
+      @course = Course.find(params[:post][:course_id])
+      @post = Post.new(post_params)
+      @participation = current_user.participations.find_by(course: @course)
+      @post.course = @course
+      @post.participation = @participation
+      authorize @post
+      if @post.save
+        redirect_to posts_path
+      else
+        @posts = policy_scope(Post).order(posted_at: :desc)
+        @courses = current_user.courses_as_participant.where("end_at < ?", Time.now)
+        render 'posts/index'
+      end
     end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :photo)
   end
 end
