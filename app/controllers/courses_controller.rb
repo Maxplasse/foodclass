@@ -44,6 +44,7 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     authorize @course
+    @post = Post.new
   end
 
 end
