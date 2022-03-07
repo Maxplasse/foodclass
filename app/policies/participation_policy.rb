@@ -20,4 +20,8 @@ class ParticipationPolicy < ApplicationPolicy
   def favorites?
     true
   end
+
+  def add_in_favorite?
+    true
+  end
 end

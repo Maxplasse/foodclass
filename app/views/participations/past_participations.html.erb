@@ -20,18 +20,26 @@
   <br>
   <div>
     <div class="cards">
-      <% @courses.each do |participation| %>
+      <% current_user.participations.order(id: :asc).past.each do |participation| %>
         <div class="card-course">
           <%= link_to course_path(participation) do %>
-              <%= cl_image_tag participation.photo.key %>
+              <%= cl_image_tag participation.course.photo.key %>
           <% end %>
             <div class="card-course-infos">
               <div class="mb-1">
-                <h2><%= participation.title %></h2>
+                <h2><%= participation.course.title %></h2>
               </div>
               <div>
-                <p>Chef <%= participation.chef.user.first_name %> <%= participation.chef.user.last_name %></p>
-                <p>Temps de réalisation : <%= participation.duration %> minutes</p>
+                <p>Chef <%= participation.course.chef.user.first_name %> <%= participation.course.chef.user.last_name %></p>
+                <p>Temps de réalisation : <%= participation.course.duration %> minutes</p>
+                <%#= participation.add_in_favorite %>
+                <%# if participation.favorite == true %>
+                  <%= link_to add_in_favorite_participation_path(participation) do %>
+                    <i class="<% if participation.favorite? %>fas<% else %>far<% end %> fa-heart"></i>
+                  <% end %>
+                <%# else %>
+                  <%#= link_to "fav", add_in_favorite_participation_path(participation) %>
+                <%# end %>
               </div>
             </div>
         </div>

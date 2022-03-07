@@ -48,10 +48,18 @@ class ParticipationsController < ApplicationController
     @participation.user = current_user
     authorize @participation
     if @participation.save
-      redirect_to course_path(@course), notice: "Demande de réservation envoyée!"
+      redirect_to course_path(@course), notice: "Demande de réservation envoyée !"
     else
       render :new
     end
+  end
+
+
+  def add_in_favorite
+    @participation = Participation.find(params[:id])
+    @participation.favorite == false ? @participation.update(favorite: true) : @participation.update(favorite: false)
+    authorize @participation
+    redirect_to past_participations_participations_path
   end
 
   private
