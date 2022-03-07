@@ -1,0 +1,19 @@
+<div class="card-course" data-controller="favorite" data-favorite-target="card">
+  <%= link_to course_path(participation.course) do %>
+      <%= cl_image_tag participation.course.photo.key %>
+  <% end %>
+    <div class="card-course-infos">
+      <div class="mb-1">
+        <h2><%= participation.course.title %></h2>
+      </div>
+      <div>
+        <p>Chef <%= participation.course.chef.user.first_name %> <%= participation.course.chef.user.last_name %></p>
+        <p>Temps de réalisation : <%= participation.course.duration %> minutes</p>
+      </div>
+    </div>
+    <div class="fav-icon">
+      <%= link_to add_in_favorite_participation_path(participation), data: {favorite_target: "link", action: "click->favorite#toggleFav"} do %>
+        <i class="<% if participation.favorite? %>fas<% else %>far<% end %> fa-heart"></i>
+      <% end %>
+    </div>
+</div>

@@ -59,7 +59,11 @@ class ParticipationsController < ApplicationController
     @participation = Participation.find(params[:id])
     @participation.favorite == false ? @participation.update(favorite: true) : @participation.update(favorite: false)
     authorize @participation
-    redirect_to past_participations_participations_path
+
+    respond_to do |format|
+      format.html { redirect_to past_participations_participations_path }
+      format.text { render partial: "card_course", locals: { participation: @participation }, formats: [:html] }
+    end
   end
 
   private

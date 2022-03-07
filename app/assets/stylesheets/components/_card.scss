@@ -1,6 +1,7 @@
 .card-course {
   overflow: hidden;
   background: white;
+  position: relative;
 }
 
 .card-course
@@ -28,4 +29,20 @@
   padding-left: 6px;
   justify-content: space-between;
   position: relative;
+}
+
+.fav-icon {
+  position: absolute;
+  top: 2px;
+  right: 6px;
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+  }
+}
+
+.card-course:hover {
+  transform: scale(1.05);
 }
