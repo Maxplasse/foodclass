@@ -4,13 +4,25 @@
     <br>
     <div class="d-flex justify-content-between">
       <div style="width: 100%">
-        <%= form_tag courses_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Trouver un cours, un chef, etc",
-            style: "height: 50px; "
-          %>
+        <div data-controller="search-courses">
+          <%= form_with url: courses_path, method: :get, html: { class:
+            'mb-4', data: { search_courses_target: 'form' } } do |f| %>
+            <%= f.text_field :query,
+                     class: "form-control",
+                     placeholder: 'Trouver un cours, un chef, etc',
+                     style: "height: 50px",
+                     value: params[:query],
+                     data: { search_courses_target: 'input',
+                     action: 'keyup->search-courses#update'} %>
+
+          <%# <%= form_tag courses_path, method: :get do %>
+            <%# <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Trouver un cours, un chef, etc",
+              style: "height: 50px; "
+            %>
+        </div>
       </div>
       <div style="padding-left: 4px">
         <%= submit_tag "Rechercher", class: "button" %>
@@ -19,29 +31,29 @@
     </div>
   <br>
 
-  <% if @courses == [] %>
-    Pas de résultat pour cette recherche.
-    <br>
-    Peut-être une nouvelle recette à inventer ?
+  <div data-search-courses-target="list">
+    <% if @courses == [] %>
+      Pas de résultat pour cette recherche.
+      <br>
+      Peut-être une nouvelle recette à inventer ?
 
-  <% else %>
-    <div class="cards">
-      <% @courses.each do |course| %>
-        <div class="card-course">
-          <%= link_to course_path(course) do %>
-              <%= cl_image_tag course.photo.key %>
-          <% end %>
-          <div class="card-course-infos">
-            <div>
-              <h2><%= course.title %></h2>
-              <p>Chef <%= course.chef.user.first_name %> <%= course.chef.user.last_name %></p>
-              <p>Temps de réalisation : <%= course.duration %> minutes</p>
+    <% else %>
+      <div class="cards">
+        <% @courses.each do |course| %>
+          <div class="card-course">
+            <%= link_to course_path(course) do %>
+                <%= cl_image_tag course.photo.key %>
+            <% end %>
+            <div class="card-course-infos">
+              <div>
+                <h2><%= course.title %></h2>
+                <p>Chef <%= course.chef.user.first_name %> <%= course.chef.user.last_name %></p>
+                <p>Temps de réalisation : <%= course.duration %> minutes</p>
+              </div>
             </div>
           </div>
-        </div>
-       <% end %>
-    </div>
-  <% end %>
-
-
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
