@@ -29,6 +29,11 @@ class ParticipationsController < ApplicationController
     else
       @courses = @past_participations
     end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'participations/list_participations', locals: { courses: @courses }, formats: [:html] }
+    end
   end
 
   def upcoming_participations

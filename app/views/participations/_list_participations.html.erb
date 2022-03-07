@@ -1,0 +1,28 @@
+<div data-search-participations-target="list">
+  <div class="cards">
+    <% @courses.each do |course| %>
+      <div class="card-course">
+        <%= link_to course_path(course) do %>
+          <%= cl_image_tag course.photo.key %>
+          <% end %>
+            <div class="card-course-infos">
+              <div class="mb-1">
+                <h2><%= course.title %></h2>
+              </div>
+              <div>
+                <p>Chef <%= course.chef.user.first_name %> <%= course.chef.user.last_name %></p>
+                <p>Temps de réalisation : <%= course.duration %> minutes</p>
+                <%#= participation.add_in_favorite %>
+                <%# if participation.favorite == true %>
+                  <%= link_to add_in_favorite_participation_path(course.participations.find_by(user_id: current_user.id)) do %>
+                    <i class="<% if course.participations.find_by(user_id: current_user.id).favorite? %>fas<% else %>far<% end %> fa-heart"></i>
+                  <% end %>
+                <%# else %>
+                  <%#= link_to "fav", add_in_favorite_participation_path(participation) %>
+                <%# end %>
+              </div>
+            </div>
+      </div>
+    <% end %>
+  </div>
+<div>
