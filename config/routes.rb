@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :courses, only: [:index, :show] do
     resources :posts, only: [:create]
   end
-  resources :posts, only: [:index, :create] do
+  resources :posts, only: [:index, :create, :destroy] do
     resources :upvotes, only: :create
     resources :comments, only: [:create, :destroy]
   end

@@ -1,68 +1,89 @@
 <div class="container">
-<br>
-  <div class="container-community">
+  <div class="title-community">
+    <h3>Bienvenue sur la commauté FoodClass.</h3>
+  </div>
+  <div class="container-community card-new-post" data-controller="insert-posts" data-action="submit->insert-posts#posted">
     <%= simple_form_for @post do |f| %>
-      <%= f.association :course, collection: @courses %>
-      <%= f.input :content, label: false %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit "Partage ton post ici!"%>
+      <span><%= f.input :content, label: false, placeholder: "Partage ton post ici!", id: "form-white" %></span>
+      <div class="d-flex" style="align-items: flex-start;">
+        <div class="post-new-form">
+          <%= f.association :course, label: false, collection: @courses, placeholder: "Pour quel cours souhaites tu ajouter un post?" %>
+        </div>
+        <div class="post-new-form" >
+          <%= f.input :photo, label: false, as: :file %>
+        </div>
+        <%= f.submit "Publier", class: "button-small-post"%>
+      </div>
     <% end %>
   </div>
+  <br>
   <% @posts.each do |post| %>
-    <div class="card-community">
-      <div class="d-flex" style="align-items: flex-start;">
-        <%= image_tag post.participation.user.photo, class: "avatar-large mx-3" %>
-        <div class="card-community-title">
-          <p><span class="community-user-nickname"><%= post.participation.user.nickname %></span>
-            a commenté la recette
-            <span><%= link_to post.course.title, course_path(post.course) %></span> par
-            <%= post.course.chef.user.first_name %>
-            <%= post.course.chef.user.last_name %>
-          </p>
-          <p><%= post.created_at.strftime("%e %b %Y %H:%M") %></p>
+    <div id="post-<%= post.id %>" >
+      <div class="card-community">
+        <div class="d-flex" style="align-items: flex-start;">
+          <%= image_tag post.participation.user.photo, class: "avatar-large mx-3" %>
+          <div class="card-community-title">
+            <p><span class="community-user-nickname"><%= post.participation.user.nickname %></span>
+              a commenté la recette
+              <span><%= link_to post.course.title, course_path(post.course) %></span> par
+              <%= post.course.chef.user.first_name %>
+              <%= post.course.chef.user.last_name %>
+            </p>
+            <p><%= post.created_at.strftime("%A, %d %b %Y %l:%M %p") %></p>
+          </div>
+          <div>
+            <%= link_to post_upvotes_path(post), method: :post do %>
+              <span class="button-small-like"><%= post.upvotes.count == 0 ? "" : post.upvotes.count %> <i class="far fa-thumbs-up"></i></span>
+            <% end %>
+          </div>
+          <div class="button-delete button-delete-post">
+            <% if post.participation.user == current_user %>
+              <%= link_to post_path(post), method: :delete do %>
+                <%= image_tag("cancel.png") %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
+        <div class="d-flex card-community-margin">
+          <div class="main-img">
+            <% if post.photo.attached? %>
+              <%= cl_image_tag(post.photo.key, style: "width: 350px; height: 200px; object-fit:cover") %>
+            <% end %>
+          </div>
+          <div class="card-community-description">
+            <p>
+              <%= post.content %>
+            </p>
+            <br>
+          </div>
+        </div>
+        <div class="card-community-margin">
         <div>
-          <%= link_to post_upvotes_path(post), method: :post do %>
-            <span class="button-small"><%= post.upvotes.count == 0 ? "" : post.upvotes.count %> <i class="far fa-thumbs-up"></i></span>
+          <%= simple_form_for [post, comment = Comment.new], remote: true do |f| %>
+            <%= f.input :content, label: false %>
+            <%= f.submit "Commenter", label: false%>
           <% end %>
         </div>
       </div>
-      <div class="d-flex card-community-margin">
-        <div class="main-img">
-          <%= cl_image_tag(post.photo.key, style: "width: 350px; height: 200px; object-fit:cover") %>
-        </div>
-        <div class="card-community-description">
-          <p>
-            <%= post.content %>
-          </p>
-          <br>
-        </div>
-      </div>
-      <div class="card-community-margin">
-      <div>
-        <%= simple_form_for [post, comment = Comment.new] do |f| %>
-          <%= f.input :content, label: false %>
-          <%= f.submit "Commenter"%>
-        <% end %>
-      </div>
-      </div>
-    </div>
     <div class="card-community-container">
       <% post.comments.each do |comment| %>
-        <div class="card-community-comments">
+        <div class="card-community-comments" id="comment-<%= comment.id %>">
           <div class="d-flex">
             <%= image_tag comment.user.photo, class: "avatar-large" %>
             <div class="post-comment-content">
               <p><%= comment.content %></p>
             </div>
             <div class="button-delete">
-              <%= link_to post_comment_path(post, comment), method: :delete  do %>
+            <% if current_user.comments.include? comment %>
+              <%= link_to post_comment_path(post, comment), method: :delete do %>
                 <%= image_tag("cancel.png") %>
               <% end %>
+            <% end %>
             </div>
           </div>
         </div>
       <% end %>
+    </div>
     </div>
   <% end %>
 </div>

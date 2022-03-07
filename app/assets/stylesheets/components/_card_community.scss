@@ -5,6 +5,7 @@
   border-radius: 4px;
   font-family: $body-font;
   font-size: 17px;
+  position: relative;
 }
 
 .card-community-title p {
@@ -20,15 +21,10 @@
 }
 
 .card-community-comments {
-  background-color: #FCE0DC30;
-  margin: 10px 0px 10px 108px;
+  margin: 10px 0px 10px 78px;
   padding: 10px;
+  padding-top: 21px;
   border-radius: 4px;
-
-}
-
-.card-community-container {
-  margin: 0px 108px;
 }
 
 .card-community-description {
@@ -52,4 +48,23 @@
 .post-comment-content p {
   font-size: 14px;
   padding: 0px 17px;
+}
+
+.post-new-form {
+  margin-right: 10px;
+  justify-content: space-between;
+}
+
+.card-new-post {
+  background-color: #fce0dc99;
+  padding: 17px 17px 6px;
+  position: relative;
+}
+
+.title-community {
+  margin: 150px 108px 27px;
+}
+
+#form-white {
+  background-color: white;
 }
