@@ -8,8 +8,10 @@ export default class extends Controller {
   }
 
   toggleFav(event) {
-    event.preventDefault()
-    const url = this.linkTarget.href
+    event.preventDefault();
+    const url = this.linkTarget.href;
+
+    console.log("toggle")
 
     fetch(url, {
       method: "PATCH",

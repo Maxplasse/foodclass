@@ -1,30 +1,32 @@
-<div class="container container-top">
+<div class="container container-top" data-controller="search-participations">
   <%= render "shared/dashboard_navigation" %>
   <div class="dashboard-navigation">
-      <div class="d-flex justify-content-between">
-        <div style="width: 100%">
-          <%= form_tag past_participations_participations_path, method: :get do %>
-            <%= text_field_tag :query,
+    <div class="d-flex justify-content-between">
+      <div style="width: 100%">
+          <%# <%= form_tag past_participations_participations_path, method: :get do %>
+            <%# <%= text_field_tag :query,
               params[:query],
               class: "form-control",
               placeholder: "Retrouver un ancien cours, un chef, etc",
               style: "height: 50px; "
             %>
-        </div>
-        <div style="padding-left: 4px">
-          <%= submit_tag "Rechercher", class: "button" %>
-        </div>
-        <% end %>
+        <%= form_with url:past_participations_participations_path, method: :get, html: { class:
+          'mb-4', data: { search_participations_target: 'form' } } do |f| %>
+          <%= f.text_field :query,
+            class: "form-control",
+            placeholder: "Retrouver un ancien cours, un chef, etc",
+            style: "height: 50px; ",
+            value: params[:query],
+            data: { search_participations_target: 'input',
+            action: 'keyup->search-participations#update' } %>
       </div>
-  </div>
-  <br>
-  <div>
-    <div class="cards">
-      <% current_user.participations.order(id: :asc).past.each do |participation| %>
-        <%= render "card_course", participation: participation %>
+      <div style="padding-left: 4px">
+        <%= submit_tag "Rechercher", class: "button" %>
+      </div>
       <% end %>
     </div>
-  <div>
+  </div>
+  <br>
+  <%= render 'list_participations', courses: @courses %>
 </div>
-<br>
 <br>

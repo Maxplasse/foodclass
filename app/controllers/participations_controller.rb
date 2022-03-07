@@ -1,6 +1,6 @@
 class ParticipationsController < ApplicationController
   def past_participations
-    @past_participations = Participation.past.where(user: current_user).map {|p| p.course}
+    @past_participations = Participation.past.where(user: current_user).order(:id).map {|p| p.course }
     authorize(:participation, :past_participations?)
 
     if params[:query] && !params[:query].empty?
@@ -28,6 +28,11 @@ class ParticipationsController < ApplicationController
       end
     else
       @courses = @past_participations
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'participations/list_participations', locals: { courses: @courses }, formats: [:html] }
     end
   end
 
@@ -62,7 +67,7 @@ class ParticipationsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to past_participations_participations_path }
-      format.text { render partial: "card_course", locals: { participation: @participation }, formats: [:html] }
+      format.text { render partial: "card_course", locals: { course: @participation.course }, formats: [:html] }
     end
   end
 
