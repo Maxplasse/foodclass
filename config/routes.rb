@@ -16,6 +16,9 @@ Rails.application.routes.draw do
       get :upcoming_participations
       get :favorites
     end
+    member do
+      get :add_in_favorite
+    end
   end
   resources :invitations, only: [:create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
