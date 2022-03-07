@@ -11,4 +11,7 @@ class PostPolicy < ApplicationPolicy
   def create?
     record.course.in? user.courses_as_participant.where("end_at < ?", Time.now)
   end
+  def destroy?
+    record.participation.user == user
+  end
 end

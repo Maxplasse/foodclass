@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     authorize @comment
     # raise
     if @comment.save
-      redirect_to posts_path
+      redirect_to posts_path(anchor: "post-#{@post.id}")
     else
       render :new
     end
