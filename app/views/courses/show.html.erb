@@ -3,7 +3,7 @@
     <h3 class="card-show-title"><%= @course.title %></h3>
       <div class="row">
         <div class="d-flex justify-content-between col-6">
-          <p><strong> Date du cours : <%= @course.start_at.strftime("%A, %d %b %Y %l:%M %p") %></strong></p>
+          <p><strong> Date du cours : <%= @course.start_at.strftime("%A %d %B %Y %Hh%M") %></strong></p>
         </div>
       </div>
       <div class="row">
@@ -102,6 +102,11 @@
       </div>
   </div>
   <% if @course.end_at < Time.now  %>
+    <%= simple_form_for [@course, @post] do |f| %>
+      <%= f.input :content, label: false %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Partage ton post ici!"%>
+    <% end %>
     <br>
     <% @course.posts.each do |post| %>
       <div class="card-community">

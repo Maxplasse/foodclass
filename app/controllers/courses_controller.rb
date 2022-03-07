@@ -34,11 +34,17 @@ class CoursesController < ApplicationController
     else
       @courses = policy_scope(Course).order(created_at: :desc)
     end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'courses/list', locals: { courses: @courses }, formats: [:html] }
+    end
   end
 
   def show
     @course = Course.find(params[:id])
     authorize @course
+    @post = Post.new
   end
 
 end

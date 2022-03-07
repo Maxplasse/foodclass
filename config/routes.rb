@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       get :favorites
     end
     member do
-      get :add_in_favorite
+      patch :add_in_favorite
     end
   end
   resources :invitations, only: [:create]
