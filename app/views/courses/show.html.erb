@@ -3,7 +3,7 @@
     <h3 class="card-show-title"><%= @course.title %></h3>
       <div class="row">
         <div class="d-flex justify-content-between col-6">
-          <p><strong> Date du cours : <%= @course.start_at.strftime("%A %d %B %Y %Hh%M") %></strong></p>
+          <p><strong> Date du cours : <%= l(@course.start_at, format: "%A %d %B %Y, %Hh%M") %></strong></p>
         </div>
       </div>
       <div class="row">
@@ -119,7 +119,7 @@
               <%= post.course.chef.user.first_name %>
               <%= post.course.chef.user.last_name %>
             </p>
-            <p><%= post.posted_at.strftime("%A, %d %b %Y %l:%M %p") %></p>
+            <p><%= l(post.posted_at, format: "%A %d %B %Y, %Hh%M") %></p>
           </div>
           <div>
             <%= link_to post_upvotes_path(post), method: :post do %>
