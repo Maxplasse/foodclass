@@ -5,6 +5,9 @@
         <div class="d-flex justify-content-between col-6">
           <p><strong> Date du cours : <%= l(@course.start_at, format: "%A %d %B %Y, %Hh%M") %></strong></p>
         </div>
+        <div class="booking-btn">
+          <button class="button" data-bs-toggle="modal" data-bs-target="#bookingModal">Cours réservé! Voir détail</button>
+        </div>
       </div>
       <div class="row">
         <div class="col-6">
@@ -22,7 +25,6 @@
               <button class="button">Accès au cours<span class="live-icon"></span></button>
             </div>
           <% end %>
-
         </div>
         <div class="col-6">
           <div class="card-show-infos">
@@ -79,11 +81,38 @@
           <% if Time.now < @course.start_at %>
             <div class="show-btn">
               <button class="button" data-bs-toggle="modal" data-bs-target="#epiceryModal">Commander chez Epicery</button>
-              <button class="button">M'envoyer la liste</button>
+              <button class="button" data-bs-toggle="modal" data-bs-target="#emailModal">M'envoyer la liste</button>
             </div>
           <% end %>
 
-            <!-- Modal -->
+            <!-- Modal Cours réservé-->
+            <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Détails de votre réservation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div>
+                      <p><strong> Date du cours : <%= l(@course.start_at, format: "%A %d %B %Y, %Hh%M") %></strong></p>
+                      <br>
+                      <p><strong>Chef·fe : <%= @course.chef.user.first_name %> <%= @course.chef.user.last_name %></strong></p>
+                      <br>
+                      <p><strong>Temps de réalisation : <%= @course.duration %> minutes</strong></p>
+                      <br>
+                      <p><strong>Difficulté : <%= @course.difficulty %></strong></p>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="button-cancel" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="button" data-bs-dismiss="modal">Confirmer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal Epicery-->
             <div class="modal fade" id="epiceryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -103,6 +132,29 @@
                 </div>
               </div>
             </div>
+
+           <!-- Modal Email-->
+            <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="emailModalLabel">M'envoyer la liste de course par email</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div>
+                      <label for="recipient-name" class="col-form-label" style="width:100px">Mail@</label>
+                      <input type="text" id="email">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="button" data-bs-dismiss="modal">Envoyer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
         </div>
       </div>
   </div>
