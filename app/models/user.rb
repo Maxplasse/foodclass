@@ -25,36 +25,41 @@ class User < ApplicationRecord
       min_points: 0,
       max_points: 49,
       name: "Apprenti",
-      icon_name: "apprenti.png",
-      icon_level: "Apprenti.svg"
+      icon_level_unlocked: "Apprenti-unlocked.png",
+      icon_level_locked: "n1-locked.png",
+      badge: "Apprenti.svg"
     },
     {
       min_points: 50,
       max_points: 124,
       name: "Commis",
-      icon_name: "commis.png",
-      icon_level: "Commis.svg"
+      icon_level_unlocked: "Commis-unlocked.png",
+      icon_level_locked: "n2-locked.png",
+      badge: "Commis.svg"
     },
     {
       min_points: 125,
       max_points: 249,
       name: "Sous-chef",
-      icon_name: "sous-chef.png",
-      icon_level: "Souschef.svg"
+      icon_level_unlocked: "Souschef-unlocked.png",
+      icon_level_locked: "Souschef-locked.png",
+      badge: "Souschef.svg"
     },
     {
       min_points: 250,
       max_points: 399,
       name: "Chef",
-      icon_name: "chef.png",
-      icon_level: "Chef.svg"
+      icon_level_unlocked: "Chef-unlocked.png",
+      icon_level_locked: "Chef-locked.png",
+      badge: "Chef.svg"
     },
     {
       min_points: 400,
       max_points: 1_000_000,
       name: "FoodClass Chef",
-      icon_name: "fc_chef.png",
-      icon_level: "Foodclass_chef.svg"
+      icon_level_unlocked: "FoodClassChef-unlocked.png",
+      icon_level_locked: "FoodclassChef-locked.png",
+      badge: "Foodclass_chef.svg"
     }
   ]
 
@@ -68,12 +73,16 @@ class User < ApplicationRecord
     current_level[:name]
   end
 
-  def current_level_icon_name
-    current_level[:icon_name]
+  def current_level_icon_unlocked
+    current_level[:icon_level_unlocked]
   end
 
-  def current_level_icon_level
-    current_level[:icon_level]
+  def current_level_icon_locked
+    current_level[:icon_level_locked]
+  end
+
+  def current_level_badge
+    current_level[:badge]
   end
 
   def level_validated?(level)

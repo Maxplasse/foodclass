@@ -1,79 +1,113 @@
-<div class="container container-top">
+<div class="body-background">
   <%= render "shared/dashboard_navigation" %>
-
-  <div class="row">
-    <div class="col-md-12 col-lg-9 my-progress">
-      <div class="d-flex justify-content-between progress-title">
-        <h4>Mes progrès</h4>
+  <div class="container">
+    <div class="show-grid">
+      <div class="my-profile">
+        <div class="d-flex">
+          <h3>Bientôt <%= current_user.next_level_name %>, <%= current_user.first_name %> !</h3>
+        </div>
         <div class="d-flex justify-content-between">
-          <h5><%= current_user.current_level_name %></h5>
-          <div class="progression-barre">
-            <div class="progress">
-              <div class="progress-value"></div>
+          <div>
+            <div class="d-flex justify-content-between progress-bar-title">
+              <div class="progression-barre">
+                <div class="progress">
+                  <div class="progress-value"></div>
+                  <p id="points"><%= current_user.next_level_min_points  %> <i class="fas fa-carrot"></i> restantes</p>
+                </div>
+                <div class="progress-bar-infos">
+                  <p><%= current_user.current_level_name %></p>
+                  <p><%= current_user.next_level_name %></p>
+                </div>
+              </div>
             </div>
-            <p><%= current_user.next_level_min_points  %> <i class="fas fa-carrot"></i> restantes</p>
+
+            <div class="infos-boxes">
+              <div>
+                <div class="box-info-title">
+                  <p>#COURS</p>
+                </div>
+                <div class="info-box">
+                  <p id="count-participations"><%= current_user.participations.count %></p>
+                </div>
+              </div>
+
+              <div>
+                <div class="box-info-title">
+                  <p>#NIVEAU</p>
+                </div>
+                <div id="current-level">
+                  <%= image_tag "toque.png" %>
+                  <p><%= current_user.current_level_name %></p>
+                </div>
+              </div>
+
+              <div>
+                <div class="box-info-title">
+                  <p>#POINTS</p>
+                </div>
+                <div id="next-level-points">
+                  <p ><%= current_user.number_of_points %></p>
+                  <i class="fas fa-carrot"></i>
+                </div>
+              </div>
+            </div>
           </div>
-          <h5><%= current_user.next_level_name %></h5>
-        </div>
-      </div>
-      <div class="d-flex" id="progress">
-        <div>
-          <p>Nombre de cours suivis : <%= current_user.participations.count %></p>
-          <p>Niveau : <%= current_user.current_level_name %></p>
-          <p>Nombre de points accumulés : <%= current_user.number_of_points %> <i class="fas fa-carrot"></i></p>
-          <br>
-        </div>
-        <div>
-          <%= image_tag "#{current_user.current_level_icon_level}" %>
-        </div>
-      </div>
 
-      <div class="d-flex bg-white level-boxes">
-        <% User::LEVELS.each do |level| %>
-          <div class="<%= level[:name].parameterize %>-box level-box">
-            <div>
-              <h6><%= level[:name] %></h6>
-            </div>
-            <div class="d-flex hex-box">
-              <span class="hex"></span>
-              <% if current_user.level_validated?(level) %>
-                <i class="fas fa-lock-open"></i>
-              <% else %>
-                <i class="fas fa-lock"></i>
-              <% end %>
-            </div>
-            <div>
-              <%= level[:min_points] %> <i class="fas fa-carrot"></i>
-            </div>
+          <div class="level-badge">
+            <%= image_tag "#{current_user.current_level_badge}" %>
           </div>
-        <% end %>
-      </div>
+        </div>
 
-      <%# <h5>Niveaux de difficultés</h5>
-      <p> Facile : 5 <i class="fas fa-carrot"></i> - Moyen : 10 <i class="fas fa-carrot"></i> - Difficile : 15 <i class="fas fa-carrot"></i> </p> %>
-    </div>
-
-    <div class="col-md-12 col-lg-3 my-badges">
-      <div class="badges">
-        <h4>Mes compétences</h4>
-        <div class="img-badges">
-          <%= image_tag "Apprenti.svg" %>
-          <%= image_tag "Toast.svg" %>
-          <%= image_tag "Commis.svg" %>
-          <%= image_tag "Sushis.svg" %>
-          <%= image_tag "Chicken.svg" %>
-          <%= image_tag "Souschef.svg" %>
-          <%= image_tag "Healthy_food.svg" %>
-          <%= image_tag "Meal.svg" %>
-          <%= image_tag "Ramen.svg" %>
-          <%= image_tag "Salad.svg" %>
-          <%= image_tag "Chef.svg" %>
+        <div class="ma-progression">
+          <h4>Ma progression</h4>
+          <div class="d-flex bg-white level-boxes">
+            <% User::LEVELS.each_with_index do |level, index| %>
+              <div class="<%= level[:name].parameterize %>-box level-box">
+                <div id="level-name">
+                  <p><%= level[:name] %></p>
+                </div>
+                <div class="d-flex
+                            hex-box
+                            <%= "unlocked" if current_user.level_validated?(level) %>
+                            <%= "locked" if !current_user.level_validated?(level) %>
+                            <%= "first-level" if index == 0 %>
+                            <%= "next" if level[:name] == current_user.next_level_name %>">
+                  <% if current_user.level_validated?(level) %>
+                    <%= image_tag level[:icon_level_unlocked] %>
+                  <% else %>
+                    <%= image_tag level[:icon_level_locked] %>
+                  <% end %>
+                </div>
+                <div>
+                </div>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
 
-    </div>
+      <div class="my-badges">
+        <div class="badges">
+          <h4>Mes badges</h4>
+          <div class="img-badges">
+            <%= image_tag "Apprenti.svg" %>
+            <%= image_tag "Toast.svg" %>
+            <%= image_tag "Commis.svg" %>
+            <%= image_tag "Healthy_food.svg" %>
+            <%= image_tag "Chicken.svg" %>
+            <%= image_tag "Souschef.svg" %>
+            <%= image_tag "Sushis.svg" %>
+            <%= image_tag "Meal.svg" %>
+            <%= image_tag "Ramen.svg" %>
+            <%= image_tag "Salad.svg" %>
+            <%= image_tag "Chef.svg" %>
+          </div>
+        </div>
 
-    <div class="col-12 invitation">
+      </div>
+
+    </div>
+    <div class="invitation">
       <h4>Parrainez vos proches ! </h4>
       <%= simple_form_for @invitation, html: { class: "form-inline" } do |f| %>
         <%= f.input :email, label: false, placeholder: 'Saisissez une adresse email' %>
@@ -83,6 +117,4 @@
       <% end %>
     </div>
   </div>
-
-
 </div>

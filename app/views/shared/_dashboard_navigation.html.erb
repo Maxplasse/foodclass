@@ -1,8 +1,10 @@
 <div class="dashboard-navigation list-in-line">
-  <ul class="list-inline">
-    <li class="list-inline-item me-5"><p><%= link_to "Mon profil", my_profile_path, class: "#{ "active" if controller_name == "profiles" && action_name == "show" }" %></p></li>
-    <li class="list-inline-item me-5"><p><%= link_to "Mes prochains cours", upcoming_participations_participations_path, class: "#{ "active" if controller_name == "participations" && action_name == "upcoming_participations" }" %></p></li>
-    <li class="list-inline-item me-5"><p><%= link_to "Mes cours favoris", favorites_participations_path, class: "#{ "active" if controller_name == "participations" && action_name == "favorites" }" %></p></li>
-    <li class="list-inline-item"><p><%= link_to "Mes cours passés", past_participations_participations_path, class: "#{ "active" if controller_name == "participations" && action_name == "past_participations" }" %></p></li>
-  </ul>
+  <div class="container">
+    <ul class="list-inline">
+      <li class="list-inline-item me-5"><p><%= link_to "Mon profil", my_profile_path, class: "#{ "active" if controller_name == "profiles" && action_name == "show" }" %></p></li>
+      <li class="list-inline-item me-5"><p><%= link_to "Mes prochains cours", upcoming_participations_participations_path, class: "#{ "active" if controller_name == "participations" && action_name == "upcoming_participations" }" %></p></li>
+      <li class="list-inline-item me-5"><p><%= link_to "Mes cours favoris", favorites_participations_path, class: "#{ "active" if controller_name == "participations" && action_name == "favorites" }" %></p></li>
+      <li class="list-inline-item"><p><%= link_to "Mes cours passés", past_participations_participations_path, class: "#{ "active" if controller_name == "participations" && action_name == "past_participations" }" %></p></li>
+    </ul>
+  </div>
 </div>
