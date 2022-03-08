@@ -1,6 +1,6 @@
 class ParticipationsController < ApplicationController
   def past_participations
-    @past_participations = Participation.past.where(user: current_user).map {|p| p.course}
+    @past_participations = Participation.past.where(user: current_user).order(:id).map {|p| p.course }
     authorize(:participation, :past_participations?)
 
     if params[:query] && !params[:query].empty?
@@ -64,7 +64,11 @@ class ParticipationsController < ApplicationController
     @participation = Participation.find(params[:id])
     @participation.favorite == false ? @participation.update(favorite: true) : @participation.update(favorite: false)
     authorize @participation
-    redirect_to past_participations_participations_path
+
+    respond_to do |format|
+      format.html { redirect_to past_participations_participations_path }
+      format.text { render partial: "card_course", locals: { course: @participation.course }, formats: [:html] }
+    end
   end
 
   private

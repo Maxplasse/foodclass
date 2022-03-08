@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!
 
   def index
     @posts = policy_scope(Post).order(posted_at: :desc)
     @post = Post.new
-    @courses = current_user.courses_as_participant.where("end_at < ?", Time.now)
+    if current_user
+      @courses = current_user.courses_as_participant.where("end_at < ?", Time.now)
+    end
   end
 
   def new
@@ -40,6 +42,15 @@ class PostsController < ApplicationController
       end
     end
   end
+
+  def destroy
+    @post = Post.find(params[:id])
+    authorize @post
+    @post.destroy
+
+    redirect_to posts_path
+  end
+
 
   private
 
