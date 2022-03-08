@@ -45,4 +45,35 @@
 
 .card-course:hover {
   transform: scale(1.05);
+
+  .booking-button {
+  background-color: #F74C25;
+  opacity: .9;
+  font-weight: bolder;
+  }
+}
+
+.booking-button {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  background-color: #F74C25;
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  margin: 0px 2px;
+  opacity: .8;
+  transition: 0.1s;
+  display: inline-block;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #F74C25;
+    color: black;
+    opacity: .9;
+    font-weight: bolder;
+  }
 }
