@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 
 body {
-  background: $white; // Using this variable
+  background: $white;
   margin-top: 100px;
 }
 
@@ -20,40 +20,6 @@ body {
 .title-navbar {
   align-items: center;
   justify-content: center;
-}
-
-.wrapper {
-  display: grid;
-  padding-top: 150px;
-  grid-template-columns: 1fr 1fr;
-  margin-left: auto;
-  margin-right: auto;
-  width: 1320px;
-
-  .custom-center-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  img {
-    width: auto;
-    height: 496px;
-    object-fit: cover;
-    // mask-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9));
-  }
-
-  .text {
-    text-align: justify;
-    font-size: 20px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  h2 {
-    font-size: 50px;
-    letter-spacing: 0.4rem;
-  }
 }
 
 .carousel-home {

@@ -7,6 +7,7 @@
 .card-show {
   padding-top: 25px;
   margin-bottom: 15px;
+  position: absolute;
 }
 .card-show-title {
   color: $orange;
@@ -53,6 +54,54 @@
 
 }
 
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  background-color: #d5d5d5;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+label {
+  color: #4c4c4c;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.bobox {
+  display: flex;
+}
+
+input[type="checkbox"]:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00c";
+  font-size: 10px;
+  color: white;
+  display: none;
+
+}
+
+input[type="checkbox"]:hover {
+  background-color: #a5a5a5;
+}
+
+input[type="checkbox"]:checked {
+  background-color: $orange;
+}
+
+input[type="checkbox"]:checked:after {
+  display: block;
+}
+
 .btn {
   background-color: $orange;
   color: white;
@@ -71,12 +120,33 @@
   }
 }
 
+.booking-btn .button {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  margin-top: 25px;
+  margin-left: 22px;
+  color: $orange;
+  background-color: white;
+  border: solid 1px $orange;
+
+  &:hover{
+    color: white;
+    background-color: $orange;
+  }
+}
+
 .show-btn .button {
   margin-top: 25px;
   margin-left: 22px;
   color: $orange;
   background-color: white;
   border: solid 1px $orange;
+
+  &:hover{
+    color: white;
+    background-color: $orange;
+  }
 }
 
 .live-btn .button {
@@ -130,3 +200,17 @@ span.live-icon{
 // .d-flex {
 //   justify-content: space-between;
 // }
+
+.carre-video {
+  display: flex;
+  position: relative;
+  .fa-regular {
+    position: absolute;
+    left: 272px;
+    bottom: 210px;
+    color: $orange;
+    font-size: 85px;
+    opacity: 0.8;
+
+  }
+}

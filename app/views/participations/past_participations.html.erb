@@ -3,13 +3,6 @@
   <div class="dashboard-navigation">
     <div class="d-flex justify-content-between">
       <div style="width: 100%">
-          <%# <%= form_tag past_participations_participations_path, method: :get do %>
-            <%# <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Retrouver un ancien cours, un chef, etc",
-              style: "height: 50px; "
-            %>
         <%= form_with url:past_participations_participations_path, method: :get, html: { class:
           'mb-4', data: { search_participations_target: 'form' } } do |f| %>
           <%= f.text_field :query,
