@@ -178,3 +178,17 @@ span.live-icon{
 // .d-flex {
 //   justify-content: space-between;
 // }
+
+.carre-video {
+  display: flex;
+  position: relative;
+  .fa-regular {
+    position: absolute;
+    left: 272px;
+    bottom: 210px;
+    color: $orange;
+    font-size: 85px;
+    opacity: 0.8;
+
+  }
+}
