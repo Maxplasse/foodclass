@@ -3,7 +3,7 @@
     <h3 class="card-show-title"><%= @course.title %></h3>
       <div class="row">
         <div class="d-flex justify-content-between col-6">
-          <p><strong> Date du cours : <%= @course.start_at.strftime("%A %d %B %Y %Hh%M") %></strong></p>
+          <p><strong> Date du cours : <%= l(@course.start_at, format: "%A %d %B %Y, %Hh%M") %></strong></p>
         </div>
       </div>
       <div class="row">
@@ -39,36 +39,38 @@
               <p>Pour 2 personnes :</p>
             </div>
             <div class="detail-checkbox">
-              <input type="checkbox" id="Homard" name="Homard">
-              <label for="Homard"><strong>1 </strong>homard</label>
-            <div>
-              <input type="checkbox" id="Beurre" name="Beurre">
-              <label for="Beurre"><strong>50g </strong>beurre</label>
-            </div>
-            <div>
-              <input type="checkbox" id="echalotes" name="echalotes">
-              <label for="echalotes"><strong>3 </strong>échalotes</label>
-            </div>
-            <div>
-              <input type="checkbox" id="Vin" name="Vin">
-              <label for="Vin"><strong>10cl </strong>vin</label>
-            </div>
-            <div>
-              <input type="checkbox" id="thym" name="thym">
-              <label for="thym"><strong>2 </strong>branches de thym</label>
-            </div>
-            <div>
-              <input type="checkbox" id="creme" name="creme">
-              <label for="creme"><strong>20cl </strong>crème fraiche liquide entière</label>
-            </div>
-            <div>
-              <input type="checkbox" id="aneth" name="aneth">
-              <label for="aneth"><strong>2 cuil. à soupe </strong>Feuilles d'aneth</label>
-            </div>
-            <div>
-              <input type="checkbox" id="cib" name="cib">
-              <label for="cib">Ciboulette fraiche</label>
-            </div>
+              <div class="bobox">
+                <input type="checkbox" id="Homard" name="Homard">
+                <label for="Homard"><strong>1 </strong>homard</label>
+              </div>
+              <div class="bobox">
+                <input type="checkbox" id="Beurre" name="Beurre">
+                <label for="Beurre"><strong>50g </strong>beurre</label>
+              </div>
+              <div class="bobox">
+                <input type="checkbox" id="echalotes" name="echalotes">
+                <label for="echalotes"><strong>3 </strong>échalotes</label>
+              </div>
+              <div class="bobox">
+                <input type="checkbox" id="Vin" name="Vin">
+                <label for="Vin"><strong>10cl </strong>vin</label>
+              </div>
+              <div class="bobox">
+                <input type="checkbox" id="thym" name="thym">
+                <label for="thym"><strong>2 </strong>branches de thym</label>
+              </div>
+              <div class="bobox">
+                <input type="checkbox" id="creme" name="creme">
+                <label for="creme"><strong>20cl </strong>crème fraiche liquide entière</label>
+              </div>
+              <div class="bobox">
+                <input type="checkbox" id="aneth" name="aneth">
+                <label for="aneth"><strong>2 cuil. à soupe </strong>Feuilles d'aneth</label>
+              </div>
+              <div class="bobox">
+                <input type="checkbox" id="cib" name="cib">
+                <label for="cib">Ciboulette fraiche</label>
+              </div>
             </div>
           </div>
           <% if Time.now < @course.start_at %>
@@ -119,7 +121,7 @@
               <%= post.course.chef.user.first_name %>
               <%= post.course.chef.user.last_name %>
             </p>
-            <p><%= post.posted_at.strftime("%A, %d %b %Y %l:%M %p") %></p>
+            <p><%= l(post.posted_at, format: "%A %d %B %Y, %Hh%M") %></p>
           </div>
           <div>
             <%= link_to post_upvotes_path(post), method: :post do %>
