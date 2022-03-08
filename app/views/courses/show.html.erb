@@ -3,13 +3,19 @@
     <h3 class="card-show-title"><%= @course.title %></h3>
       <div class="row">
         <div class="d-flex justify-content-between col-6">
-          <p><strong> Date du cours : <%= @course.start_at.strftime("%A %d %B %Y %Hh%M") %></strong></p>
+          <p><strong> Date du cours : <%= l(@course.start_at, format: "%A %d %B %Y, %Hh%M") %></strong></p>
+        </div>
+        <div class="booking-btn">
+          <button class="button" data-bs-toggle="modal" data-bs-target="#bookingModal">Cours réservé! Voir détail</button>
         </div>
       </div>
       <div class="row">
         <div class="col-6">
           <% if @course.end_at < Time.now  %>
-            <%= video_tag "replay2.mp4", autoplay: true %>
+            <div class="carre-video">
+              <%= video_tag "replay2.mp4", autoplay: true %>
+              <i class="fa-regular fa-circle-play"></i>
+            </div>
           <% else %>
             <%= cl_image_tag @course.photo.key %>
           <% end %>
@@ -19,7 +25,6 @@
               <button class="button">Accès au cours<span class="live-icon"></span></button>
             </div>
           <% end %>
-
         </div>
         <div class="col-6">
           <div class="card-show-infos">
@@ -39,46 +44,75 @@
               <p>Pour 2 personnes :</p>
             </div>
             <div class="detail-checkbox">
-              <input type="checkbox" id="Homard" name="Homard">
-              <label for="Homard"><strong>1 </strong>homard</label>
-            <div>
-              <input type="checkbox" id="Beurre" name="Beurre">
-              <label for="Beurre"><strong>50g </strong>beurre</label>
-            </div>
-            <div>
-              <input type="checkbox" id="echalotes" name="echalotes">
-              <label for="echalotes"><strong>3 </strong>échalotes</label>
-            </div>
-            <div>
-              <input type="checkbox" id="Vin" name="Vin">
-              <label for="Vin"><strong>10cl </strong>vin</label>
-            </div>
-            <div>
-              <input type="checkbox" id="thym" name="thym">
-              <label for="thym"><strong>2 </strong>branches de thym</label>
-            </div>
-            <div>
-              <input type="checkbox" id="creme" name="creme">
-              <label for="creme"><strong>20cl </strong>crème fraiche liquide entière</label>
-            </div>
-            <div>
-              <input type="checkbox" id="aneth" name="aneth">
-              <label for="aneth"><strong>2 cuil. à soupe </strong>Feuilles d'aneth</label>
-            </div>
-            <div>
-              <input type="checkbox" id="cib" name="cib">
-              <label for="cib">Ciboulette fraiche</label>
-            </div>
+              <div class="bobox">
+                <input type="checkbox" id="Homard" name="Homard">
+                <label for="Homard"><strong>1 </strong>homard</label>
+              </div>
+              <div class="bobox">
+                <input type="checkbox" id="Beurre" name="Beurre">
+                <label for="Beurre"><strong>50g </strong>beurre</label>
+              </div>
+              <div class="bobox">
+                <input type="checkbox" id="echalotes" name="echalotes">
+                <label for="echalotes"><strong>3 </strong>échalotes</label>
+              </div>
+              <div class="bobox">
+                <input type="checkbox" id="Vin" name="Vin">
+                <label for="Vin"><strong>10cl </strong>vin</label>
+              </div>
+              <div class="bobox">
+                <input type="checkbox" id="thym" name="thym">
+                <label for="thym"><strong>2 </strong>branches de thym</label>
+              </div>
+              <div class="bobox">
+                <input type="checkbox" id="creme" name="creme">
+                <label for="creme"><strong>20cl </strong>crème fraiche liquide entière</label>
+              </div>
+              <div class="bobox">
+                <input type="checkbox" id="aneth" name="aneth">
+                <label for="aneth"><strong>2 cuil. à soupe </strong>Feuilles d'aneth</label>
+              </div>
+              <div class="bobox">
+                <input type="checkbox" id="cib" name="cib">
+                <label for="cib">Ciboulette fraiche</label>
+              </div>
             </div>
           </div>
           <% if Time.now < @course.start_at %>
             <div class="show-btn">
               <button class="button" data-bs-toggle="modal" data-bs-target="#epiceryModal">Commander chez Epicery</button>
-              <button class="button">M'envoyer la liste</button>
+              <button class="button" data-bs-toggle="modal" data-bs-target="#emailModal">M'envoyer la liste</button>
             </div>
           <% end %>
 
-            <!-- Modal -->
+            <!-- Modal Cours réservé-->
+            <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Détails de votre réservation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div>
+                      <p><strong> Date du cours : <%= l(@course.start_at, format: "%A %d %B %Y, %Hh%M") %></strong></p>
+                      <br>
+                      <p><strong>Chef·fe : <%= @course.chef.user.first_name %> <%= @course.chef.user.last_name %></strong></p>
+                      <br>
+                      <p><strong>Temps de réalisation : <%= @course.duration %> minutes</strong></p>
+                      <br>
+                      <p><strong>Difficulté : <%= @course.difficulty %></strong></p>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="button-cancel" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="button" data-bs-dismiss="modal">Confirmer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal Epicery-->
             <div class="modal fade" id="epiceryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -98,18 +132,46 @@
                 </div>
               </div>
             </div>
+
+           <!-- Modal Email-->
+            <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="emailModalLabel">M'envoyer la liste de course par email</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div>
+                      <label for="recipient-name" class="col-form-label" style="width:100px">Mail@</label>
+                      <input type="text" id="email">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="button" data-bs-dismiss="modal">Envoyer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
   </div>
   <% if @course.end_at < Time.now  %>
-    <%= simple_form_for [@course, @post] do |f| %>
-      <%= f.input :content, label: false %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit "Partage ton post ici!"%>
-    <% end %>
+    <div class="">
+      <h3>Retrouvez les posts pour cette recette!</h3>
+    </div>
+      <div class="card-new-post">
+        <%= simple_form_for [@course, @post] do |f| %>
+          <%= f.input :content, label: false %>
+        <div class="d-flex" style="align-items: flex-start;">
+          <%= f.input :photo, as: :file, label: false %>
+          <%= f.submit "Publier", class: "button-small-post"%>
+        </div>
+        <% end %>
+      </div>
     <br>
     <% @course.posts.each do |post| %>
-      <div class="card-community">
+      <div class="card-show-post">
         <div class="d-flex" style="align-items: flex-start;">
           <%= image_tag post.participation.user.photo, class: "avatar-large mx-3" %>
           <div class="card-community-title">
@@ -119,11 +181,11 @@
               <%= post.course.chef.user.first_name %>
               <%= post.course.chef.user.last_name %>
             </p>
-            <p><%= post.posted_at.strftime("%A, %d %b %Y %l:%M %p") %></p>
+            <p><%= l(post.posted_at, format: "%A %d %B %Y, %Hh%M") %></p>
           </div>
           <div>
             <%= link_to post_upvotes_path(post), method: :post do %>
-              <span class="button-small"><%= post.upvotes.count == 0 ? "" : post.upvotes.count %> <i class="far fa-thumbs-up"></i></span>
+              <span class="button-small-like"><%= post.upvotes.count == 0 ? "" : post.upvotes.count %> <i class="far fa-thumbs-up"></i></span>
             <% end %>
           </div>
         </div>
@@ -146,23 +208,23 @@
           <% end %>
         </div>
         </div>
-      </div>
-      <div class="card-community-container">
-        <% post.comments.each do |comment| %>
-          <div class="card-community-comments">
-            <div class="d-flex">
-              <%= image_tag comment.user.photo, class: "avatar-large" %>
-              <div class="post-comment-content">
-                <p><%= comment.content %></p>
-              </div>
-              <div class="button-delete">
-                <%= link_to post_comment_path(post, comment), method: :delete  do %>
-                  <%= image_tag("cancel.png") %>
-                <% end %>
+        <div class="card-community-container">
+          <% post.comments.each do |comment| %>
+            <div class="card-community-comments">
+              <div class="d-flex">
+                <%= image_tag comment.user.photo, class: "avatar-large" %>
+                <div class="post-comment-content">
+                  <p><%= comment.content %></p>
+                </div>
+                <div class="button-delete-comment">
+                  <%= link_to post_comment_path(post, comment), method: :delete  do %>
+                    <%= image_tag("cancel.png") %>
+                  <% end %>
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   <% end %>

@@ -3,7 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_one :chef
   has_many :courses, through: :chef
-  has_many :participations
+  has_many :participations, dependent: :destroy
+  has_many :emojis, dependent: :destroy
   has_many :upvotes, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :courses_as_participant, through: :participations, source: :course
