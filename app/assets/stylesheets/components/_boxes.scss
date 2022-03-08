@@ -1,18 +1,27 @@
 @media(max-width: 768px) {
-  .cards {
+  .boxes {
     grid-template-columns: 1fr 1fr ;
   }
 }
 
-@media(max-width: 576px) {
-  .cards {
+@media(min-width: 767px) {
+  .boxes {
     grid-template-columns: 1fr;
   }
 }
 
-.cards {
+.boxes {
+  /*
   display: grid;
   grid-gap: 1px;
+  grid-template-columns: 1fr 1fr; */
   padding-right: 0;
   padding-left: 0;
+  padding-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.boxes-row {
+    display: flex; /* contexte sur le parent */
+  }
