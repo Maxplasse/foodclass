@@ -36,3 +36,19 @@
     opacity: 0.8;
 }
 }
+
+.form-control {
+  background-color: white;
+}
+
+.form-select {
+  background-color: white;
+}
+
+.form-control[type="file"]:not(:disabled):not([readonly]) {
+  background-color: white;
+}
+
+#post-photo {
+  background-color: white;
+}

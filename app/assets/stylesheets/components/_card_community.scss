@@ -25,6 +25,7 @@
   padding: 10px;
   padding-top: 21px;
   border-radius: 4px;
+  position: relative;
 }
 
 .card-community-description {
@@ -50,21 +51,17 @@
   padding: 0px 17px;
 }
 
-.post-new-form {
+.card-new-form {
   margin-right: 10px;
   justify-content: space-between;
 }
 
 .card-new-post {
   background-color: #fce0dc99;
-  padding: 17px 17px 6px;
+  padding: 20px 20px 9px;
   position: relative;
 }
 
 .title-community {
   margin: 150px 108px 27px;
-}
-
-#form-white {
-  background-color: white;
 }
