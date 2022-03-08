@@ -1,17 +1,17 @@
 .card-community {
-  background-color: #FCE0DC30;
-  margin: 26px 108px 5px;
-  padding: 20px;
+  box-shadow: 0px 0px 5px rgba(0,0,0, 0.1);
+  margin: 26px 171px 5px;
+  padding: 28px;
   border-radius: 4px;
   font-family: $body-font;
   font-size: 17px;
   position: relative;
+  background-color: white;
 }
 
 .card-community-title p {
   margin-bottom: 0px;
   font-weight: bold;
-  max-width: 466px;
 }
 
 .card-community-title a {
@@ -21,11 +21,12 @@
 }
 
 .card-community-comments {
-  margin: 10px 0px 10px 78px;
+  margin: 14px 53px 10px 38px;
   padding: 10px;
   padding-top: 21px;
   border-radius: 4px;
   position: relative;
+  background-color: #FCE0DC30;
 }
 
 .card-community-description {
@@ -33,7 +34,8 @@
   color: $navy;
   font-size: 15px;
   p {
-    margin-bottom: 3rem;
+    margin: 15px 38px 0px;
+    font-size: 17px;
   }
 }
 
@@ -57,11 +59,44 @@
 }
 
 .card-new-post {
-  background-color: #fce0dc99;
   padding: 20px 20px 9px;
   position: relative;
 }
 
 .title-community {
-  margin: 150px 108px 27px;
+  margin: 100px 269px 27px;
+  padding-top: 50px;
+}
+
+.card-show-post {
+  padding: 20px;
+  border-radius: 4px;
+  font-family: $body-font;
+  font-size: 17px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.container-community-color {
+  background-color: $light-pink;
+}
+
+.card-photo img {
+  width: 819px;
+  height: 600px;
+  object-fit: cover;
+  background-color: white;
+  margin: 0px 38px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.card-comments {
+  position: relative;
+}
+
+.emojis-dropdown {
+  position: absolute;
+  left: 10px;
+  bottom: -7px;
 }
