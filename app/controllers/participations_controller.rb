@@ -1,6 +1,6 @@
 class ParticipationsController < ApplicationController
   def past_participations
-    @past_participations = Participation.past.where(user: current_user).order(:id).map {|p| p.course }
+    @past_participations = Participation.past.where(user: current_user).order(:id).map { |p| p.course }
     authorize(:participation, :past_participations?)
 
     if params[:query] && !params[:query].empty?
@@ -23,7 +23,7 @@ class ParticipationsController < ApplicationController
         @results.group_by(&:searchable_type)["Course"].each do |course|
           if @past_participations.include?(course.searchable)
               @courses << course.searchable
-            end
+          end
         end
       end
     else

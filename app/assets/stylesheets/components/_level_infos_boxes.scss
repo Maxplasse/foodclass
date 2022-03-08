@@ -1,0 +1,124 @@
+// Level infos boxes
+
+.infos-boxes {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5px;
+}
+
+.info-box {
+  width: 140px;
+  height: 140px;
+  background-color: $light-pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-info-title p {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+#count-participations {
+  font-size: 4em;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#current-level {
+  font-size: 20px;
+  width: 140px;
+  height: 140px;
+  background-color: $light-pink;
+  text-align: center;
+  padding-top: 20px;
+
+  img {
+    width: 64px;
+  }
+}
+
+#next-level-points {
+  font-size: 3em;
+  width: 140px;
+  height: 140px;
+  background-color: $light-pink;
+  text-align: center;
+}
+
+
+// Progression boxes
+
+// Levels boxes
+
+.ma-progression h4 {
+  margin: 48px 0;
+}
+
+#level-name p{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.level-boxes {
+  background-color: white;
+  padding: 0, 15px;
+}
+
+.level-box {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 28vh;
+  margin: 10px;
+}
+
+.hex-box {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 148px;
+
+  img {
+    width: 120px;
+  }
+}
+
+.unlocked:before {
+  content: "";
+  width: 59px;
+  border: 2px solid $orange;
+  position: absolute;
+  left: -50px
+}
+
+.locked:before {
+  content: "";
+  width: 59px;
+  border: 2px dashed grey;
+  position: absolute;
+  left: -50px
+}
+
+.first-level:before {
+  display: none;
+}
+
+.next:before {
+  content: "";
+  width: 59px;
+  height: 4px;
+  background: linear-gradient(90deg, $orange, grey);
+  border: none;
+  position: absolute;
+  left: -50px
+}
+// .next:before {
+//   content: "";
+//   width: 4em;
+//   color: $light-pink;
+//   border: 2px dashed;
+// }

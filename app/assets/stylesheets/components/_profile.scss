@@ -1,7 +1,20 @@
-// Mes progrès
-
-.my-progress {
+.body-background {
   background-color: $light-pink;
+  padding-bottom: 2em;
+  margin-top: 100px;
+}
+
+.show-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2em;
+  margin-top: 2em;
+}
+
+// Mon profil
+
+.my-profile {
+  background-color: white;
   padding: 10px 20px;
 
   i {
@@ -9,60 +22,30 @@
   }
 }
 
-#progress {
+.progress-bar-infos {
+  width: 500px;
+  margin: 0 5px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
 
-  img {
-    width: 150px;
-    height: 150px;
+  p {
+    font-weight: bold;
   }
 }
 
-.progress-title {
-  margin-bottom: 30px;
-
-  h5 {
-    padding: 10px;
-  }
+.progress-bar-title {
+  margin: 24px 0px;
+  // background-color: white;
 }
 
-// Levels boxes
-
-.level-boxes {
-  background-color: white;
-  margin-top: 10px;
-  padding: 0, 15px;
+.level-badge img {
+  width: 300px;
 }
 
-.level-box {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 28vh;
-  margin: 10px;
-}
-
-.hex-box {
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  height: 148px;
-
-  i {
-    position: absolute;
-    font-size: 24px;
-    color: $black;
-  }
-}
 
 // Mes compétences
 .my-badges {
-  background-color: $light-pink;
-  border-left: solid white 32px;
+  background-color: white;
   padding: 10px 20px;
 }
 
@@ -80,18 +63,21 @@
 // Parrainage
 
 .invitation {
-  background-color: $light-pink;
-  padding: 10px 20px;
+  background-color: white;
+  padding: 17px 20px 4px 20px;
   margin: 24px 0px;
+  display: flex;
 
   h4 {
     margin-bottom: 16px;
+    width: 290px;
   }
 
 }
 
 .form-inline {
   display: flex;
+  width: inherit;
 }
 
 .invitation_email {

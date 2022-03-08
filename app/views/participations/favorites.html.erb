@@ -1,5 +1,5 @@
+<%= render "shared/dashboard_navigation" %>
 <div class="container container-top">
-  <%= render "shared/dashboard_navigation" %>
   <div class="cards">
       <% current_user.participations.each do |participation| %>
         <%if participation.favorite == true %>

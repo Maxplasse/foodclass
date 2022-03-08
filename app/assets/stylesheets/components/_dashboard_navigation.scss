@@ -1,6 +1,12 @@
 .dashboard-navigation {
   font-size: 24px;
   align-items: center;
+  background-color: white;
+  position: sticky;
+  top: 90px;
+  border-bottom: 1px solid silver;
+  z-index: 1;
+  padding: 0.5em 0;
 
   a {
     color: $orange;

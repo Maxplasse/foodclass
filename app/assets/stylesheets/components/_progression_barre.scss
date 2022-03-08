@@ -13,14 +13,30 @@
   padding: 0 5px;
   display: flex;
   height: 24px;
-  width: 300px;
+  width: 500px;
+  border: 1px solid $orange;
+  margin: 0px 5px;
+
+  p {
+    color: white;
+    font-size: 16px;
+    width: inherit;
+  }
+
+  i {
+    color: white;
+  }
+}
+
+#points {
+  margin-top: 16px;
 }
 
 .progress-value {
   animation: load 3s normal forwards;
   box-shadow: 0 10px 40px -10px #fff;
   border-radius: 100px;
-  background: #fff;
+  background: white;
   height: 16px;
   width: 0;
 }
