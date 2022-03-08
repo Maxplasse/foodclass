@@ -159,14 +159,21 @@
       </div>
   </div>
   <% if @course.end_at < Time.now  %>
-    <%= simple_form_for [@course, @post] do |f| %>
-      <%= f.input :content, label: false %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit "Partage ton post ici!"%>
-    <% end %>
+    <div class="">
+      <h3>Retrouvez les posts pour cette recette!</h3>
+    </div>
+      <div class="card-new-post">
+        <%= simple_form_for [@course, @post] do |f| %>
+          <%= f.input :content, label: false %>
+        <div class="d-flex" style="align-items: flex-start;">
+          <%= f.input :photo, as: :file, label: false %>
+          <%= f.submit "Publier", class: "button-small-post"%>
+        </div>
+        <% end %>
+      </div>
     <br>
     <% @course.posts.each do |post| %>
-      <div class="card-community">
+      <div class="card-show-post">
         <div class="d-flex" style="align-items: flex-start;">
           <%= image_tag post.participation.user.photo, class: "avatar-large mx-3" %>
           <div class="card-community-title">
@@ -180,7 +187,7 @@
           </div>
           <div>
             <%= link_to post_upvotes_path(post), method: :post do %>
-              <span class="button-small"><%= post.upvotes.count == 0 ? "" : post.upvotes.count %> <i class="far fa-thumbs-up"></i></span>
+              <span class="button-small-like"><%= post.upvotes.count == 0 ? "" : post.upvotes.count %> <i class="far fa-thumbs-up"></i></span>
             <% end %>
           </div>
         </div>
@@ -203,23 +210,23 @@
           <% end %>
         </div>
         </div>
-      </div>
-      <div class="card-community-container">
-        <% post.comments.each do |comment| %>
-          <div class="card-community-comments">
-            <div class="d-flex">
-              <%= image_tag comment.user.photo, class: "avatar-large" %>
-              <div class="post-comment-content">
-                <p><%= comment.content %></p>
-              </div>
-              <div class="button-delete">
-                <%= link_to post_comment_path(post, comment), method: :delete  do %>
-                  <%= image_tag("cancel.png") %>
-                <% end %>
+        <div class="card-community-container">
+          <% post.comments.each do |comment| %>
+            <div class="card-community-comments">
+              <div class="d-flex">
+                <%= image_tag comment.user.photo, class: "avatar-large" %>
+                <div class="post-comment-content">
+                  <p><%= comment.content %></p>
+                </div>
+                <div class="button-delete-comment">
+                  <%= link_to post_comment_path(post, comment), method: :delete  do %>
+                    <%= image_tag("cancel.png") %>
+                  <% end %>
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   <% end %>

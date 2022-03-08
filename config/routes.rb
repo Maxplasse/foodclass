@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   resources :posts, only: [:index, :create, :destroy] do
     resources :upvotes, only: :create
+    resources :emojis, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
   end
   resources :participations, only: [] do
