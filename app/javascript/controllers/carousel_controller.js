@@ -7,6 +7,7 @@ export default class extends Controller {
   static targets = [ "" ]
 
   connect() {
+    // console.log(this.element)
     $(this.element).slick({
       infinite: true,
       dots: true,

@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <li class="nav-item mx-5 navbar-link">
-          <%= link_to "Communauté", posts_path, class: "nav-link navbar-foodclass link-community"%>
+          <%= link_to "Communauté", posts_path, class: "nav-link navbar-foodclass link-community", 'data-action': "click->transition#show"%>
         </li>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
