@@ -22,8 +22,8 @@
       <div class="col-6">
         <% if @course.end_at < Time.now  %>
           <div class="carre-video">
-            <%= video_tag "FoodClass..mp4", autoplay: true %>
-            <i class="fa-regular fa-circle-play"></i>
+            <%= video_tag "foodclass.mp4", autoplay: true, controls: true, autoplay: true, autobuffer: true %>
+            <%# <i class="fa-regular fa-circle-play"></i> %>
           </div>
         <% else %>
           <%= cl_image_tag @course.photo.key %>
