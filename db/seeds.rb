@@ -172,6 +172,14 @@ users_chefs_h = [
     password: "pierre",
     nickname: "pierre_chomet",
     photo: "pierre.jpg"
+  },
+  {
+    first_name: "Amar",
+    last_name: "Berbère",
+    email: "amar@gmail.com",
+    password: "tajine",
+    nickname: "amar",
+    photo: "amar.jpg"
   }
 ]
 
@@ -188,6 +196,7 @@ morys = users_chefs[3]
 sarahm = users_chefs[4]
 alexiad = users_chefs[5]
 pierrec = users_chefs[6]
+amarb = users_chefs[7]
 
 p "2"
 
@@ -233,6 +242,12 @@ chefs_h = [
     specialty: "",
     level: "",
     user: pierrec
+  },
+  {
+    restaurant_name: "",
+    specialty: "",
+    level: "",
+    user: amarb
   }
 ]
 
@@ -251,6 +266,7 @@ mory = chefs[3]
 sarah = chefs[4]
 alexia = chefs[5]
 pierre = chefs[6]
+amar = chefs[7]
 
 p "4"
 
@@ -464,6 +480,20 @@ courses_simple_h = [
     photo_url: [
       "https://images.pexels.com/photos/6646351/pexels-photo-6646351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     ]
+  },
+  {
+    chef: amar,
+    title: "Tajine d'agneau",
+    difficulty: "Moyen",
+    duration: 50,
+    category: "",
+    total_participations: 143,
+    level_points: 10,
+    start_at: DateTime.new(2022, 2, 26, 19, 30),
+    end_at: DateTime.new(2022, 2, 26, 19, 30) + 0.83.hour,
+    photo_url: [
+      "https://assets.afcdn.com/recipe/20181017/82766_w1024h768c1cx1834cy2446.jpg"
+    ]
   }
 ]
 
@@ -524,7 +554,6 @@ part_stephen2 = part_stephen[8] # Gigot d'agneau et ses légumes de saison
 part_matthieu = matthieu.participations
 part_matt1 = part_matthieu[9] # Toast avocat, épinards et œuf
 
-
 p "8"
 
 # les posts de maxime
@@ -556,9 +585,9 @@ posts_h = [
     photo_url: "https://img-3.journaldesfemmes.fr/Dv4No5oSzA4-mYG4QYiXZRInjhs=/750x500/smart/0858995addb849bdb295719d05cf406c/recipe-jdf/10033576.jpg"
   },
   {
-    content: "Un délicieux riz coco accompagné sous les conseils de Chloé Charles. Plat délicieuuuuux! ",
-    participation: part_max2,
-    course: post_max2,
+    content: "Un délicieux riz curry coco sous les conseils de Chloé Charles. On s'est régalé ! ",
+    participation: part_marie1,
+    course: post_marie1,
     posted_at: DateTime.new(2022, 3, 1, 18, 57),
     photo_url: "https://res.cloudinary.com/hv9ssmzrz/image/fetch/c_fill,f_auto,h_488,q_auto,w_650/https://s3-eu-west-1.amazonaws.com/images-ca-1-0-1-eu/recipe_photos/original/140940/DSC_0390.JPG"
   },
@@ -585,8 +614,8 @@ posts_h = [
   },
   {
     content: "Pierre a pris son temps pour bien expliquer cette recette asseaz complexe. Un régal!",
-    participation: part_marie1,
-    course: post_marie1,
+    participation: part_max2,
+    course: post_max2,
     posted_at: DateTime.new(2021, 11, 4, 15, 23),
     photo_url: "https://static.750g.com/images/1200-630/dc55b155cecbd4a45c1f0131c1d7850c/makis-saumon-et-avocat.jpeg"
   },
