@@ -91,18 +91,20 @@
 
 .unlocked:before {
   content: "";
-  width: 59px;
-  border: 2px solid $orange;
+  width: 78px;
+  height: 4px;
+  background: $orange;
+  border: none;
   position: absolute;
-  left: -50px
+  left: -70px;
 }
 
 .locked:before {
   content: "";
-  width: 59px;
+  width: 78px;
   border: 2px dashed grey;
   position: absolute;
-  left: -50px
+  left: -70px;
 }
 
 .first-level:before {
@@ -111,12 +113,12 @@
 
 .next:before {
   content: "";
-  width: 59px;
+  width: 78px;
   height: 4px;
   background: linear-gradient(90deg, $orange, grey);
   border: none;
   position: absolute;
-  left: -50px
+  left: -70px;
 }
 // .next:before {
 //   content: "";
