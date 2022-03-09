@@ -51,6 +51,7 @@
 .post-comment-content p {
   font-size: 14px;
   padding: 0px 17px;
+  max-width: 500px;
 }
 
 .card-new-form {
@@ -64,7 +65,7 @@
 }
 
 .title-community {
-  margin: 100px 269px 27px;
+  margin: 100px 247px 27px;
   padding-top: 50px;
 }
 
@@ -77,13 +78,9 @@
   margin-bottom: 20px;
 }
 
-.container-community-color {
-  background-color: $light-pink;
-}
-
 .card-photo img {
-  width: 819px;
-  height: 600px;
+  width: 633px;
+  height: 477px;
   object-fit: cover;
   background-color: white;
   margin: 0px 38px;
