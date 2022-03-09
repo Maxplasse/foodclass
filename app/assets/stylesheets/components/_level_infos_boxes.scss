@@ -40,6 +40,8 @@
 }
 
 #next-level-points {
+  display: flex;
+  flex-direction: column;
   font-size: 3em;
   width: 140px;
   height: 140px;
@@ -122,3 +124,9 @@
 //   color: $light-pink;
 //   border: 2px dashed;
 // }
+
+.level-badge {
+  img {
+    width: 260px;
+  }
+}
