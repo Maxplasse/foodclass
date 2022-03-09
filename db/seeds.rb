@@ -625,3 +625,8 @@ posts_h.map do |post|
 end
 
 p "9"
+
+post = Post.order(posted_at: :desc).first
+Emoji.create(post: post, content: "🔥", user: maxime_p)
+Emoji.create(post: post, content: "🔥", user: fred)
+Emoji.create(post: post, content: "❤️", user: fred)
