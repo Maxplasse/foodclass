@@ -33,7 +33,7 @@
     padding: 10px 18px;
     color: #F74C25;
     margin: 0px 2px;
-    opacity: 0.8;
+    opacity: 1;
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
@@ -41,7 +41,7 @@
     &:hover {
       color: $orange;
       font-weight: 400;
-      opacity: 0.6;
+      opacity: 0.8;
     }
   }
 }
@@ -60,7 +60,7 @@
     font-size: 40px;
     font-family: $headers-font;
     position: relative;
-    left: 10px;
+    left: 42px;
     top: 0px;
   }
 
@@ -74,13 +74,13 @@
     font-size: 21px;
     padding: 10px 18px;
     margin: 0px 2px;
-    opacity: 0.8;
+    opacity: 1;
 
     &:hover {
       background-color: $orange;
       color: white;
       font-weight: 400;
-      opacity: 0.6;
+      opacity: 0.8;
     }
   }
 

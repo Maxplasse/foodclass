@@ -163,5 +163,9 @@
 }
 
 .button-comment-dropdown {
-  margin-left: 275px;
+  // margin-left: 275px;
+  // justify-content: flex-end;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
 }
