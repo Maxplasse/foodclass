@@ -7,7 +7,10 @@ export default class extends Controller {
     console.log("Hello emojis");
   }
 
-  selectEmoji() {
-    console.log(this.emojiTarget);
+  selectEmoji(event) {
+    const selected_emoji = event.currentTarget.textContent
+    console.log(selected_emoji);
+    const emoji = [selected_emoji.selectedIndex].textContent;
+    console.log(emoji);
   }
 }
