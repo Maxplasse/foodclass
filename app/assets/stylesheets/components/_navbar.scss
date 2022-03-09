@@ -24,7 +24,7 @@
 
   .navbar-brand {
     background-color: white;
-    font-weight: 1000;
+    font-weight: 900;
     border: none;
     margin-top: 5px;
     border-radius: 4px;
@@ -40,7 +40,7 @@
 
     &:hover {
       color: $orange;
-      font-weight: 1000;
+      font-weight: 900;
       opacity: 0.8;
     }
   }
@@ -66,7 +66,7 @@
 
   .navbar-brand {
     background-color: $orange;
-    font-weight: 1000;
+    font-weight: 900;
     color: white;
     margin-top: 5px;
     border-radius: 4px;
@@ -79,7 +79,7 @@
     &:hover {
       background-color: $orange;
       color: white;
-      font-weight: 1000;
+      font-weight: 900;
       opacity: 0.8;
     }
   }
