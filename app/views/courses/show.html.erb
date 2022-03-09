@@ -22,7 +22,7 @@
       <div class="col-6">
         <% if @course.end_at < Time.now  %>
           <div class="carre-video">
-            <%= video_tag "foodclass.mp4", autoplay: true, controls: true, autoplay: true, autobuffer: true %>
+            <%= video_tag "foodclass.mp4", controls: true %>
             <%# <i class="fa-regular fa-circle-play"></i> %>
           </div>
         <% else %>
