@@ -33,16 +33,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
 
-  <body data-controller="transition" data-transition-page-value="<%= controller_name %>_<%= action_name %>">
-    <div class="transition transition-1 <%= "is-active" if controller_name == "posts" && action_name == "index" %>"
-      data-transition-target="panel">
-      <div class="carrot-fall" data-transition-target="carrot">
-        <i class="fal fa-carrot"></i>
-      </div>
-      <div class="title-transition">
-        <%= image_tag("logo-fc.jpg") %>
-      </div>
-    </div>
+  <body>
     <%= render 'shared/navbar' %>
     <%= yield %>
     <p class="notice"><%= notice %></p>
