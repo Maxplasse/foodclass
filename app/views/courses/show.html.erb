@@ -1,6 +1,6 @@
-<% content_for :meta_title, "#{@course.name} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, @course.description %>
-<% content_for :meta_image, cl_image_path(@course.photo.path) %>
+<% content_for :meta_title, "#{@course.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @course.category %>
+<% content_for :meta_image, cl_image_path(@course.photo.key) %>
 
 <div class="container show-container">
   <div class="card-show">
