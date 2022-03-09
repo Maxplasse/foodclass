@@ -1,0 +1,30 @@
+.transition-1 {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  bottom: 0;
+  z-index: 101;
+  background-color: $orange;
+  transition: 0.5s ease-out;
+}
+
+.transition-1 {
+  &.is-active {
+    left: 0;
+  }
+}
+
+.title-transition img {
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 50vh;
+  left: 100vh;
+  color: white;
+}
+
+.carrot-fall-from-top {
+  transform: translateY(400px);
+  z-index: 101;
+}
