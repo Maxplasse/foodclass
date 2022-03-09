@@ -5,4 +5,8 @@ class Post < ApplicationRecord
   has_many :upvotes, dependent: :destroy
   has_many :emojis, dependent: :destroy
   has_one_attached :photo
+
+  def emojis_counters
+    emojis.group(:content).count
+  end
 end

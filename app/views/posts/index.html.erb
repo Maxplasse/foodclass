@@ -51,6 +51,19 @@
               <%= cl_image_tag(post.photo.key) %>
             <% end %>
           </div>
+            <div class="emojis-dropdown d-flex">
+              <% post.emojis_counters.each do |emoji, counter| %>
+                <span class="mr-1">
+                  <span><%= emoji %></span>
+                  <span><%= counter %></span>
+                </span>
+              <% end %>
+              <div  data-controller="emojis" data-action="click->emojis#selectEmoji">
+                <%= simple_form_for post_emojis_path(post) do |f| %>
+                    <%= f.input :emoji, collection: Emoji::EMOJIS, label: false %>
+                <% end %>
+              </div>
+            </div>
           <div class="card-community-margin" style="align-items: flex-start; justify-content: space-between;">
             <div class="card-comments">
               <div class="button-comments">
@@ -59,13 +72,7 @@
                     <%= pluralize(post.comments.count,"commentaire", "commentaires") %>
                   </a>
                 </p>
-                <div>
               </div>
-            </div>
-            <div class="emojis-dropdown">
-              <%= simple_form_for post_emojis_path(post) do |f| %>
-                  <%= f.input :emoji, collection: Emoji::EMOJIS, label: false %>
-                <% end %>
             </div>
           </div>
             <div class="collapse" id="collapseComments">
