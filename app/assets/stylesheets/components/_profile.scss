@@ -1,7 +1,7 @@
 .body-background {
   background-color: $light-pink;
   padding-bottom: 2em;
-  margin-top: 100px;
+  padding-top: 72px;
 }
 
 .show-grid {
@@ -107,4 +107,8 @@
 
 .box-info-title {
   text-align: center;
+}
+
+#new_invitation {
+  width: 100%;
 }
