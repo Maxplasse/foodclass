@@ -119,11 +119,32 @@
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="button" data-bs-dismiss="modal">Confirmer</button>
+                    <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#confirmationBookingModal">Confirmer</button>
                   </div>
                 </div>
               </div>
             </div>
+
+            <div class="modal fade" id="confirmationBookingModal" aria-hidden="true" aria-labelledby="bookingModalToggleLabel2" tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalToggleLabel2">Réservation confirmée !</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Votre réservation a bien été prise en compte. Merci !
+                    <br>
+                    Vous allez recevoir un email avec le récapitulatif du cours et un lien pour vous connecter à la diffusion.
+                  </div>
+                  <div class="modal-footer">
+                    <button class="button" data-bs-target="#bookingModalToggle" data-bs-dismiss="modal">Fermer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
 
             <!-- Modal Epicery-->
             <div class="modal fade" id="epiceryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
