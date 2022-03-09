@@ -11,10 +11,10 @@
           </a>
         </p>
         <div class="collapse container-form" id="collapseForm">
-          <span><%= f.input :content, class: "form-white", label: false, placeholder: "Partage ton post ici!" %></span>
+          <span><%= f.input :content, class: "form-white", label: false, placeholder: "Partage ton post ici !" %></span>
           <div class="d-flex" style="align-items: flex-start;">
             <div class="card-new-form">
-              <%= f.association :course, label: false, collection: @courses, prompt: "Pour quel cours souhaites-tu ajouter un post?" %>
+              <%= f.association :course, label: false, collection: @courses, prompt: "Pour quel cours souhaites-tu ajouter un post ?" %>
             </div>
             <div class="card-new-form" >
               <%= f.input :photo, label: false, as: :file %>
