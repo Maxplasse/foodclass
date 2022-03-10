@@ -1,5 +1,3 @@
-
-
 .carousel-home-page-custom {
   margin-top: 100px;
   h3 {
@@ -32,3 +30,19 @@ img {
         line-height: 20px;
 
     }
+
+.my-badges .carousel-home-page-custom {
+  margin-top: 0px;
+}
+
+.img-badges .slick-prev:before {
+  display: none;
+}
+
+.img-badges .slick-next:before {
+  display: none;
+}
+
+.img-badges .slick-dots {
+  bottom: -36px;
+}
