@@ -1,0 +1,15 @@
+<div class="d-flex" data-controller="emojis">
+  <div>
+    <% post.emojis_counters.each do |emoji, counter| %>
+      <span class="mr-1">
+        <span><%= emoji %></span>
+        <span><%= counter %></span>
+      </span>
+    <% end %>
+  </div>
+  <div>
+    <%= simple_form_for [post, Emoji.new], html: {'data-emojis-target': "form"} do |f| %>
+      <%= f.input :content, collection: Emoji::EMOJIS, label: false, input_html: {'data-action': "change->emojis#submit"}, prompt: "" %>
+    <% end %>
+  </div>
+</div>

@@ -16,6 +16,7 @@ import "controllers"
 import "bootstrap"
 
 
+
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 initSweetalert('#sweet-alert-demo', {
@@ -23,3 +24,8 @@ initSweetalert('#sweet-alert-demo', {
   text: "Merci d'avoir parrainé un proche !",
   icon: "success"
 });
+
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();
+
