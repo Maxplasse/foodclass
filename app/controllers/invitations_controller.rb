@@ -5,9 +5,10 @@ class InvitationsController < ApplicationController
     authorize @invitation
 
     if @invitation.save
+      sleep(1)
       redirect_to my_profile_path
     else
-      render :my_profile
+      redirect_to my_profile_path
     end
   end
 

@@ -14,3 +14,12 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+
+
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert-demo', {
+  title: "Envoyé !",
+  text: "Merci d'avoir parrainé un proche !",
+  icon: "success"
+});
