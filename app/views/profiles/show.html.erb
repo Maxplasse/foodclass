@@ -24,16 +24,15 @@
             <div class="infos-boxes">
               <div>
                 <div class="box-info-title">
-                  <p>COURS</p>
                 </div>
                 <div class="info-box">
                   <p id="count-participations"><%= current_user.participations.count %></p>
+                  <p>Cours</p>
                 </div>
               </div>
 
               <div>
                 <div class="box-info-title">
-                  <p>NIVEAU</p>
                 </div>
                 <div id="current-level">
                   <%= image_tag "toque.png" %>
@@ -43,7 +42,6 @@
 
               <div>
                 <div class="box-info-title">
-                  <p>POINTS</p>
                 </div>
                 <div id="next-level-points">
                   <p ><%= current_user.number_of_points %></p>
@@ -108,7 +106,7 @@
 
     </div>
     <div class="invitation">
-      <h4>Parrainez vos proches ! </h4>
+      <h4>Parraine tes proches ! </h4>
       <%= simple_form_for @invitation, html: { class: "form-inline" } do |f| %>
         <%= f.input :email, label: false, placeholder: 'Saisissez une adresse email' %>
         <%= button_tag type: 'submit', class: "submit-button" do %>
