@@ -38,13 +38,13 @@
     top: 92%;
     left: calc(50% - 15px);
     color: white;
-    font-size: 2rem;
-    animation: carrot-fall 3s linear;
+    font-size: 3rem;
+    animation: carrot-fall-1 2s linear;
     transform: rotate(36deg);
   }
 }
 
-@keyframes carrot-fall {
+@keyframes carrot-fall-1 {
   0% {
     display: none;
     top: -50px;
@@ -90,6 +90,6 @@
   }
   100% {
     transform: rotate(756deg);
-    top: 92%;
+    top: 94%;
   }
 }
