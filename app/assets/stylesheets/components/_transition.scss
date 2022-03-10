@@ -16,11 +16,8 @@
 }
 
 .logo-transition img {
-  text-align: center;
-  top: 0;
-  left: 0;
-  display: grid;
-  place-content: center;
+  display: block;
+  margin: 0 auto;
   height: 120px;
   width: 250px;
 }
