@@ -84,35 +84,54 @@
         </div>
       </div>
 
-      <div class="my-badges">
-        <div class="badges">
-          <h4>Mes badges</h4>
-          <div class="img-badges">
-            <%= image_tag "Apprenti.svg", alt: "Apprenti", title: "Apprenti"%>
-            <%= image_tag "Toast.svg", alt: "Toasts brunch", title: "Toasts brunch" %>
-            <%= image_tag "Commis.svg", alt: "Commis", title: "Commis"  %>
-            <%= image_tag "Healthy_food.svg", alt: "Repas sains", title: "Repas sains"%>
-            <%= image_tag "Chicken.svg", alt: "Découpe du poulet", title: "Découpe du poulet" %>
-            <%= image_tag "Souschef.svg", alt: "Sous-chef", title: "Sous-chef"%>
-            <%= image_tag "Sushis.svg", alt: "Maître Sushis", title: "Maître Sushis"%>
-            <%= image_tag "Meal.svg", alt: "Cuisine complète", title: "Riz gluant"%>
-            <%= image_tag "Ramen.svg", alt: "Prod des Ramen", title: "Prod des Ramen"%>
-            <%= image_tag "Salad.svg", alt: "Maître Salade", title: "Maître Salade" %>
-            <%= image_tag "Chef.svg", alt: "Cuisinier du dimanche", title: "Cuisinier du dimanche"%>
-          </div>
-        </div>
 
+      <div>
+        <div class="invitation">
+            <h4>Parraine tes proches ! </h4>
+            <p>FoodClass., c'est avant tout une communauté. Invite tes proches à nous rejoindre et gagne des <i class="fas fa-carrot"></i> !</p>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="submit-button" data-bs-toggle="modal" data-bs-target="#parrainage">
+                Parrainer
+              </button>
+            </div>
+            <%# Modal parrainage %>
+            <div class="modal" id="parrainage" tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Parrainer un proche</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <%= simple_form_for @invitation, html: { class: "form-inline" } do |f| %>
+                      <%= f.input :email, label: false, placeholder: 'Saisissez une adresse email' %>
+                      <button id="sweet-alert-demo" class="submit-button" disabled>Parrainer</i></button>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+        <div class="my-badges">
+          <div class="badges">
+            <h4>Mes badges</h4>
+            <div class="img-badges">
+              <%= image_tag "Apprenti.svg" %>
+              <%= image_tag "Toast.svg" %>
+              <%= image_tag "Commis.svg" %>
+              <%= image_tag "Healthy_food.svg" %>
+              <%= image_tag "Chicken.svg" %>
+              <%= image_tag "Souschef.svg" %>
+              <%= image_tag "Sushis.svg" %>
+              <%= image_tag "Meal.svg" %>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </div>
-    <div class="invitation">
-      <h4>Parraine tes proches ! </h4>
-      <%= simple_form_for @invitation, html: { class: "form-inline" } do |f| %>
-        <%= f.input :email, label: false, placeholder: 'Saisissez une adresse email' %>
-        <%= button_tag type: 'submit', class: "submit-button" do %>
-          <i class="fa fa-paper-plane" aria-hidden="true"></i>
-        <% end %>
-      <% end %>
-    </div>
+
   </div>
 </div>

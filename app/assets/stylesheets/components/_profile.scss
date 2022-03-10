@@ -50,7 +50,7 @@
 // Mes compétences
 .my-badges {
   background-color: white;
-  padding: 10px 20px;
+  padding: 10px 20px 54px;
 }
 
 .badges img {
@@ -68,13 +68,16 @@
 
 .invitation {
   background-color: white;
-  padding: 17px 20px 4px 20px;
-  margin: 24px 0px;
-  display: flex;
+  padding: 17px 20px 20px 20px;
+  margin: 0 0 24px 0;
 
   h4 {
     margin-bottom: 16px;
     width: 290px;
+  }
+
+  i {
+    color: $orange;
   }
 
 }
@@ -86,6 +89,7 @@
 
 .invitation_email {
   flex-grow: 1;
+  margin-right: 6px;
 }
 
 .submit-button {
@@ -94,15 +98,12 @@
   color: white;
   padding: 14px 44px;
   border-radius: 4px;
-  text-align: center;
-  display: flex;
-  // font-size: 16px;
-  margin-left: 10px;
   opacity: 1;
   transition: 0.3s;
-  text-decoration: none;
   height: 40px;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
 }
 
 .box-info-title {
