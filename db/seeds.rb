@@ -175,7 +175,7 @@ users_chefs_h = [
   },
   {
     first_name: "Amar",
-    last_name: "Berbère",
+    last_name: "Malki",
     email: "amar@gmail.com",
     password: "tajine",
     nickname: "amar",
@@ -196,7 +196,7 @@ morys = users_chefs[3]
 sarahm = users_chefs[4]
 alexiad = users_chefs[5]
 pierrec = users_chefs[6]
-amarb = users_chefs[7]
+amarm = users_chefs[7]
 
 p "2"
 
@@ -247,7 +247,7 @@ chefs_h = [
     restaurant_name: "",
     specialty: "",
     level: "",
-    user: amarb
+    user: amarm
   }
 ]
 
@@ -489,8 +489,8 @@ courses_simple_h = [
     category: "",
     total_participations: 143,
     level_points: 10,
-    start_at: DateTime.new(2022, 2, 26, 19, 30),
-    end_at: DateTime.new(2022, 2, 26, 19, 30) + 0.83.hour,
+    start_at: DateTime.new(2022, 2, 24, 19, 30),
+    end_at: DateTime.new(2022, 2, 24, 19, 30) + 0.83.hour,
     photo_url: [
       "https://assets.afcdn.com/recipe/20181017/82766_w1024h768c1cx1834cy2446.jpg"
     ]
@@ -522,6 +522,7 @@ posted_course = courses.each do |course|
   Participation.create!(course: course, user: stephen, favorite: false)
   Participation.create!(course: course, user: matthieu, favorite: false)
   Participation.create!(course: course, user: marie, favorite: false)
+  Participation.create!(course: course, user: louise, favorite: false)
 end
 
 p "6"
@@ -553,12 +554,17 @@ part_stephen2 = part_stephen[8] # Gigot d'agneau et ses légumes de saison
 # Matthieu participation to create new posts
 part_matthieu = matthieu.participations
 part_matt1 = part_matthieu[9] # Toast avocat, épinards et œuf
+part_matt2 = part_matthieu[10]
+
+# Louise participation to create new posts
+part_louise = louise.participations
+part_louise1 = part_louise[11]
 
 p "8"
 
 # les posts de maxime
 post_max1 = posted_course[0]
-post_max2 = posted_course[2]
+post_max2 = posted_course[6]
 post_max3 = posted_course[3]
 
 # les posts de fred
@@ -566,15 +572,18 @@ post_fred1 = posted_course[4]
 post_fred2 = posted_course[5]
 
 # les posts de marie
-post_marie1 = posted_course[6]
+post_marie1 = posted_course[2]
 
 # les posts de stephen
 post_stephen1 = posted_course[7]
 post_stephen2 = posted_course[8]
 
 # les posts de matthieu
-post_matthieu = posted_course[9]
+post_matthieu1 = posted_course[9]
+post_matthieu2 = posted_course[15]
 
+# les posts de louise
+post_louise1 = posted_course[15]
 
 posts_h = [
   {
@@ -636,10 +645,25 @@ posts_h = [
   {
     content: "Recette simple et efficace",
     participation: part_matt1,
-    course: post_matthieu,
+    course: post_matthieu1,
     posted_at: DateTime.new(2022, 2, 18, 15, 55),
     photo_url: "https://cuisine-addict.com/wp-content/uploads/2015/06/avocado-toast.jpg"
+  },
+  {
+    content: "Un vrai voyage au Maroc !",
+    participation: part_louise1,
+    course: post_louise1,
+    posted_at: DateTime.new(2022, 2, 24, 23, 55),
+    photo_url: "https://www.la-cuisine-marocaine.com/photos-recettes/01-tajine-d-agneau-aux-pruneaux-et-amandes.jpg"
+  },
+  {
+    content: "Un régal, merci beaucoup Amar pour ce cours !",
+    participation: part_matt2,
+    course: post_matthieu2,
+    posted_at: DateTime.new(2022, 2, 25, 11, 34),
+    photo_url: "https://cuisine.nessma.tv/uploads/6/2020-06/427e390cfd1beebf9993c7363d810029.jpg"
   }
+
 ]
 
 posts_h.map do |post|

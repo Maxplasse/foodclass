@@ -45,6 +45,7 @@
               <p>Temps de réalisation : <%= @course.duration %> minutes</p>
               <%# <p>Matériel nécessaire :</p> %>
               <p>Difficulté : <%= @course.difficulty %></p>
+              <p>Nombre de <i class="fas fa-carrot"></i> : <%= @course.level_points %></p>
               <p>Nombre de participants : <%= @course.total_participations %></p>
             </div>
             <div class="main-checkbox <%="past_courses" if @course.end_at < Time.now %>">
@@ -203,17 +204,17 @@
 
   <% if @course.end_at < Time.now  %>
     <div class="show-posts">
-      <h3>Retrouvez les posts pour cette recette!</h3>
+      <h3>Posts de la communauté pour ce cours </h3>
       <div>
         <div class="form-collapse" data-controller="insert-posts" data-action="submit->insert-posts#posted">
           <%= simple_form_for [@course, @post] do |f| %>
             <p>
               <a data-bs-toggle="collapse" href="#collapseForm" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <%= f.submit "Publier", class: "button-small-post"%>
+                <%= f.submit "Partager un post !", class: "button-small-post"%>
               </a>
             </p>
             <div class="collapse container-form" id="collapseForm">
-              <span><%= f.input :content, class: "form-white", label: false, placeholder: "Partage ton post ici !" %></span>
+              <span><%= f.input :content, class: "form-white", label: false, placeholder: "Partager un post ici" %></span>
               <div class="d-flex" style="align-items: flex-start;">
                 <div class="card-new-form">
                 </div>
