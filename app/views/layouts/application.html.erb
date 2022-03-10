@@ -33,14 +33,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
 
+
   <body data-controller="transition" data-transition-page-value="<%= controller_name %>_<%= action_name %>" data-turbolinks="false">
     <div class="transition transition-1 <%= "is-active" if controller_name == "posts" && action_name == "index" %>"
       data-transition-target="panel" data-turbolinks="false">
-      <%# <div class="carrot-fall" data-transition-target="carrot">
-        <i class="fal fa-carrot"></i>
-      </div> %>
-      <div class="logo-transition">
-        <%= image_tag("logo-fc.png") %>
+      <div class="parent-logo">
+        <i class="fas fa-carrot"></i>
+        <div class="logo-transition">
+          <%= image_tag("logo-fc.png") %>
+        </div>
       </div>
     </div>
 
