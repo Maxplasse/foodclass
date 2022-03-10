@@ -47,10 +47,10 @@
   padding-top: 42px;
 }
 
-// Mes compétences
+// Mes badges
 .my-badges {
   background-color: white;
-  padding: 10px 20px 54px;
+  padding: 17px 20px 54px;
 }
 
 .badges img {
@@ -61,7 +61,13 @@
 
 .img-badges {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+
+  p {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 14px;
+  }
 }
 
 // Parrainage
