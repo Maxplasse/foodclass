@@ -35,12 +35,12 @@
 
   i {
     position: absolute;
-    top: 92%;
+    top: 90.5%;
     left: calc(50% - 15px);
     color: white;
     font-size: 3rem;
     animation: carrot-fall-1 2s linear;
-    transform: rotate(36deg);
+    transform: rotate(33deg);
   }
 }
 
@@ -89,7 +89,7 @@
     // transform: rotate(410deg);
   }
   100% {
-    transform: rotate(756deg);
-    top: 94%;
+    transform: rotate(753deg);
+    top: 90.5%;
   }
 }
