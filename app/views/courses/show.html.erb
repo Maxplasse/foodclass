@@ -159,9 +159,23 @@
                       <label for="start">Me faire livrer le :</label>
                       <input type="date" id="start" name="start">
                     </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#confirmationModal">Commander</button>
+                    <%# <div> %>
+                      <%# <label for="flatpicker"><i class="fa-solid fa-calendar"></i></label> %>
+                      <%# <input class="datepicker" id="flatpicker" dateFormat="d-m-Y H:i"> %>
+
+                      <%#= simple_form_for :search, method: "get" do |f| %>
+                        <%#= f.input :"Me livrer le", as: :string, required: true, input_html: {
+                          class: "datepicker",
+                          minDate: "today",
+                          enableTime: true,
+                          dateFormat: "d-m-Y H:i",
+                          } %>
+                          <%#= f.button :submit, "Go", class: "btn btn-primary" %>
+                      <%# end %>
+                    <%# </div> %>
+                    <div class="modal-footer">
+                        <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#confirmationModal">Commander</button>
+                    </div>
                   </div>
                 </div>
               </div>
