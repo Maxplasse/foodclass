@@ -277,7 +277,7 @@
                 </span>
               <% end %>
             </div>
-            <div>
+            <div class="emojis-dropdown">
               <%= simple_form_for [post, Emoji.new], html: {'data-emojis-target': "form"} do |f| %>
                 <%= f.input :content, collection: Emoji::EMOJIS, label: false, input_html: {'data-action': "change->emojis#submit"}, prompt: "" %>
               <% end %>
