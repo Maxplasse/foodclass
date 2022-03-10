@@ -3,7 +3,7 @@
     <h3>Bienvenue sur la commauté FoodClass.</h3>
     <p>
       <a class="button-small" data-bs-toggle="collapse" href="#collapseForm" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Publie ton post !
+        Partager un post !
       </a>
     </p>
   </div>
@@ -12,7 +12,7 @@
       <%= simple_form_for @post do |f| %>
         <div class="collapse" id="collapseForm">
           <span>
-            <%= f.input :content, class: "form-white", label: false, placeholder: "Partage ton post ici !" %>
+            <%= f.input :content, class: "form-white", label: false, placeholder: "Partager un post ici" %>
           </span>
           <div class="d-flex" style="align-items: flex-start;">
             <div class="card-new-form">
@@ -40,7 +40,7 @@
                 <%= post.course.chef.user.first_name %>
                 <%= post.course.chef.user.last_name %>
               </p>
-              <p>posté il y a <%= post.created_at.strftime("%A, %d %b %Y %l:%M %p") %></p>
+              <p><strong> posté <%= l(post.created_at, format: "%A %d %B %Y à %Hh%M") %></strong></p>
             </div>
           </div>
           <div class="card-community-description">
@@ -57,21 +57,7 @@
           <div class="">
             <div class="card-comments">
               <div class="emojis-dropdown d-flex mt-2" style="justify-content: space-between">
-                  <div>
-                    <% post.emojis_counters.each do |emoji, counter| %>
-                      <span class="mr-1">
-                        <span><%= emoji %></span>
-                        <span><%= counter %></span>
-                      </span>
-                    <% end %>
-                  </div>
-                  <div >
-                    <%= simple_form_for post_emojis_path(post) do |f| %>
-                       <span data-controller="emojis" data-action="click->emojis#selectEmoji" data-emojis-target="emoji">
-                        <%= f.input :emoji, collection: Emoji::EMOJIS, label: false%>
-                       </span>
-                    <% end %>
-                  </div>
+                <%= render 'shared/emojis', post: post %>
                 <div>
                   <p>
                     <a class="text-comments" data-bs-toggle="collapse" href="#collapseComments" role="button" aria-expanded="false" aria-controls="collapseExample">

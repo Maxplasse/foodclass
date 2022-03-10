@@ -1,16 +1,25 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "emoji" ]
+  static targets = [ "form" ]
 
-  connect() {
-    console.log("Hello emojis");
-  }
+  submit(event) {
+    event.preventDefault()
 
-  selectEmoji(event) {
-    const selected_emoji = event.currentTarget.textContent
-    console.log(selected_emoji);
-    const emoji = [selected_emoji.selectedIndex].textContent;
-    console.log(emoji);
+    // pour récupérer l'url du formulaire
+    const url = this.formTarget.action
+
+    // méthode pour ajaxifier
+    console.log(url)
+    fetch(url, {
+      method: "POST",
+      headers: { "Accept": "text/plain" },
+      body: new FormData(this.formTarget)
+    })
+    .then(response => response.text())
+    .then((data) => {
+      console.log(data)
+      this.element.outerHTML = data
+    })
   }
 }
