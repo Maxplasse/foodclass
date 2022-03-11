@@ -6,7 +6,7 @@
   <div class="card-show">
     <div class="card-show-title">
       <h3><%= @course.title %></h3>
-      <% if @course.end_at > Time.now  %>
+      <% if @course.end_at > Time.now && !@course.in?(current_user.courses_as_participant) %>
         <div class="booking-btn">
           <button class="button" data-bs-toggle="modal" data-bs-target="#bookingModal">Réserver ce cours</button>
         </div>

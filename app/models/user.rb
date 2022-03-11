@@ -26,7 +26,7 @@ class User < ApplicationRecord
       max_points: 49,
       name: "Apprenti",
       icon_level_unlocked: "Apprenti-unlocked.png",
-      icon_level_locked: "n1-locked.png",
+      icon_level_locked: "Apprenti-locked.png",
       badge: "Apprenti.svg"
     },
     {
@@ -34,7 +34,7 @@ class User < ApplicationRecord
       max_points: 124,
       name: "Commis",
       icon_level_unlocked: "Commis-unlocked.png",
-      icon_level_locked: "n2-locked.png",
+      icon_level_locked: "Commis-locked.png",
       badge: "Commis.svg"
     },
     {

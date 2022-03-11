@@ -6,7 +6,7 @@ class ParticipationPolicy < ApplicationPolicy
     # end
   end
   def create?
-    true
+    !record.course.in? user.courses_as_participant
   end
 
   def past_participations?
