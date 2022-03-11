@@ -53,6 +53,36 @@
               <div class="card-show-infos">
                 <p>Pour 2 personnes :</p>
               </div>
+
+              <div class="detail-checkbox">
+                <div class="bobox">
+                  <input type="checkbox" id="Homard" name="Homard">
+                  <label for="Homard"><strong>1 </strong>homard</label>
+                </div>
+                <div class="bobox">
+                  <input type="checkbox" id="Beurre" name="Beurre">
+                  <label for="Beurre"><strong>50g </strong>beurre</label>
+                </div>
+                <div class="bobox">
+                  <input type="checkbox" id="echalotes" name="echalotes">
+                  <label for="echalotes"><strong>3 </strong>échalotes</label>
+                </div>
+                <div class="bobox">
+                  <input type="checkbox" id="Vin" name="Vin">
+                  <label for="Vin"><strong>10cl </strong>vin blanc</label>
+                </div>
+                <div class="bobox">
+                  <input type="checkbox" id="thym" name="thym">
+                  <label for="thym"><strong>2 </strong>branches de thym</label>
+                </div>
+                <div class="bobox">
+                  <input type="checkbox" id="creme" name="creme">
+                  <label for="creme"><strong>20cl </strong>crème fraiche liquide entière</label>
+                </div>
+                <div class="bobox">
+                  <input type="checkbox" id="aneth" name="aneth">
+                  <label for="aneth"><strong>2 cuil. à soupe </strong>Feuilles d'aneth</label>
+
               <!-- Début de personnalisation des ingrédients pour la démo (Tajine vs Homard) -->
               <% if @course == Course.find_by(title: "Tajine d'agneau") %>
                 <div class="detail-checkbox">
@@ -88,6 +118,7 @@
                     <input type="checkbox" id="Cannelle" name="Cannelle">
                     <label for="Cannelle"><strong>1/2 c.à.s </strong>cannelle</label>
                   </div>
+
                 </div>
               <% else %>
               <!-- Fin de Personnalisation des ingrédients pour la démo (Tajine vs Homard) -->
