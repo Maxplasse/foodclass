@@ -53,40 +53,81 @@
               <div class="card-show-infos">
                 <p>Pour 2 personnes :</p>
               </div>
-              <div class="detail-checkbox">
-                <div class="bobox">
-                  <input type="checkbox" id="Homard" name="Homard">
-                  <label for="Homard"><strong>1 </strong>homard</label>
+              <!-- Début de personnalisation des ingrédients pour la démo (Tajine vs Homard) -->
+              <% if @course == Course.find_by(title: "Tajine d'agneau") %>
+                <div class="detail-checkbox">
+                  <div class="bobox">
+                    <input type="checkbox" id="Pruneau" name="Pruneau">
+                    <label for="Pruneau"><strong>500g </strong>pruneau</label>
+                  </div>
+                  <div class="bobox">
+                    <input type="checkbox" id="Agneau" name="Agneau">
+                    <label for="Agneau"><strong>1,5kg </strong>épaule d'agneau</label>
+                  </div>
+                  <div class="bobox">
+                    <input type="checkbox" id="Oignon" name="Oignon">
+                    <label for="Oignon"><strong>500g </strong>d'oignon</label>
+                  </div>
+                  <div class="bobox">
+                    <input type="checkbox" id="Huile" name="Huile">
+                    <label for="Huile"><strong>30cl </strong>huile d'olive</label>
+                  </div>
+                  <div class="bobox">
+                    <input type="checkbox" id="Coriandre" name="Coriandre">
+                    <label for="Coriandre"><strong>5 </strong>branches de coriandre</label>
+                  </div>
+                  <div class="bobox">
+                    <input type="checkbox" id="Miel" name="Miel">
+                    <label for="Miel"><strong>3 c.à.s </strong>miel</label>
+                  </div>
+                  <div class="bobox">
+                    <input type="checkbox" id="Ail" name="Ail">
+                    <label for="Ail"><strong>2 gousses </strong>d'ail</label>
+                  </div>
+                  <div class="bobox">
+                    <input type="checkbox" id="Cannelle" name="Cannelle">
+                    <label for="Cannelle"><strong>1/2 c.à.s </strong>cannelle</label>
+                  </div>
                 </div>
-                <div class="bobox">
-                  <input type="checkbox" id="Beurre" name="Beurre">
-                  <label for="Beurre"><strong>50g </strong>beurre</label>
+              <% else %>
+              <!-- Fin de Personnalisation des ingrédients pour la démo (Tajine vs Homard) -->
+                <div class="detail-checkbox">
+                  <div class="bobox">
+                    <input type="checkbox" id="Homard" name="Homard">
+                    <label for="Homard"><strong>1 </strong>homard</label>
+                  </div>
+                  <div class="bobox">
+                    <input type="checkbox" id="Beurre" name="Beurre">
+                    <label for="Beurre"><strong>50g </strong>beurre</label>
+                  </div>
+                  <div class="bobox">
+                    <input type="checkbox" id="echalotes" name="echalotes">
+                    <label for="echalotes"><strong>3 </strong>échalotes</label>
+                  </div>
+                  <div class="bobox">
+                    <input type="checkbox" id="Vin" name="Vin">
+                    <label for="Vin"><strong>10cl </strong>vin</label>
+                  </div>
+                  <div class="bobox">
+                    <input type="checkbox" id="thym" name="thym">
+                    <label for="thym"><strong>2 </strong>branches de thym</label>
+                  </div>
+                  <div class="bobox">
+                    <input type="checkbox" id="creme" name="creme">
+                    <label for="creme"><strong>20cl </strong>crème fraiche liquide entière</label>
+                  </div>
+                  <div class="bobox">
+                    <input type="checkbox" id="aneth" name="aneth">
+                    <label for="aneth"><strong>2 cuil. à soupe </strong>Feuilles d'aneth</label>
+                  </div>
+                  <div class="bobox">
+                    <input type="checkbox" id="cib" name="cib">
+                    <label for="cib">Ciboulette fraiche</label>
+                  </div>
                 </div>
-                <div class="bobox">
-                  <input type="checkbox" id="echalotes" name="echalotes">
-                  <label for="echalotes"><strong>3 </strong>échalotes</label>
-                </div>
-                <div class="bobox">
-                  <input type="checkbox" id="Vin" name="Vin">
-                  <label for="Vin"><strong>10cl </strong>vin</label>
-                </div>
-                <div class="bobox">
-                  <input type="checkbox" id="thym" name="thym">
-                  <label for="thym"><strong>2 </strong>branches de thym</label>
-                </div>
-                <div class="bobox">
-                  <input type="checkbox" id="creme" name="creme">
-                  <label for="creme"><strong>20cl </strong>crème fraiche liquide entière</label>
-                </div>
-                <div class="bobox">
-                  <input type="checkbox" id="aneth" name="aneth">
-                  <label for="aneth"><strong>2 cuil. à soupe </strong>Feuilles d'aneth</label>
-                </div>
-                <div class="bobox">
-                  <input type="checkbox" id="cib" name="cib">
-                  <label for="cib">Ciboulette fraiche</label>
-                </div>
-              </div>
+                <!-- Fermeture if else à supprimer après démo -->
+              <% end %>
+                <!-- Fermeture if else à supprimer après démo -->
             </div>
           </div>
           <div id="img-chef">
