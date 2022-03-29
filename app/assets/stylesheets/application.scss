@@ -4,12 +4,12 @@
 @import "config/bootstrap_variables";
 
 // External libraries
-@import "bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "slick-carousel/slick/slick";
 @import "slick-carousel/slick/slick-theme";
-@import "flatpickr/dist/flatpickr";
+// @import "flatpickr/dist/flatpickr";
 
 // Your CSS partials
 @import "components/index";

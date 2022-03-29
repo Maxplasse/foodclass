@@ -1,7 +1,5 @@
 .card-community {
   box-shadow: 0px 0px 5px rgba(0,0,0, 0.1);
-  margin: 26px 171px 5px;
-  padding: 28px;
   border-radius: 4px;
   font-family: $body-font;
   font-size: 17px;
@@ -9,10 +7,6 @@
   background-color: white;
 }
 
-.card-community-title p {
-  margin-bottom: 0px;
-  font-weight: bold;
-}
 
 .card-community-title a {
   text-decoration: none;
@@ -27,16 +21,6 @@
   border-radius: 4px;
   position: relative;
   background-color: #FCE0DC30;
-}
-
-.card-community-description {
-  margin-left: 15px;
-  color: $navy;
-  font-size: 15px;
-  p {
-    margin: 15px 38px 0px;
-    font-size: 17px;
-  }
 }
 
 .card-community-margin {
@@ -100,35 +84,232 @@
   }
 }
 
+@media(min-width: 1200px) {
+  .card-photo img {
+    width: 665px;
+    height: 498px;
+  }
+}
 
+@media(min-width: 992px) {
+  .card-community {
+    margin: 26px 155px 5px;
+    padding: 28px;
+  }
+  .card-photo img {
+    width: 665px;
+    height: 498px;
+  }
+  .title-community {
+    margin: 100px 155px 27px;
+    padding-top: 50px;
+  }
+  .card-community-title p {
+    margin-bottom: 0px;
+    font-weight: bold;
+  }
+  .card-community-description {
+    margin-left: 15px;
+    color: $navy;
+    font-size: 15px;
+    p {
+      margin: 15px 38px 0px;
+      font-size: 17px;
+    }
+  }
+  .text-comments {
+    color: $orange;
+    font-weight: 900;
+    font-size: 16px;
+    text-decoration: none;
+  }
 
-@media(max-width: 400px) {
+  .text-comments:hover {
+      color: $orange;
+      opacity: 0.8;
+  }
+}
+
+@media(max-width: 992px) {
+  .card-community {
+    margin: 26px 41px 5px;
+    padding: 28px;
+  }
+  .card-photo img {
+    width: 665px;
+    height: 498px;
+  }
+  .title-community {
+    margin: 100px 41px 27px;
+    padding-top: 50px;
+  }
+  .card-community-title p {
+    margin-bottom: 0px;
+    font-weight: bold;
+  }
+  .card-community-description {
+    margin-left: 15px;
+    color: $navy;
+    font-size: 15px;
+    p {
+      margin: 15px 38px 0px;
+      font-size: 17px;
+    }
+  }
+
+  .text-comments {
+    color: $orange;
+    font-weight: 900;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+  .text-comments:hover {
+      color: $orange;
+      opacity: 0.8;
+  }
+}
+
+@media(max-width: 1200px) {
+  .card-photo img {
+    width: 480px;
+    height: 291px;
+  }
+}
+
+@media(max-width: 768px) {
   .card-community {
     margin: 26px 0px 5px;
     padding: 28px;
   }
   .card-photo img {
-    width: 263px;
-    height: 196px;
+    width: 388px;
+    height: 291px;
   }
   .title-community {
-    margin: 84px 11px 0px;
-    padding-top: 35px;
+    margin: 100px 0px 27px;
+    padding-top: 37px;
+  }
+
+  .title-community h3 {
+    font-size: 19px;
+    margin-right: 29px;
+  }
+
+  .card-community-title p {
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .card-community-description {
+    margin-left: 15px;
+    color: $navy;
+    font-size: 15px;
+    p {
+      margin: 15px 38px 0px;
+      font-size: 13px;
+    }
+  }
+  .text-comments {
+    color: $orange;
+    font-weight: 900;
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  .text-comments:hover {
+      color: $orange;
+      opacity: 0.8;
   }
 }
 
-@media(min-width: 1365px) {
+@media(max-width: 576px) {
   .card-community {
-    margin: 26px 262px 5px;
+    margin: 26px 0px 5px;
     padding: 28px;
   }
   .card-photo img {
-    width: 633px;
-    height: 477px;
+    width: 378px;
+    height: 283px;
   }
   .title-community {
-    margin: 100px 335px 27px;
+    margin: 59px 0px 27px;
     padding-top: 50px;
   }
 
+  .title-community h3 {
+    font-size: 15px;
+    padding-top: 9px;
+  }
+  .card-community-title p {
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .card-community-description {
+    margin-left: 15px;
+    color: $navy;
+    font-size: 15px;
+    p {
+      margin: 13px 10px 0px;
+      font-size: 12px;
+    }
+  }
+  .text-comments {
+    color: $orange;
+    font-weight: 900;
+    font-size: 12px;
+    text-decoration: none;
+  }
+
+  .text-comments:hover {
+      color: $orange;
+      opacity: 0.8;
+  }
+}
+
+@media(max-width: 414px) {
+  .card-community {
+    margin: 26px 0px 5px;
+    padding: 20px 10px;
+    font-size: 13px;
+  }
+  .card-photo img {
+    width: 273px;
+    height: 185px;
+  }
+  .title-community {
+    margin: 59px 0px 27px;
+    padding-top: 50px;
+  }
+
+  .title-community h3 {
+    font-size: 15px;
+    padding-top: 4px;
+  }
+  .card-community-title p {
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .card-community-description {
+    margin-left: 15px;
+    color: $navy;
+    font-size: 15px;
+    p {
+      margin: 13px 10px 0px;
+      font-size: 12px;
+    }
+  }
+  .text-comments {
+    color: $orange;
+    font-weight: 900;
+    font-size: 12px;
+    text-decoration: none;
+  }
+
+  .text-comments:hover {
+      color: $orange;
+      opacity: 0.8;
+  }
 }

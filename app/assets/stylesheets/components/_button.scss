@@ -1,171 +1,869 @@
-.button {
-  background-color: #F74C25;
-  border: none;
-  color: white;
-  padding: 14px 44px;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 16px;
-  margin: 0px 2px;
-  opacity: 0.9;
-  transition: 0.3s;
-  display: inline-block;
-  text-decoration: none;
-}
+@media(min-width: 992px) {
+  .button {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 0.9;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+  }
 
-.button:hover {
-  background-color: #F74C25;
-  color: white;
-  opacity: 1;
-}
-
-.button-cancel {
-  background-color: gray;
-  border: none;
-  color: white;
-  padding: 14px 44px;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 16px;
-  margin: 0px 2px;
-  opacity: 0.8;
-  transition: 0.3s;
-  display: inline-block;
-  text-decoration: none;
-
-  &:hover {
-    background-color: gray;
+  .button:hover {
+    background-color: #F74C25;
     color: white;
     opacity: 1;
   }
-}
 
-.button-small {
-  background-color: #F74C25;
-  border: none;
-  color: white;
-  padding: 6px 38px;
-  margin-top: 5px;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 16px;
-  margin: 0px 2px;
-  opacity: 1;
-  transition: 0.3s;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #F74C25;
+  .button-cancel {
+    background-color: gray;
+    border: none;
     color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
     opacity: 0.8;
-  }
-}
-
-.button-delete-comment img {
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  right: 44px;
-  top: 24px;
-}
-
-.button-delete-post img {
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  right: 19px;
-  top: 13px;
-}
-
-.button-small-like {
-  background-color: #F74C25;
-  border: none;
-  color: white;
-  padding: 6px 38px;
-  margin-top: 5px;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 16px;
-  margin: 0px 2px;
-  opacity: 1;
-  transition: 0.3s;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  position: absolute;
-  right: 60px;
-  top: 19px;
-
-  &:hover {
-    background-color: #F74C25;
-    color: white;
-    opacity: 0.8;
-  }
-}
-
-.button-small-post {
-  background-color: #F74C25;
-  border: none;
-  color: white;
-  padding: 6px 38px;
-  margin-top: 5px;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 16px;
-  margin: 0px 2px;
-  opacity: 1;
-  transition: 0.3s;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;
-  left: 690px;
-  bottom: 75px;
-
-  &:hover {
-    background-color: #F74C25;
-    color: white;
-    opacity: 0.8;
-  }
-}
-
-.button-comments {
-  background-color: #F74C25;
-  border: none;
-  margin-top: 5px;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 16px;
-  margin: 0px 2px;
-  opacity: 1;
-  transition: 0.3s;
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
-  right: -450px;
-
-  a {
+    transition: 0.3s;
+    display: inline-block;
     text-decoration: none;
-    color: white;
+
+    &:hover {
+      background-color: gray;
+      color: white;
+      opacity: 1;
+    }
   }
 
-  &:hover {
+  .button-small {
     background-color: #F74C25;
+    border: none;
     color: white;
-    opacity: 0.8;
+    padding: 6px 38px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
   }
 
-  p {
-    margin-bottom: 0;
+  .button-delete-comment img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 44px;
+    top: 24px;
+  }
+
+  .button-delete-post img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 19px;
+    top: 13px;
+  }
+
+  .button-small-like {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 6px 38px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute;
+    right: 60px;
+    top: 19px;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+  }
+
+  .button-small-post {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 6px 38px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    left: 690px;
+    bottom: 75px;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+  }
+
+  .button-comments {
+    background-color: #F74C25;
+    border: none;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    right: -450px;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .button-comment-dropdown {
+    // margin-left: 275px;
+    // justify-content: flex-end;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
   }
 }
 
-.button-comment-dropdown {
-  // margin-left: 275px;
-  // justify-content: flex-end;
-  display: block;
-  margin-left: auto;
-  margin-right: 0;
+@media(max-width: 992px) {
+  .button {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 0.9;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .button:hover {
+    background-color: #F74C25;
+    color: white;
+    opacity: 1;
+  }
+
+  .button-cancel {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+      background-color: gray;
+      color: white;
+      opacity: 1;
+    }
+  }
+
+  .button-small {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 6px 14px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+  }
+
+  .button-delete-comment img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 44px;
+    top: 24px;
+  }
+
+  .button-delete-post img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 19px;
+    top: 13px;
+  }
+
+  .button-small-like {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 6px 38px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute;
+    right: 60px;
+    top: 19px;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+  }
+
+  .button-small-post {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 6px 38px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    left: 690px;
+    bottom: 75px;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+  }
+
+  .button-comments {
+    background-color: #F74C25;
+    border: none;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    right: -450px;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .button-comment-dropdown {
+    // margin-left: 275px;
+    // justify-content: flex-end;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+@media(max-width: 768px) {
+  .button {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 0.9;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .button:hover {
+    background-color: #F74C25;
+    color: white;
+    opacity: 1;
+  }
+
+  .button-cancel {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+      background-color: gray;
+      color: white;
+      opacity: 1;
+    }
+  }
+
+  .button-small {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+  }
+
+  .button-delete-comment img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 44px;
+    top: 24px;
+  }
+
+  .button-delete-post img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 19px;
+    top: 13px;
+  }
+
+  .button-small-like {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 6px 38px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute;
+    right: 60px;
+    top: 19px;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+  }
+
+  .button-small-post {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 6px 38px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    left: 690px;
+    bottom: 75px;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+  }
+
+  .button-comments {
+    background-color: #F74C25;
+    border: none;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    right: -450px;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .button-comment-dropdown {
+    // margin-left: 275px;
+    // justify-content: flex-end;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+@media(max-width: 576px) {
+  .button {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 0.9;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .button:hover {
+    background-color: #F74C25;
+    color: white;
+    opacity: 1;
+  }
+
+  .button-cancel {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+      background-color: gray;
+      color: white;
+      opacity: 1;
+    }
+  }
+
+  .button-small {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 10px 7px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 12px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+  }
+
+  .button-delete-comment img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 44px;
+    top: 24px;
+  }
+
+  .button-delete-post img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 19px;
+    top: 13px;
+  }
+
+  .button-small-like {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 6px 38px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute;
+    right: 60px;
+    top: 19px;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+  }
+
+  .button-small-post {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 6px 38px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    left: 690px;
+    bottom: 75px;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+  }
+
+  .button-comments {
+    background-color: #F74C25;
+    border: none;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    right: -450px;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .button-comment-dropdown {
+    // margin-left: 275px;
+    // justify-content: flex-end;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+@media(max-width: 414px) {
+  .button {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 0.9;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .button:hover {
+    background-color: #F74C25;
+    color: white;
+    opacity: 1;
+  }
+
+  .button-cancel {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+      background-color: gray;
+      color: white;
+      opacity: 1;
+    }
+  }
+
+  .button-small {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 5px 4px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 12px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+  }
+
+  .button-delete-comment img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 44px;
+    top: 24px;
+  }
+
+  .button-delete-post img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 19px;
+    top: 13px;
+  }
+
+  .button-small-like {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 6px 38px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute;
+    right: 60px;
+    top: 19px;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+  }
+
+  .button-small-post {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 6px 38px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    left: 690px;
+    bottom: 75px;
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+  }
+
+  .button-comments {
+    background-color: #F74C25;
+    border: none;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 2px;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    right: -450px;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    &:hover {
+      background-color: #F74C25;
+      color: white;
+      opacity: 0.8;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .button-comment-dropdown {
+    // margin-left: 275px;
+    // justify-content: flex-end;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+  }
 }

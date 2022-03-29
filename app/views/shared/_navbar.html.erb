@@ -2,18 +2,20 @@
   <div class="container">
     <%= link_to "Réserver un cours", courses_path, class:"navbar-brand" %>
 
+    <% if user_signed_in? %>
+      <%= link_to "FoodClass.", root_path, class:"title-navbar" %>
+    <% else %>
+      <%= link_to "FoodClass.", root_path, class:"title-navbar-deconnected" %>
+    <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <%= link_to "FoodClass.", root_path, class:"title-navbar" %>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+        <% if user_signed_in? %>
         <li class="nav-item mx-5 navbar-link">
           <%= link_to "Communauté", posts_path, class: "nav-link navbar-foodclass link-community", 'data-action': "click->transition#show"%>
         </li>
-        <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -25,7 +27,7 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item mx-5 navbar-link">
+          <li class="nav-item navbar-link">
             <%= link_to "Se connecter", new_user_session_path, class: "nav-link navbar-foodclass link-community" %>
           </li>
         <% end %>

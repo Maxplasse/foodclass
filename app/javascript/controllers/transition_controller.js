@@ -9,7 +9,7 @@ export default class extends Controller {
     if (this.pageValue != "posts_index") return;
     setTimeout(() => {
           this.panelTarget.classList.remove('is-active');
-        }, 3500);
+        }, 1500);
   }
 
   show() {
