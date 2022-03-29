@@ -13,7 +13,7 @@ export default class extends Controller {
     const minFontSize = 40
     // min width 768px
     const maxFontSize1 = 180
-    const minFontSize1 = 28
+    const minFontSize1 = 40
 
     // min width 576px
     const maxFontSize2 = 120
