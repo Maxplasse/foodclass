@@ -43,4 +43,6 @@ yarn-debug.log*
 .env*
 .env*
 .env*
-config/cloudinary.yml*
+config/cloudinary
+config/cloudinary
+config/cloudinary*
