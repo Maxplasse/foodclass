@@ -598,7 +598,7 @@ posts_h = [
     participation: part_marie1,
     course: post_marie1,
     posted_at: DateTime.new(2022, 3, 1, 18, 57),
-    photo_url: "https://res.cloudinary.com/hv9ssmzrz/image/fetch/c_fill,f_auto,h_488,q_auto,w_650/https://s3-eu-west-1.amazonaws.com/images-ca-1-0-1-eu/recipe_photos/original/140940/DSC_0390.JPG"
+    photo_url: "https://res.cloudinary.com/hv9ssmzrz/image/fetch/c_fill,f_auto,h_488,q_auto,w_650/https://s3-eu-west-1.amazonaws.com/images-ca-1-0-1-eu/recipe_photos/original/140940/DSC_0390.jpg"
   },
   {
     content: "Recette suive à la lettre, très bonne recette avec Mory Sacko",
