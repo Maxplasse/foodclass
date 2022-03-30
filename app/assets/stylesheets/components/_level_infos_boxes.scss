@@ -1,144 +1,881 @@
-// Level infos boxes
+  // Level infos boxes
+@media(min-width: 1200px) {
+  .infos-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5px;
+  }
 
-.infos-boxes {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 5px;
-}
+  .info-box {
+    width: 140px;
+    height: 140px;
+    background-color: $light-pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-.info-box {
-  width: 140px;
-  height: 140px;
-  background-color: $light-pink;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    p {
+      font-size: 20px;
+      margin-bottom: -20px
+    }
+  }
 
-  p {
+  .box-info-title p {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  #count-participations {
+    font-size: 4em;
+    text-align: center;
+    margin-top: -40px;
+  }
+
+  #current-level {
     font-size: 20px;
-    margin-bottom: -20px
+    width: 140px;
+    height: 140px;
+    background-color: $light-pink;
+    text-align: center;
+    padding-top: 20px;
+
+    img {
+      width: 64px;
+    }
+  }
+
+  #next-level-points {
+    display: flex;
+    flex-direction: column;
+    font-size: 3em;
+    width: 140px;
+    height: 140px;
+    background-color: $light-pink;
+    text-align: center;
+
+    p {
+      margin-bottom: -4px;
+    }
+  }
+
+
+  // Progression boxes
+
+  // Levels boxes
+
+  .ma-progression h4 {
+    margin: 48px 0;
+  }
+
+  #level-name p{
+    font-size: 19px;
+    font-weight: bold;
+  }
+
+  .level-boxes {
+    background-color: white;
+    padding: 0, 15px;
+  }
+
+  .level-box {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 28vh;
+    margin: 10px;
+  }
+
+  .hex-box {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 148px;
+
+    img {
+      width: 120px;
+    }
+  }
+
+  .unlocked:before {
+    content: "";
+    width: 77px;
+    height: 4px;
+    background: $orange;
+    border: none;
+    position: absolute;
+    left: -68px;
+  }
+
+  .locked:before {
+    content: "";
+    width: 77px;
+    border: 2px dashed grey;
+    position: absolute;
+    left: -68px;
+  }
+
+  .first-level:before {
+    display: none;
+  }
+
+  .next:before {
+    content: "";
+    width: 77px;
+    height: 4px;
+    background: linear-gradient(90deg, $orange, grey);
+    border: none;
+    position: absolute;
+    left: -68px;
+  }
+  // .next:before {
+  //   content: "";
+  //   width: 4em;
+  //   color: $light-pink;
+  //   border: 2px dashed;
+  // }
+
+  .level-badge {
+    img {
+      width: 260px;
+    }
   }
 }
 
-.box-info-title p {
-  font-size: 24px;
-  margin-bottom: 0;
-}
+@media(max-width: 1200px) {
+  .infos-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5px;
+  }
 
-#count-participations {
-  font-size: 4em;
-  text-align: center;
-  margin-top: -40px;
-}
+  .info-box {
+    width: 100px;
+    height: 100px;
+    background-color: $light-pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-#current-level {
-  font-size: 20px;
-  width: 140px;
-  height: 140px;
-  background-color: $light-pink;
-  text-align: center;
-  padding-top: 20px;
+    p {
+      font-size: 17px;
+      margin-bottom: -20px
+    }
+  }
 
-  img {
-    width: 64px;
+  .box-info-title p {
+    font-size: 17px;
+    margin-bottom: 0;
+  }
+
+  #count-participations {
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: -40px;
+  }
+
+  #current-level {
+    font-size: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: $light-pink;
+    text-align: center;
+    padding-top: 20px;
+
+    img {
+      width: 43px;
+    }
+  }
+
+  #next-level-points {
+    flex-direction: column;
+    font-size: 2em;
+    width: 100px;
+    height: 100px;
+    background-color: #FCE0DC30;
+    text-align: center;
+
+    p {
+      margin-bottom: -4px;
+    }
+  }
+
+
+  // Progression boxes
+
+  // Levels boxes
+
+  .ma-progression h4 {
+    margin: 48px 0;
+    font-size: 22px;
+  }
+
+  #level-name p{
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .level-boxes {
+    background-color: white;
+    padding: 0, 15px;
+  }
+
+  .level-box {
+    width: 17%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 28vh;
+    margin: 10px;
+  }
+
+  .hex-box {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 148px;
+
+    img {
+      width: 94px;
+    }
+  }
+
+  .unlocked:before {
+    content: "";
+    width: 38px;
+    height: 4px;
+    background: #F74C25;
+    border: none;
+    position: absolute;
+    left: -31px;
+  }
+
+  .locked:before {
+    content: "";
+    width: 38px;
+    border: 2px dashed grey;
+    position: absolute;
+    left: -31px;
+  }
+
+  .first-level:before {
+    display: none;
+  }
+
+  .next:before {
+    content: "";
+    width: 38px;
+    height: 4px;
+    background: linear-gradient(90deg, $orange, grey);
+    border: none;
+    position: absolute;
+    left: -31px;
+  }
+  // .next:before {
+  //   content: "";
+  //   width: 4em;
+  //   color: $light-pink;
+  //   border: 2px dashed;
+  // }
+
+  .level-badge {
+    img {
+      width: 200px;
+    }
   }
 }
 
-#next-level-points {
-  display: flex;
-  flex-direction: column;
-  font-size: 3em;
-  width: 140px;
-  height: 140px;
-  background-color: $light-pink;
-  text-align: center;
+@media(max-width: 992px) {
+  .infos-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5px;
+  }
 
-  p {
-    margin-bottom: -4px;
+  .info-box {
+    width: 115px;
+    height: 115px;
+    background-color: $light-pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-size: 14px;
+      margin-bottom: -20px
+    }
+  }
+
+  .box-info-title p {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  #count-participations {
+    font-size: 3.5em;
+    text-align: center;
+    margin-top: -40px;
+  }
+
+  #current-level {
+    font-size: 14px;
+    width: 115px;
+    height: 115px;
+    background-color: $light-pink;
+    text-align: center;
+    padding-top: 20px;
+
+    img {
+      width: 64px;
+    }
+  }
+
+  #next-level-points {
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5rem;
+    width: 115px;
+    height: 115px;
+    background-color: $light-pink;
+    text-align: center;
+
+    p {
+      margin-bottom: -4px;
+    }
+  }
+
+
+  // Progression boxes
+
+  // Levels boxes
+
+  .ma-progression h4 {
+    margin: 48px 0;
+  }
+
+  #level-name p{
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .level-boxes {
+    background-color: white;
+    padding: 0, 15px;
+  }
+
+  .level-box {
+    width: 14.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 28vh;
+    margin: 10px;
+  }
+
+  .hex-box {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 148px;
+
+    img {
+      width: 90px;
+    }
+  }
+
+  .unlocked:before {
+    content: "";
+    width: 49px;
+    height: 4px;
+    background: #F74C25;
+    border: none;
+    position: absolute;
+    left: -42px;
+  }
+
+  .locked:before {
+    content: "";
+    width: 49px;
+    border: 2px dashed grey;
+    position: absolute;
+    left: -42px;
+  }
+
+  .first-level:before {
+    display: none;
+  }
+
+  .next:before {
+    content: "";
+    width: 49px;
+    height: 4px;
+    background: linear-gradient(90deg, #F74C25, grey);
+    border: none;
+    position: absolute;
+    left: -42px;
+  }
+  // .next:before {
+  //   content: "";
+  //   width: 4em;
+  //   color: $light-pink;
+  //   border: 2px dashed;
+  // }
+
+  .level-badge {
+    img {
+      width: 260px;
+    }
   }
 }
 
+@media(max-width: 768px) {
+  .infos-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5px;
+  }
 
-// Progression boxes
+  .info-box {
+    width: 140px;
+    height: 140px;
+    background-color: $light-pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-// Levels boxes
+    p {
+      font-size: 20px;
+      margin-bottom: -20px
+    }
+  }
 
-.ma-progression h4 {
-  margin: 48px 0;
-}
+  .box-info-title p {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
 
-#level-name p{
-  font-size: 20px;
-  font-weight: bold;
-}
+  #count-participations {
+    font-size: 4em;
+    text-align: center;
+    margin-top: -40px;
+  }
 
-.level-boxes {
-  background-color: white;
-  padding: 0, 15px;
-}
+  #current-level {
+    font-size: 20px;
+    width: 140px;
+    height: 140px;
+    background-color: $light-pink;
+    text-align: center;
+    padding-top: 20px;
 
-.level-box {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 28vh;
-  margin: 10px;
-}
+    img {
+      width: 64px;
+    }
+  }
 
-.hex-box {
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  height: 148px;
+  #next-level-points {
+    display: flex;
+    flex-direction: column;
+    font-size: 3em;
+    width: 140px;
+    height: 140px;
+    background-color: $light-pink;
+    text-align: center;
 
-  img {
-    width: 120px;
+    p {
+      margin-bottom: -4px;
+    }
+  }
+
+
+  // Progression boxes
+
+  // Levels boxes
+
+  .ma-progression h4 {
+    margin: 48px 0;
+  }
+
+  #level-name p{
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .level-boxes {
+    background-color: white;
+    padding: 0, 15px;
+  }
+
+  .level-box {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 28vh;
+    margin: 10px;
+  }
+
+  .hex-box {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 148px;
+
+    img {
+      width: 120px;
+    }
+  }
+
+  .unlocked:before {
+    content: "";
+    width: 77px;
+    height: 4px;
+    background: $orange;
+    border: none;
+    position: absolute;
+    left: -68px;
+  }
+
+  .locked:before {
+    content: "";
+    width: 77px;
+    border: 2px dashed grey;
+    position: absolute;
+    left: -68px;
+  }
+
+  .first-level:before {
+    display: none;
+  }
+
+  .next:before {
+    content: "";
+    width: 77px;
+    height: 4px;
+    background: linear-gradient(90deg, $orange, grey);
+    border: none;
+    position: absolute;
+    left: -68px;
+  }
+  // .next:before {
+  //   content: "";
+  //   width: 4em;
+  //   color: $light-pink;
+  //   border: 2px dashed;
+  // }
+
+  .level-badge {
+    img {
+      width: 260px;
+    }
   }
 }
 
-.unlocked:before {
-  content: "";
-  width: 77px;
-  height: 4px;
-  background: $orange;
-  border: none;
-  position: absolute;
-  left: -68px;
+@media(max-width: 576px) {
+  .infos-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5px;
+  }
+
+  .info-box {
+    width: 140px;
+    height: 140px;
+    background-color: $light-pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-size: 20px;
+      margin-bottom: -20px
+    }
+  }
+
+  .box-info-title p {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  #count-participations {
+    font-size: 4em;
+    text-align: center;
+    margin-top: -40px;
+  }
+
+  #current-level {
+    font-size: 20px;
+    width: 140px;
+    height: 140px;
+    background-color: $light-pink;
+    text-align: center;
+    padding-top: 20px;
+
+    img {
+      width: 64px;
+    }
+  }
+
+  #next-level-points {
+    display: flex;
+    flex-direction: column;
+    font-size: 3em;
+    width: 140px;
+    height: 140px;
+    background-color: $light-pink;
+    text-align: center;
+
+    p {
+      margin-bottom: -4px;
+    }
+  }
+
+
+  // Progression boxes
+
+  // Levels boxes
+
+  .ma-progression h4 {
+    margin: 48px 0;
+  }
+
+  #level-name p{
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .level-boxes {
+    background-color: white;
+    padding: 0, 15px;
+  }
+
+  .level-box {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 28vh;
+    margin: 10px;
+  }
+
+  .hex-box {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 148px;
+
+    img {
+      width: 120px;
+    }
+  }
+
+  .unlocked:before {
+    content: "";
+    width: 77px;
+    height: 4px;
+    background: $orange;
+    border: none;
+    position: absolute;
+    left: -68px;
+  }
+
+  .locked:before {
+    content: "";
+    width: 77px;
+    border: 2px dashed grey;
+    position: absolute;
+    left: -68px;
+  }
+
+  .first-level:before {
+    display: none;
+  }
+
+  .next:before {
+    content: "";
+    width: 77px;
+    height: 4px;
+    background: linear-gradient(90deg, $orange, grey);
+    border: none;
+    position: absolute;
+    left: -68px;
+  }
+  // .next:before {
+  //   content: "";
+  //   width: 4em;
+  //   color: $light-pink;
+  //   border: 2px dashed;
+  // }
+
+  .level-badge {
+    img {
+      width: 260px;
+    }
+  }
 }
 
-.locked:before {
-  content: "";
-  width: 77px;
-  border: 2px dashed grey;
-  position: absolute;
-  left: -68px;
-}
+@media(max-width: 414px) {
+  .infos-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px -7px;
+  }
 
-.first-level:before {
-  display: none;
-}
+  .info-box {
+    width: 77px;
+    height: 77px;
+    background-color: $light-pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-.next:before {
-  content: "";
-  width: 77px;
-  height: 4px;
-  background: linear-gradient(90deg, $orange, grey);
-  border: none;
-  position: absolute;
-  left: -68px;
-}
-// .next:before {
-//   content: "";
-//   width: 4em;
-//   color: $light-pink;
-//   border: 2px dashed;
-// }
+    p {
+      font-size: 12px;
+      margin-bottom: -20px
+    }
+  }
 
-.level-badge {
-  img {
-    width: 260px;
+  .box-info-title p {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+
+  #count-participations {
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: -40px;
+    margin-bottom: -11px;
+  }
+
+  #current-level {
+    font-size: 12px;
+    width: 77px;
+    height: 77px;
+    background-color: $light-pink;
+    text-align: center;
+    padding-top: 12px;
+
+    img {
+      width: 37px;
+    }
+  }
+
+  #next-level-points {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8em;
+    width: 77px;
+    height: 77px;
+    background-color: $light-pink;
+    text-align: center;
+
+    p {
+      margin-bottom: -4px;
+    }
+  }
+
+
+  // Progression boxes
+
+  // Levels boxes
+
+  .ma-progression h4 {
+    margin: 50px 0 10px;
+    font-size: 17px;
+  }
+
+  #level-name p{
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .level-boxes {
+    background-color: white;
+    padding: 0, 15px;
+  }
+
+  .level-box {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 21vh;
+    margin: 10px 10px 0px;
+  }
+
+  .hex-box {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+
+    img {
+      width: 57px;
+    }
+  }
+
+  .sous-chef-box {
+    padding-bottom: 16px;
+  }
+
+  .foodclass-chef-box {
+    padding-bottom: 16px;
+  }
+
+  .unlocked:before {
+    content: "";
+    width: 18px;
+    height: 4px;
+    background: #F74C25;
+    border: none;
+    position: absolute;
+    left: -14px;
+  }
+
+  .locked:before {
+    content: "";
+    width: 18px;
+    border: 2px dashed grey;
+    position: absolute;
+    left: -14px;
+  }
+
+  .first-level:before {
+    display: none;
+  }
+
+  .next:before {
+    content: "";
+    width: 18px;
+    height: 4px;
+    background: linear-gradient(90deg, $orange, grey);
+    border: none;
+    position: absolute;
+    left: -14px;
+  }
+  // .next:before {
+  //   content: "";
+  //   width: 4em;
+  //   color: $light-pink;
+  //   border: 2px dashed;
+  // }
+
+  .level-badge {
+    img {
+      width: 72px;
+    }
   }
 }

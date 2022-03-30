@@ -1,121 +1,771 @@
-.body-background {
-  background-color: $light-pink;
-  padding-bottom: 2em;
-  padding-top: 72px;
-}
-
-.show-grid {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-gap: 2em;
-  margin-top: 2em;
-}
-
-// Mon profil
-
-.my-profile {
-  background-color: white;
-  padding: 10px 20px;
-
-  i {
-    color: $orange;
+@media(min-width: 1200px) {
+  .body-background {
+    background-color: $light-pink;
+    padding-bottom: 2em;
+    padding-top: 72px;
   }
-}
 
-.progress-bar-infos {
-  width: 500px;
-  margin: 0 5px;
-  display: flex;
-  justify-content: space-between;
-
-  p {
-    font-weight: bold;
+  .show-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 2em;
+    margin-top: 2em;
   }
-}
 
-.progress-bar-title {
-  margin: 24px 0px;
-  // background-color: white;
-}
+  // Mon profil
 
-.level-badge img {
-  width: 260;
-}
+  .my-profile {
+    background-color: white;
+    padding: 10px 20px;
 
-.level-badge {
-  padding-right: 45px;
-  padding-top: 42px;
-}
+    i {
+      color: $orange;
+    }
+  }
 
-// Mes badges
-.my-badges {
-  background-color: white;
-  padding: 17px 20px 54px;
-}
+  .progress-bar-infos {
+    width: 500px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: space-between;
 
-.badges img {
-  width: 90px;
-  height: 90px;
-  margin: auto;
-}
+    p {
+      font-weight: bold;
+    }
+  }
 
-.img-badges {
-  display: grid;
-  grid-template-columns: 1fr;
+  .progress-bar-title {
+    margin: 24px 0px;
+    // background-color: white;
+  }
 
-  p {
-    margin-top: 5px;
+  .level-badge img {
+    width: 260px;
+  }
+
+  .level-badge {
+    padding-right: 0px;
+    padding-top: 42px;
+  }
+
+  // Mes badges
+  .my-badges {
+    background-color: white;
+    padding: 17px 20px 54px;
+  }
+
+  .badges img {
+    width: 90px;
+    height: 90px;
+    margin: auto;
+  }
+
+  .img-badges {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    p {
+      margin-top: 5px;
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+
+  // Parrainage
+
+  .invitation {
+    background-color: white;
+    padding: 17px 20px 20px 20px;
+    margin: 0 0 24px 0;
+
+    h4 {
+      margin-bottom: 16px;
+      width: 290px;
+    }
+
+    i {
+      color: $orange;
+    }
+
+  }
+
+  .form-inline {
+    display: flex;
+    width: inherit;
+  }
+
+  .invitation_email {
+    flex-grow: 1;
+    margin-right: 6px;
+  }
+
+  .submit-button {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    opacity: 1;
+    transition: 0.3s;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+
+  .box-info-title {
     text-align: center;
-    font-size: 14px;
+  }
+
+  #new_invitation {
+    width: 100%;
   }
 }
 
-// Parrainage
-
-.invitation {
-  background-color: white;
-  padding: 17px 20px 20px 20px;
-  margin: 0 0 24px 0;
-
-  h4 {
-    margin-bottom: 16px;
-    width: 290px;
+@media(max-width: 1200px) {
+  .body-background {
+    background-color: $light-pink;
+    padding-bottom: 2em;
+    padding-top: 72px;
   }
 
-  i {
-    color: $orange;
+  .show-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 2em;
+    margin-top: 2em;
   }
 
+  // Mon profil
+
+  .my-profile {
+    background-color: white;
+    padding: 10px 20px;
+
+    i {
+      color: $orange;
+      font-size: 34px;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+  }
+
+  .my-badges h4 {
+    font-size: 22px;
+  }
+
+  .progress-bar-infos {
+    width: 375px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .progress-bar-title {
+    margin: 24px 0px;
+    // background-color: white;
+  }
+
+  .level-badge img {
+    width: 160px;
+    margin-left: 18px;
+  }
+
+  .level-badge {
+    padding-right: 0px;
+    padding-top: 42px;
+  }
+
+  // Mes badges
+  .my-badges {
+    background-color: white;
+    padding: 17px 20px 54px;
+  }
+
+  .badges img {
+    width: 68px;
+    height: 68px;
+    margin: auto;
+  }
+
+  .img-badges {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    p {
+      margin-top: 5px;
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+
+  // Parrainage
+
+  .invitation {
+    background-color: white;
+    padding: 17px 20px 20px 20px;
+    margin: 0 0 24px 0;
+
+    h4 {
+      margin-bottom: 22px;
+      width: 290px;
+      font-size: 24px;
+    }
+
+    i {
+      color: $orange;
+    }
+
+  }
+
+  .form-inline {
+    display: flex;
+    width: inherit;
+  }
+
+  .invitation_email {
+    flex-grow: 1;
+    margin-right: 6px;
+  }
+
+  .submit-button {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    opacity: 1;
+    transition: 0.3s;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+
+  .box-info-title {
+    text-align: center;
+  }
+
+  #new_invitation {
+    width: 100%;
+  }
 }
 
-.form-inline {
-  display: flex;
-  width: inherit;
+@media(max-width: 992px) {
+  .body-background {
+    background-color: $light-pink;
+    padding-bottom: 2em;
+    padding-top: 72px;
+  }
+
+  .show-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2em;
+    margin-top: 2em;
+  }
+
+  // Mon profil
+
+  .my-profile {
+    background-color: white;
+    padding: 10px 20px;
+
+    i {
+      color: $orange;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+  }
+
+  .progress-bar-infos {
+    width: 450px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-weight: bold;
+    }
+  }
+
+  .progress-bar-title {
+    margin: 24px 0px;
+    // background-color: white;
+  }
+
+  .level-badge img {
+    width: 200px;
+    margin-left: 43px;
+  }
+
+  .level-badge {
+    padding-right: 45px;
+    padding-top: 42px;
+  }
+
+  // Mes badges
+  .my-badges {
+    background-color: white;
+    padding: 17px 20px 54px;
+  }
+
+  .badges img {
+    width: 90px;
+    height: 90px;
+    margin: auto;
+  }
+
+  .img-badges {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    p {
+      margin-top: 5px;
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+
+  // Parrainage
+
+  .invitation {
+    background-color: white;
+    padding: 17px 20px 20px 20px;
+    margin: 0 0 24px 0;
+
+    h4 {
+      margin-bottom: 16px;
+      width: 290px;
+      font-size: 22px;
+    }
+
+    i {
+      color: $orange;
+    }
+
+  }
+
+  .form-inline {
+    display: flex;
+    width: inherit;
+  }
+
+  .invitation_email {
+    flex-grow: 1;
+    margin-right: 6px;
+  }
+
+  .submit-button {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    opacity: 1;
+    transition: 0.3s;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+
+  .box-info-title {
+    text-align: center;
+  }
+
+  #new_invitation {
+    width: 100%;
+  }
 }
 
-.invitation_email {
-  flex-grow: 1;
-  margin-right: 6px;
+@media(max-width: 768px) {
+  .body-background {
+    background-color: $light-pink;
+    padding-bottom: 2em;
+    padding-top: 72px;
+  }
+
+  .show-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2em;
+    margin-top: 2em;
+  }
+
+  // Mon profil
+
+  .my-profile {
+    background-color: white;
+    padding: 10px 20px;
+
+    i {
+      color: $orange;
+    }
+  }
+
+  .progress-bar-infos {
+    width: 500px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-weight: bold;
+    }
+  }
+
+  .progress-bar-title {
+    margin: 24px 0px;
+    // background-color: white;
+  }
+
+  .level-badge img {
+    width: 260px;
+  }
+
+  .level-badge {
+    padding-right: 45px;
+    padding-top: 42px;
+  }
+
+  // Mes badges
+  .my-badges {
+    background-color: white;
+    padding: 17px 20px 54px;
+  }
+
+  .badges img {
+    width: 90px;
+    height: 90px;
+    margin: auto;
+  }
+
+  .img-badges {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    p {
+      margin-top: 5px;
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+
+  // Parrainage
+
+  .invitation {
+    background-color: white;
+    padding: 17px 20px 20px 20px;
+    margin: 0 0 24px 0;
+
+    h4 {
+      margin-bottom: 16px;
+      width: 290px;
+    }
+
+    i {
+      color: $orange;
+    }
+
+  }
+
+  .form-inline {
+    display: flex;
+    width: inherit;
+  }
+
+  .invitation_email {
+    flex-grow: 1;
+    margin-right: 6px;
+  }
+
+  .submit-button {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    opacity: 1;
+    transition: 0.3s;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+
+  .box-info-title {
+    text-align: center;
+  }
+
+  #new_invitation {
+    width: 100%;
+  }
 }
 
-.submit-button {
-  background-color: #F74C25;
-  border: none;
-  color: white;
-  padding: 14px 44px;
-  border-radius: 4px;
-  opacity: 1;
-  transition: 0.3s;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  font-size: 18px;
+@media(max-width: 576px) {
+  .body-background {
+    background-color: $light-pink;
+    padding-bottom: 2em;
+    padding-top: 72px;
+  }
+
+  .show-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2em;
+    margin-top: 2em;
+  }
+
+  // Mon profil
+
+  .my-profile {
+    background-color: white;
+    padding: 10px 20px;
+
+    i {
+      color: $orange;
+    }
+  }
+
+  .progress-bar-infos {
+    width: 500px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-weight: bold;
+    }
+  }
+
+  .progress-bar-title {
+    margin: 24px 0px;
+    // background-color: white;
+  }
+
+  .level-badge img {
+    width: 260px;
+  }
+
+  .level-badge {
+    padding-right: 45px;
+    padding-top: 42px;
+  }
+
+  // Mes badges
+  .my-badges {
+    background-color: white;
+    padding: 17px 20px 54px;
+  }
+
+  .badges img {
+    width: 90px;
+    height: 90px;
+    margin: auto;
+  }
+
+  .img-badges {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    p {
+      margin-top: 5px;
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+
+  // Parrainage
+
+  .invitation {
+    background-color: white;
+    padding: 17px 20px 20px 20px;
+    margin: 0 0 24px 0;
+
+    h4 {
+      margin-bottom: 16px;
+      width: 290px;
+    }
+
+    i {
+      color: $orange;
+    }
+
+  }
+
+  .form-inline {
+    display: flex;
+    width: inherit;
+  }
+
+  .invitation_email {
+    flex-grow: 1;
+    margin-right: 6px;
+  }
+
+  .submit-button {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    opacity: 1;
+    transition: 0.3s;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+
+  .box-info-title {
+    text-align: center;
+  }
+
+  #new_invitation {
+    width: 100%;
+  }
 }
 
-.box-info-title {
-  text-align: center;
-}
+@media(max-width: 414px) {
+  .body-background {
+    background-color: $light-pink;
+    padding-bottom: 2em;
+    padding-top: 72px;
+  }
 
-#new_invitation {
-  width: 100%;
+  .show-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2em;
+    margin-top: 2em;
+  }
+
+  // Mon profil
+
+  .my-profile {
+    background-color: white;
+    padding: 10px 20px;
+
+    i {
+      color: $orange;
+    }
+
+    h3 {
+      font-size: 17px;
+    }
+  }
+
+  .progress-bar-infos {
+    width: 215px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-weight: bold;
+      font-size: 12px;
+    }
+  }
+
+  .progress-bar-title {
+    margin: 24px 0px;
+    // background-color: white;
+  }
+
+  .level-badge img {
+    width: 82px;
+  }
+
+  .level-badge {
+    padding-right: 9px;
+    padding-top: 52px;
+  }
+
+  // Mes badges
+  .my-badges {
+    background-color: white;
+    padding: 17px 20px 54px;
+  }
+
+  .badges img {
+    width: 90px;
+    height: 90px;
+    margin: auto;
+  }
+
+  .img-badges {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    p {
+      margin-top: 5px;
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+
+  // Parrainage
+
+  .invitation {
+    background-color: white;
+    padding: 17px 20px 20px 20px;
+    margin: 0 0 24px 0;
+
+    h4 {
+      margin-bottom: 16px;
+      width: 290px;
+      font-size: 17px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    i {
+      color: $orange;
+    }
+
+  }
+
+  .form-inline {
+    display: flex;
+    width: inherit;
+  }
+
+  .invitation_email {
+    flex-grow: 1;
+    margin-right: 6px;
+  }
+
+  .submit-button {
+    background-color: #F74C25;
+    border: none;
+    color: white;
+    padding: 14px 44px;
+    border-radius: 4px;
+    opacity: 1;
+    transition: 0.3s;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+
+  .box-info-title {
+    text-align: center;
+  }
+
+  #new_invitation {
+    width: 100%;
+  }
 }

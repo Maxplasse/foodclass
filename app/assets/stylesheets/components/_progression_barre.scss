@@ -1,47 +1,301 @@
-.progression-barre {
-  flex-direction: column;
-  text-align: center;
-  margin-top: 8px;
-}
-
-.progress {
-  background: $orange;
-  justify-content: flex-start;
-  border-radius: 100px;
-  align-items: center;
-  position: relative;
-  padding: 0 5px;
-  display: flex;
-  height: 30px;
-  width: 500px;
-  border: 1px solid $orange;
-  margin: 0px 5px;
-
-  p {
-    color: white;
-    font-size: 16px;
-    width: inherit;
+@media(min-width: 1200px) {
+  .progression-barre {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 8px;
   }
 
-  i {
-    color: white;
+  .progress {
+    background: $orange;
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 30px;
+    width: 500px;
+    border: 1px solid $orange;
+    margin: 0px 5px;
+
+    p {
+      color: white;
+      font-size: 16px;
+      width: inherit;
+    }
+
+    i {
+      color: white;
+    }
+  }
+
+  #points {
+    margin-top: 16px;
+  }
+
+  .progress-value {
+    animation: load 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background: white;
+    height: 20px;
+    width: 0;
+  }
+
+  @keyframes load {
+    0% { width: 0; }
+    100% { width: 68%; }
   }
 }
 
-#points {
-  margin-top: 16px;
+@media(max-width: 1200px) {
+  .progression-barre {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .progress {
+    background: $orange;
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 27px;
+    width: 375px;
+    border: 1px solid $orange;
+    margin: 0px 5px;
+
+    p {
+      color: white;
+      font-size: 16px;
+      width: inherit;
+    }
+
+    i {
+      color: white;
+      font-size: 22px;
+    }
+  }
+
+  #points {
+    margin-top: 16px;
+  }
+
+  .progress-value {
+    animation: load 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background: white;
+    height: 20px;
+    width: 0;
+  }
+
+  @keyframes load {
+    0% { width: 0; }
+    100% { width: 68%; }
+  }
 }
 
-.progress-value {
-  animation: load 3s normal forwards;
-  box-shadow: 0 10px 40px -10px #fff;
-  border-radius: 100px;
-  background: white;
-  height: 20px;
-  width: 0;
+@media(max-width: 992px) {
+  .progression-barre {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .progress {
+    background: $orange;
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 30px;
+    width: 450px;
+    border: 1px solid $orange;
+    margin: 0px 5px;
+
+    p {
+      color: white;
+      font-size: 16px;
+      width: inherit;
+    }
+
+    i {
+      color: white;
+    }
+  }
+
+  #points {
+    margin-top: 16px;
+  }
+
+  .progress-value {
+    animation: load 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background: white;
+    height: 20px;
+    width: 0;
+  }
+
+  @keyframes load {
+    0% { width: 0; }
+    100% { width: 68%; }
+  }
 }
 
-@keyframes load {
-  0% { width: 0; }
-  100% { width: 68%; }
+@media(max-width: 768px) {
+  .progression-barre {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .progress {
+    background: $orange;
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 30px;
+    width: 500px;
+    border: 1px solid $orange;
+    margin: 0px 5px;
+
+    p {
+      color: white;
+      font-size: 16px;
+      width: inherit;
+    }
+
+    i {
+      color: white;
+    }
+  }
+
+  #points {
+    margin-top: 16px;
+  }
+
+  .progress-value {
+    animation: load 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background: white;
+    height: 20px;
+    width: 0;
+  }
+
+  @keyframes load {
+    0% { width: 0; }
+    100% { width: 68%; }
+  }
+}
+
+@media(max-width: 576px) {
+  .progression-barre {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .progress {
+    background: $orange;
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 30px;
+    width: 500px;
+    border: 1px solid $orange;
+    margin: 0px 5px;
+
+    p {
+      color: white;
+      font-size: 16px;
+      width: inherit;
+    }
+
+    i {
+      color: white;
+    }
+  }
+
+  #points {
+    margin-top: 16px;
+  }
+
+  .progress-value {
+    animation: load 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background: white;
+    height: 20px;
+    width: 0;
+  }
+
+  @keyframes load {
+    0% { width: 0; }
+    100% { width: 68%; }
+  }
+}
+
+@media(max-width: 414px) {
+  .progression-barre {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .progress {
+    background: $orange;
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 15px;
+    width: 215px;
+    border: 1px solid $orange;
+    margin: 0px 5px;
+
+    p {
+      color: white;
+      font-size: 14px;
+      width: inherit;
+    }
+
+    i {
+      color: white;
+      font-size: 14px;
+    }
+  }
+
+  #points {
+    margin-top: 16px;
+  }
+
+  .progress-value {
+    animation: load 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background: white;
+    height: 11px;
+    width: 0;
+  }
+
+  @keyframes load {
+    0% { width: 0; }
+    100% { width: 68%; }
+  }
 }

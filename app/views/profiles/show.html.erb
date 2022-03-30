@@ -1,160 +1,163 @@
 <%= render "shared/dashboard_navigation" %>
 <div class="body-background">
-  <div class="container">
-    <div class="show-grid">
-      <div class="my-profile">
-        <div class="d-flex">
-          <h3>Bientôt <%= current_user.next_level_name %>, <%= current_user.first_name %> !</h3>
-        </div>
-        <div class="d-flex justify-content-between">
+  <div class="container-profile">
+    <div class="container">
+      <div class="show-grid">
+        <div class="my-profile">
           <div>
-            <div class="d-flex justify-content-between progress-bar-title">
-              <div class="progression-barre">
-                <div class="progress">
-                  <div class="progress-value"></div>
-                  <p id="points"><%= current_user.next_level_min_points  %> <i class="fas fa-carrot"></i> restantes</p>
-                </div>
-                <div class="progress-bar-infos">
-                  <p><%= current_user.current_level_name %></p>
-                  <p><%= current_user.next_level_name %></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="infos-boxes">
-              <div>
-                <div class="box-info-title">
-                </div>
-                <div class="info-box">
-                  <p id="count-participations"><%= current_user.participations.count %></p>
-                  <p>Cours</p>
-                </div>
-              </div>
-
-              <div>
-                <div class="box-info-title">
-                </div>
-                <div id="current-level">
-                  <%= image_tag "toque.png" %>
-                  <p><%= current_user.current_level_name %></p>
-                </div>
-              </div>
-
-              <div>
-                <div class="box-info-title">
-                </div>
-                <div id="next-level-points">
-                  <p ><%= current_user.number_of_points %></p>
-                  <i class="fas fa-carrot"></i>
-                </div>
-              </div>
-            </div>
+            <h3>Bientôt <%= current_user.next_level_name %>, <%= current_user.first_name %> !</h3>
           </div>
-
-          <div class="level-badge">
-            <%= image_tag "#{current_user.current_level_badge}" %>
-          </div>
-        </div>
-
-        <div class="ma-progression">
-          <h4>Ma progression</h4>
-          <div class="d-flex bg-white level-boxes">
-            <% User::LEVELS.each_with_index do |level, index| %>
-              <div class="<%= level[:name].parameterize %>-box level-box">
-                <div id="level-name">
-                  <p><%= level[:name] %></p>
-                </div>
-                <div class="d-flex
-                            hex-box
-                            <%= "unlocked" if current_user.level_validated?(level) %>
-                            <%= "locked" if !current_user.level_validated?(level) %>
-                            <%= "first-level" if index == 0 %>
-                            <%= "next" if level[:name] == current_user.next_level_name %>">
-                  <% if current_user.level_validated?(level) %>
-                    <%= image_tag level[:icon_level_unlocked] %>
-                  <% else %>
-                    <%= image_tag level[:icon_level_locked] %>
-                  <% end %>
-                </div>
-                <div>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="invitation">
-            <h4>Parraine tes proches ! </h4>
-            <p>FoodClass, c'est avant tout une communauté. Invite tes proches à nous rejoindre et gagne des <i class="fas fa-carrot"></i> !</p>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="submit-button" data-bs-toggle="modal" data-bs-target="#parrainage">
-                Parrainer
-              </button>
-            </div>
-            <%# Modal parrainage %>
-            <div class="modal" id="parrainage" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title">Parrainer un proche</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="container">
+            <div class="d-flex justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between progress-bar-title">
+                  <div class="progression-barre">
+                    <div class="progress">
+                      <div class="progress-value"></div>
+                      <p id="points"><%= current_user.next_level_min_points  %> <i class="fas fa-carrot"></i> restantes</p>
+                    </div>
+                    <div class="progress-bar-infos">
+                      <p><%= current_user.current_level_name %></p>
+                      <p><%= current_user.next_level_name %></p>
+                    </div>
                   </div>
-                  <div class="modal-body">
-                    <%= simple_form_for @invitation, html: { class: "form-inline" } do |f| %>
-                      <%= f.input :email, label: false, placeholder: 'Saisissez une adresse email' %>
-                      <button id="sweet-alert-demo" class="submit-button" disabled>Parrainer</i></button>
+                </div>
+
+                <div class="infos-boxes">
+                  <div>
+                    <div class="box-info-title">
+                    </div>
+                    <div class="info-box">
+                      <p id="count-participations"><%= current_user.participations.count %></p>
+                      <p>Cours</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="box-info-title">
+                    </div>
+                    <div id="current-level">
+                      <%= image_tag "toque.png" %>
+                      <p><%= current_user.current_level_name %></p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="box-info-title">
+                    </div>
+                    <div id="next-level-points">
+                      <p ><%= current_user.number_of_points %></p>
+                      <i class="fas fa-carrot"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="level-badge">
+                <%= image_tag "#{current_user.current_level_badge}" %>
+              </div>
+            </div>
+          </div>
+          <div class="ma-progression">
+            <h4>Ma progression</h4>
+            <div class="d-flex bg-white level-boxes">
+              <% User::LEVELS.each_with_index do |level, index| %>
+                <div class="<%= level[:name].parameterize %>-box level-box">
+                  <div id="level-name">
+                    <p><%= level[:name] %></p>
+                  </div>
+                  <div class="d-flex
+                              hex-box
+                              <%= "unlocked" if current_user.level_validated?(level) %>
+                              <%= "locked" if !current_user.level_validated?(level) %>
+                              <%= "first-level" if index == 0 %>
+                              <%= "next" if level[:name] == current_user.next_level_name %>">
+                    <% if current_user.level_validated?(level) %>
+                      <%= image_tag level[:icon_level_unlocked] %>
+                    <% else %>
+                      <%= image_tag level[:icon_level_locked] %>
                     <% end %>
                   </div>
+                  <div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="invitation">
+              <h4>Parraine tes proches ! </h4>
+              <p>FoodClass, c'est avant tout une communauté. Invite tes proches à nous rejoindre et gagne des <i class="fas fa-carrot"></i> !</p>
+              <div class="d-flex justify-content-center">
+                <button type="button" class="submit-button" data-bs-toggle="modal" data-bs-target="#parrainage">
+                  Parrainer
+                </button>
+              </div>
+              <%# Modal parrainage %>
+              <div class="modal" id="parrainage" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Parrainer un proche</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <%= simple_form_for @invitation, html: { class: "form-inline" } do |f| %>
+                        <%= f.input :email, label: false, placeholder: 'Saisissez une adresse email' %>
+                        <button id="sweet-alert-demo" class="submit-button" disabled>Parrainer</i></button>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="my-badges">
+            <div class="badges carousel-home-page-custom">
+              <div class="d-flex justify-content-between">
+                <h4>Mes badges</h4>
+                <h4>11/40</h4>
+              </div>
+              <div class="img-badges carousel-home" data-controller="carousel-profile">
+                <div>
+                  <%= image_tag "Apprenti.svg", title: "Apprenti" %>
+                  <p>Apprenti</p>
+                  <%= image_tag "Healthy_food.svg", title: "Plat végétarien" %>
+                  <p>Repas veggie</p>
+                </div>
+                <div>
+                  <%= image_tag "Ramen.svg", title: "Repas complet" %>
+                  <p>Repas asiat</p>
+                  <%= image_tag "Commis.svg", title: "Commis" %>
+                  <p>Commis</p>
+                </div>
+                <div>
+                  <%= image_tag "Chef.svg", title: "Sous-chef" %>
+                  <p>Sous-chef</p>
+                  <%= image_tag "Chicken.svg", title: "Découpe du poulet" %>
+                  <p>Poulet master</p>
+                </div>
+                <div>
+                  <%= image_tag "Meal.svg", title: "Repas complet" %>
+                  <p>Plat sain</p>
+                  <%= image_tag "Sushis.svg", title: "Maitre sushis" %>
+                  <p>As des sushis</p>
+                </div>
+                <div>
+                  <%= image_tag "Foodclass_chef.svg", title: "Repas complet" %>
+                  <p>Roi des casseroles</p>
+                  <%= image_tag "Toast.svg", title: "Brunch" %>
+                  <p>Brunch master</p>
+                </div>
+                <div>
+                  <%= image_tag "Salad.svg", title: "Repas complet" %>
+                  <p>Roi des salades</p>
                 </div>
               </div>
             </div>
-        </div>
-        <div class="my-badges">
-          <div class="badges carousel-home-page-custom">
-            <div class="d-flex justify-content-between">
-              <h4>Mes badges</h4>
-              <h4>11/40</h4>
-            </div>
-            <div class="img-badges carousel-home" data-controller="carousel-profile">
-              <div>
-                <%= image_tag "Apprenti.svg", title: "Apprenti" %>
-                <p>Apprenti</p>
-                <%= image_tag "Healthy_food.svg", title: "Plat végétarien" %>
-                <p>Repas veggie</p>
-              </div>
-              <div>
-                <%= image_tag "Ramen.svg", title: "Repas complet" %>
-                <p>Repas asiat</p>
-                <%= image_tag "Commis.svg", title: "Commis" %>
-                <p>Commis</p>
-              </div>
-              <div>
-                <%= image_tag "Chef.svg", title: "Sous-chef" %>
-                <p>Sous-chef</p>
-                <%= image_tag "Chicken.svg", title: "Découpe du poulet" %>
-                <p>Poulet master</p>
-              </div>
-              <div>
-                <%= image_tag "Meal.svg", title: "Repas complet" %>
-                <p>Plat sain</p>
-                <%= image_tag "Sushis.svg", title: "Maitre sushis" %>
-                <p>As des sushis</p>
-              </div>
-              <div>
-                <%= image_tag "Foodclass_chef.svg", title: "Repas complet" %>
-                <p>Roi des casseroles</p>
-                <%= image_tag "Toast.svg", title: "Brunch" %>
-                <p>Brunch master</p>
-              </div>
-              <div>
-                <%= image_tag "Salad.svg", title: "Repas complet" %>
-                <p>Roi des salades</p>
-              </div>
-            </div>
-          </div>
 
+          </div>
         </div>
       </div>
     </div>
