@@ -647,7 +647,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 2em;
-    margin-top: 2em;
+    margin: 2em 2em 0em 0em;
   }
 
   // Mon profil
@@ -694,12 +694,12 @@
   // Mes badges
   .my-badges {
     background-color: white;
-    padding: 17px 20px 54px;
+    padding: 17px 10px 54px;
   }
 
   .badges img {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     margin: auto;
   }
 

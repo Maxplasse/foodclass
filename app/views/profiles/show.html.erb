@@ -88,30 +88,30 @@
 
         <div>
           <div class="invitation">
-              <h4>Parraine tes proches ! </h4>
-              <p>FoodClass, c'est avant tout une communauté. Invite tes proches à nous rejoindre et gagne des <i class="fas fa-carrot"></i> !</p>
-              <div class="d-flex justify-content-center">
-                <button type="button" class="submit-button" data-bs-toggle="modal" data-bs-target="#parrainage">
-                  Parrainer
-                </button>
-              </div>
-              <%# Modal parrainage %>
-              <div class="modal" id="parrainage" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Parrainer un proche</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <%= simple_form_for @invitation, html: { class: "form-inline" } do |f| %>
-                        <%= f.input :email, label: false, placeholder: 'Saisissez une adresse email' %>
-                        <button id="sweet-alert-demo" class="submit-button" disabled>Parrainer</i></button>
-                      <% end %>
-                    </div>
+            <h4>Parraine tes proches ! </h4>
+            <p>FoodClass, c'est avant tout une communauté. Invite tes proches à nous rejoindre et gagne des <i class="fas fa-carrot"></i> !</p>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="submit-button" data-bs-toggle="modal" data-bs-target="#parrainage">
+                Parrainer
+              </button>
+            </div>
+            <%# Modal parrainage %>
+            <div class="modal" id="parrainage" tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Parrainer un proche</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <%= simple_form_for @invitation, html: { class: "form-inline" } do |f| %>
+                      <%= f.input :email, label: false, placeholder: 'Saisissez une adresse email' %>
+                      <button id="sweet-alert-demo" class="submit-button" disabled>Parrainer</i></button>
+                    <% end %>
                   </div>
                 </div>
               </div>
+            </div>
           </div>
           <div class="my-badges">
             <div class="badges carousel-home-page-custom">

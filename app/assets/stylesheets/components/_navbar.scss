@@ -422,6 +422,113 @@
   }
 }
 
+@media(max-width: 414px) {
+  .navbar-foodclass {
+    &.navbar-light .navbar-nav .nav-link {
+      color: white;
+      font-size: 12px;
+      font-weight: 400;
+
+    }
+  }
+  .navbar-lewagon {
+    justify-content: space-between;
+    background-color: transparent;
+    transition: 0.1s background-color ease;
+    height: 90px;
+    // position: relative;
+
+    .title-navbar {
+      opacity: 0;
+      top: 15px;
+      text-decoration: none;
+      left: calc(50% - 232px);
+      position: absolute;
+    }
+
+    .title-navbar-deconnected {
+      opacity: 0;
+      top: 20px;
+      text-decoration: none;
+      left: calc(50% - 232px);
+      position: absolute;
+    }
+
+    .navbar-brand {
+      background-color: white;
+      font-weight: 400;
+      border: none;
+      margin-top: 5px;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 22px;
+      padding: 10px 7px;
+      color: #F74C25;
+      margin: 0px 2px;
+      opacity: 1;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+
+      &:hover {
+        color: $orange;
+        font-weight: 400;
+        opacity: 0.8;
+      }
+    }
+  }
+  .navbar-lewagon-white {
+    background-color: white;
+    border-bottom: solid 1px silver;
+    .navbar-link a {
+      color: $navy !important;
+    }
+
+    .title-navbar {
+      opacity: 1;
+      color: $orange;
+      text-decoration: none;
+      font-size: 22px;
+      font-family: $headers-font;
+      position: relative;
+      left: -29px;
+      top: 0px;
+    }
+
+    .title-navbar-deconnected {
+      opacity: 1;
+      color: $orange;
+      text-decoration: none;
+      font-size: 22px;
+      font-family: $headers-font;
+      position: relative;
+      left: -38px;
+      top: 0px;
+    }
+    .navbar-brand {
+      background-color: $orange;
+      font-weight: 400;
+      color: white;
+      margin-top: 5px;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 12px;
+      padding: 10px 7px;
+      margin: 0px 2px;
+      opacity: 1;
+    }
+    .navbar-brand:hover {
+      background-color: $orange;
+      color: white;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+    .navbar-toggler-icon {
+      display: none;
+    }
+  }
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
